@@ -1,0 +1,11 @@
+Fila circular implementada com aritmética modular (índices mod n): qual a complexidade de ENQUEUE e DEQUEUE?	O(1) para as duas — não desloca elementos, só avança os índices com módulo.
+Pilha implementada sobre um arranjo com um índice apontando o topo: complexidade de PUSH e POP?	O(1) no pior caso.
+POP de uma pilha implementada com lista ligada simples, com ponteiro para o topo: complexidade?	O(1) — remove direto o nó do topo, sem percorrer a lista.
+Recursão com condição de parada "if (n <= 1) return 1": por que calc(-5) não estoura a pilha nem entra em loop?	Porque -5 já satisfaz "n <= 1" na primeira chamada — a função retorna 1 direto, sem nenhuma recursão.
+Antes de supor StackOverflow ou loop infinito numa recursão, o que testar primeiro na condição de parada?	Simular a condição com um valor negativo — provas usam "n <= 1" em vez de "n == 1" bem por isso.
+Na FPU (unidade de ponto flutuante), qual instrução coloca um valor no topo da pilha de registradores — equivalente a um PUSH?	A instrução de CARGA (load, ex.: FLD).
+Na FPU, qual instrução retira um valor do topo da pilha — equivalente a um POP?	A instrução de ARMAZENAMENTO (store, ex.: FSTP).
+Numa questão que mistura pilha e fila (funções empilha/desempilha e insere/remove), qual é o erro mais fácil no teste de mesa?	Esquecer de qual estrutura está saindo o elemento: desempilha() tira do TOPO da pilha; remove() tira do INÍCIO da fila.
+P=[]; F=[]. empilha(10); empilha(20); insere(desempilha()); empilha(30); insere(40); v=remove(); empilha(v). Estado final de P (base→topo) e F (início→fim)?	P = [10, 30, 20]; F = [40].
+"Fila duplamente encadeada" com inserção e remoção permitidas nas duas pontas — que estrutura clássica é essa?	Um deque (double-ended queue).
+V ou F: pilha é uma estrutura do tipo FIFO?	Falso. Pilha é LIFO (último a entrar, primeiro a sair). FIFO é a fila.
