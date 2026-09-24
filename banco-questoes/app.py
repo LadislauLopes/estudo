@@ -257,6 +257,7 @@ th, td { text-align:left; padding:8px 6px; border-bottom:1px solid var(--line); 
 th { color:var(--muted); font-weight:600; }
 td.num, th.num { text-align:right; font-variant-numeric:tabular-nums; }
 .p-bad { color:var(--bad); font-weight:600; } .p-warn { color:var(--warn); font-weight:600; } .p-ok { color:var(--ok); font-weight:600; }
+.destaque { color:var(--accent); font-weight:700; }
 .vazio { color:var(--muted); padding:30px 0; text-align:center; }
 .scroll { overflow-x:auto; }
 </style>
@@ -335,6 +336,11 @@ function el(tag, attrs = {}, ...kids) {
   for (const k of kids) e.append(k);
   return e;
 }
+function renderRico(el, texto) {
+  // O enunciado usa **palavra** para marcar o que estava grifado/em negrito na prova original.
+  const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  el.innerHTML = esc(texto || '').replace(/\*\*(.+?)\*\*/g, '<b class="destaque">$1</b>');
+}
 function pct(a, t) { return t ? Math.round(100 * a / t) : null; }
 function classePct(p) { return p === null ? '' : p < 70 ? 'p-bad' : p < 85 ? 'p-warn' : 'p-ok'; }
 
@@ -371,11 +377,13 @@ async function proxima() {
   document.querySelectorAll('.tipos button').forEach(b => b.classList.remove('sel'));
   $('#meta').textContent = [q.codigo, q.banca, q.ano, q.orgao, q.disciplina + ' › ' + q.assunto].filter(Boolean).join(' · ')
     + (q.tentativas ? ` · já respondida ${q.tentativas}x (${q.acertos} acerto${q.acertos === 1 ? '' : 's'})` : '');
-  $('#enunciado').textContent = q.enunciado;
+  renderRico($('#enunciado'), q.enunciado);
   const alts = $('#alts'); alts.replaceChildren();
   const opcoes = q.tipo === 'CE' ? { C:'Certo', E:'Errado' } : q.alternativas;
   for (const [letra, texto] of Object.entries(opcoes)) {
-    const b = el('button', { class:'alt', 'data-l':letra }, el('span', { class:'letra' }, letra), el('span', {}, texto));
+    const txt = el('span', {});
+    renderRico(txt, texto);
+    const b = el('button', { class:'alt', 'data-l':letra }, el('span', { class:'letra' }, letra), txt);
     b.onclick = () => responder(letra);
     alts.append(b);
   }
@@ -403,7 +411,7 @@ async function responder(letra) {
   v.textContent = r.gabarito === 'X' ? 'Questão anulada.' : r.correta ? (chute ? `Acertou no chute — gabarito ${r.gabarito}. Conta como erro no caderno.` : `Acertou — gabarito ${r.gabarito}.`) : `Errou — gabarito ${r.gabarito}.`;
   v.className = 'veredito ' + (r.correta && !chute ? 'ok' : 'bad');
   $('#fonte').hidden = r.gabarito_fonte !== 'claude';
-  $('#comentario').hidden = !r.comentario; $('#comentario-txt').textContent = r.comentario;
+  $('#comentario').hidden = !r.comentario; renderRico($('#comentario-txt'), r.comentario);
   $('#classificar').hidden = r.correta && !chute;
   $('#resultado').hidden = false;
   carregarFiltros();
@@ -440,10 +448,12 @@ async function mostrarCaderno() {
   const { linhas } = await api('/api/caderno');
   const t = $('#t-caderno'); t.replaceChildren();
   t.append(el('tr', {}, ...['Quando', 'Assunto', 'Questão', 'Sua', 'Gab.', 'Tipo', 'Regra / nota'].map(h => el('th', {}, h))));
-  for (const x of linhas)
-    t.append(el('tr', {}, el('td', {}, x.respondida_em.slice(0, 16).replace('T', ' ')), el('td', {}, x.assunto),
-      el('td', {}, (x.codigo ? x.codigo + ' — ' : '') + x.trecho + (x.trecho.length >= 220 ? '…' : '')),
+  for (const x of linhas) {
+    const tdQ = el('td', {});
+    renderRico(tdQ, (x.codigo ? x.codigo + ' — ' : '') + x.trecho + (x.trecho.length >= 220 ? '…' : ''));
+    t.append(el('tr', {}, el('td', {}, x.respondida_em.slice(0, 16).replace('T', ' ')), el('td', {}, x.assunto), tdQ,
       el('td', {}, x.resposta + (x.chute ? ' (chute)' : '')), el('td', {}, x.gabarito), el('td', {}, x.tipo_erro || '—'), el('td', {}, x.nota || '')));
+  }
   if (!linhas.length) t.append(el('tr', {}, el('td', { colspan:'7', class:'vazio' }, 'Nenhum erro registrado.')));
 }
 
