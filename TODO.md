@@ -10,7 +10,7 @@ Marque `[x]` ao concluir. Este arquivo é a fonte de verdade compartilhada (eu l
 - [x] `20:20–21:00` **[Específicas]** 20 questões — filas e pilhas, incluindo 'qual a sequência de saída' depois de push/pop/enqueue/dequeue
 - [x] `21:00–21:40` **[Português]** Diagnóstico IDIB — Português de Jaboatão 2024 (questões 1 a 10) em 25 min cronometrados, e correção. Anote o tema de cada erro
 - [x] `21:40–22:00` **[Revisão]** Caderno de erros do dia e flashcards
-- [ ] `22:00–22:10` **[Logística]** Área do Candidato: se pediu isenção, o resultado preliminar sai hoje (recurso em 24 e 25/09). Confirme que a inscrição está feita — o boleto pode ser pago até 14/10
+- [x] `22:00–22:10` **[Logística]** Área do Candidato: se pediu isenção, o resultado preliminar sai hoje (recurso em 24 e 25/09). Confirme que a inscrição está feita — o boleto pode ser pago até 14/10
 
 ### Dia 2 — 2026-09-24 (Qui)
 
