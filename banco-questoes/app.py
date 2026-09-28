@@ -117,6 +117,13 @@ def responder(b):
                 "gabarito_fonte": q["gabarito_fonte"], "comentario": q["comentario"] or ""}
 
 
+def marcar_chute(b):
+    with conectar() as con:
+        con.execute("UPDATE respostas SET chute = ? WHERE id = ?",
+                    (1 if b.get("chute") else 0, int(b["resposta_id"])))
+    return {"ok": True}
+
+
 def classificar(b):
     tipo = b.get("tipo_erro") or None
     with conectar() as con:
@@ -168,7 +175,8 @@ def caderno():
 
 GET_ROUTES = {"/api/proxima": proxima, "/api/filtros": lambda p: filtros(),
               "/api/stats": lambda p: stats(), "/api/caderno": lambda p: caderno()}
-POST_ROUTES = {"/api/responder": responder, "/api/classificar": classificar, "/api/contestar": contestar}
+POST_ROUTES = {"/api/responder": responder, "/api/marcar_chute": marcar_chute,
+               "/api/classificar": classificar, "/api/contestar": contestar}
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -242,8 +250,12 @@ select { background:var(--card); color:var(--text); border:1px solid var(--line)
 .alt.certa { background:var(--ok-bg); border-color:var(--ok); } .alt.certa .letra { background:var(--ok); color:#fff; }
 .alt.errada { background:var(--bad-bg); border-color:var(--bad); } .alt.errada .letra { background:var(--bad); color:#fff; }
 .alt:disabled { cursor:default; }
+.alt.selecionada { border-color:var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.btn:disabled { opacity:.45; cursor:default; }
+.acoes-resposta { display:flex; justify-content:space-between; gap:8px; margin:4px 0 14px; }
 .controles { display:flex; flex-wrap:wrap; gap:16px; align-items:center; color:var(--muted); font-size:14px; margin-top:6px; }
 .veredito { font-weight:600; margin:16px 0 6px; } .veredito.ok { color:var(--ok); } .veredito.bad { color:var(--bad); }
+.chute-pos { display:inline-flex; align-items:center; gap:6px; font-size:14px; color:var(--muted); }
 .comentario { white-space:pre-wrap; color:var(--text); border-top:1px dashed var(--line); padding-top:10px; margin-top:8px; }
 .rotulo { font:600 12px ui-monospace, monospace; color:var(--accent); letter-spacing:.06em; }
 .aviso { color:var(--warn); font-size:13px; margin-top:6px; }
@@ -288,13 +300,17 @@ td.num, th.num { text-align:right; font-variant-numeric:tabular-nums; }
       <div class="meta" id="meta"></div>
       <div class="enunciado" id="enunciado"></div>
       <div id="alts"></div>
+      <div class="acoes-resposta">
+        <button class="btn" id="pular">Pular (P)</button>
+        <button class="btn primario" id="confirmar" disabled>Confirmar (Enter)</button>
+      </div>
       <div class="controles">
-        <label><input type="checkbox" id="chute"> Chutei (X)</label>
         <span id="timer">00:00</span>
         <span id="restam"></span>
       </div>
       <div id="resultado" hidden>
         <div class="veredito" id="veredito"></div>
+        <label class="chute-pos"><input type="checkbox" id="chute-pos"> Foi chute (X)</label>
         <div class="aviso" id="fonte" hidden>Gabarito definido pelo Claude, não pelo QConcursos. Se discordar, use "Gabarito errado?".</div>
         <div class="comentario" id="comentario" hidden><div class="rotulo">POR QUÊ</div><div id="comentario-txt"></div></div>
         <div id="classificar" hidden>
@@ -312,7 +328,7 @@ td.num, th.num { text-align:right; font-variant-numeric:tabular-nums; }
           <button class="btn primario" id="proxima">Próxima (Enter)</button>
         </div>
       </div>
-      <div class="dica">Atalhos: letra da alternativa para responder · X marca chute · depois de responder, A/B/C/D classifica o erro e Enter vai para a próxima.</div>
+      <div class="dica">Atalhos: letra da alternativa seleciona, Enter confirma · P pula a questão · depois de confirmar, X marca que foi chute, A/B/C/D classifica o erro e Enter vai para a próxima.</div>
     </div>
     <div id="vazio" class="vazio" hidden></div>
   </section>
@@ -322,7 +338,7 @@ td.num, th.num { text-align:right; font-variant-numeric:tabular-nums; }
 </main>
 <script>
 const $ = s => document.querySelector(s);
-const S = { q:null, respId:null, sessao:[], t0:0, respondida:false, tipo:null, assuntos:[], timer:null };
+const S = { q:null, respId:null, sessao:[], t0:0, respondida:false, tipo:null, assuntos:[], timer:null, selecionada:null };
 
 async function api(path, body) {
   const r = await fetch(path, body ? { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body) } : {});
@@ -371,9 +387,10 @@ async function proxima() {
     return;
   }
   const q = S.q = r.questao;
-  Object.assign(S, { respId:null, respondida:false, tipo:null });
+  Object.assign(S, { respId:null, respondida:false, tipo:null, selecionada:null, resultado:null });
   $('#vazio').hidden = true; $('#card').hidden = false; $('#resultado').hidden = true;
-  $('#chute').checked = false; $('#nota').value = '';
+  $('#nota').value = '';
+  $('#pular').hidden = false; $('#confirmar').hidden = false; $('#confirmar').disabled = true;
   document.querySelectorAll('.tipos button').forEach(b => b.classList.remove('sel'));
   $('#meta').textContent = [q.codigo, q.banca, q.ano, q.orgao, q.disciplina + ' › ' + q.assunto].filter(Boolean).join(' · ')
     + (q.tentativas ? ` · já respondida ${q.tentativas}x (${q.acertos} acerto${q.acertos === 1 ? '' : 's'})` : '');
@@ -384,7 +401,7 @@ async function proxima() {
     const txt = el('span', {});
     renderRico(txt, texto);
     const b = el('button', { class:'alt', 'data-l':letra }, el('span', { class:'letra' }, letra), txt);
-    b.onclick = () => responder(letra);
+    b.onclick = () => selecionar(letra);
     alts.append(b);
   }
   $('#restam').textContent = `${r.restam} no filtro`;
@@ -396,23 +413,47 @@ async function proxima() {
   window.scrollTo({ top:0 });
 }
 
+function selecionar(letra) {
+  if (S.respondida) return;
+  S.selecionada = letra;
+  document.querySelectorAll('.alt').forEach(b => b.classList.toggle('selecionada', b.dataset.l === letra));
+  $('#confirmar').disabled = false;
+}
+function confirmar() {
+  if (S.respondida || !S.selecionada) return;
+  responder(S.selecionada);
+}
+function pular() {
+  if (S.respondida || !S.q) return;
+  clearInterval(S.timer);
+  S.sessao.push(S.q.id);
+  proxima();
+}
+
+function atualizarVeredito(chute) {
+  const r = S.resultado;
+  const v = $('#veredito');
+  v.textContent = r.gabarito === 'X' ? 'Questão anulada.' : r.correta ? (chute ? `Acertou no chute — gabarito ${r.gabarito}. Conta como erro no caderno.` : `Acertou — gabarito ${r.gabarito}.`) : `Errou — gabarito ${r.gabarito}.`;
+  v.className = 'veredito ' + (r.correta && !chute ? 'ok' : 'bad');
+  $('#classificar').hidden = r.correta && !chute;
+}
+
 async function responder(letra) {
   if (S.respondida || !S.q) return;
   S.respondida = true; clearInterval(S.timer);
-  const chute = $('#chute').checked;
-  const r = await api('/api/responder', { questao_id:S.q.id, resposta:letra, chute, tempo_seg:Math.round((Date.now() - S.t0) / 1000) });
+  $('#pular').hidden = true; $('#confirmar').hidden = true;
+  const r = await api('/api/responder', { questao_id:S.q.id, resposta:letra, tempo_seg:Math.round((Date.now() - S.t0) / 1000) });
   S.respId = r.resposta_id; S.sessao.push(S.q.id);
+  S.resultado = { correta:r.correta, gabarito:r.gabarito };
   document.querySelectorAll('.alt').forEach(b => {
     b.disabled = true;
     if (b.dataset.l === r.gabarito) b.classList.add('certa');
     else if (b.dataset.l === letra) b.classList.add('errada');
   });
-  const v = $('#veredito');
-  v.textContent = r.gabarito === 'X' ? 'Questão anulada.' : r.correta ? (chute ? `Acertou no chute — gabarito ${r.gabarito}. Conta como erro no caderno.` : `Acertou — gabarito ${r.gabarito}.`) : `Errou — gabarito ${r.gabarito}.`;
-  v.className = 'veredito ' + (r.correta && !chute ? 'ok' : 'bad');
+  $('#chute-pos').checked = false;
+  atualizarVeredito(false);
   $('#fonte').hidden = r.gabarito_fonte !== 'claude';
   $('#comentario').hidden = !r.comentario; renderRico($('#comentario-txt'), r.comentario);
-  $('#classificar').hidden = r.correta && !chute;
   $('#resultado').hidden = false;
   carregarFiltros();
 }
@@ -466,6 +507,14 @@ document.querySelectorAll('nav button').forEach(b => b.onclick = () => {
 $('#disc').onchange = preencherAssuntos;
 $('#iniciar').onclick = () => { S.sessao = []; proxima(); };
 $('#proxima').onclick = salvarEProxima;
+$('#pular').onclick = pular;
+$('#confirmar').onclick = confirmar;
+$('#chute-pos').onchange = async () => {
+  const chute = $('#chute-pos').checked;
+  await api('/api/marcar_chute', { resposta_id:S.respId, chute });
+  atualizarVeredito(chute);
+  carregarFiltros();
+};
 document.querySelectorAll('.tipos button').forEach(b => b.onclick = () => escolherTipo(b.dataset.t));
 $('#contestar').onclick = async () => {
   const obs = prompt('O que está errado no gabarito? (fica registrado para o Claude revisar)');
@@ -476,9 +525,11 @@ document.addEventListener('keydown', e => {
   if ($('#v-resolver').hidden || $('#card').hidden || e.ctrlKey || e.metaKey || e.altKey) return;
   const k = e.key.toUpperCase();
   if (!S.respondida) {
-    if (k === 'X') { $('#chute').checked = !$('#chute').checked; return; }
-    if ([...document.querySelectorAll('.alt')].some(b => b.dataset.l === k)) responder(k);
+    if (k === 'P') { pular(); return; }
+    if (e.key === 'Enter') { e.preventDefault(); confirmar(); return; }
+    if ([...document.querySelectorAll('.alt')].some(b => b.dataset.l === k)) selecionar(k);
   } else {
+    if (k === 'X') { $('#chute-pos').checked = !$('#chute-pos').checked; $('#chute-pos').dispatchEvent(new Event('change')); return; }
     if (!$('#classificar').hidden && 'ABCD'.includes(k) && k.length === 1 && document.activeElement.tagName !== 'TEXTAREA') escolherTipo(k);
     if (e.key === 'Enter' && document.activeElement.tagName !== 'TEXTAREA') { e.preventDefault(); salvarEProxima(); }
   }
