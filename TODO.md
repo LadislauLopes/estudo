@@ -14,10 +14,10 @@ Marque `[x]` ao concluir. Este arquivo é a fonte de verdade compartilhada (eu l
 
 ### Dia 2 — 2026-09-24 (Qui)
 
-- [ ] `19:00–20:10` **[Específicas]** Árvores: terminologia (raiz, folha, grau, nível, altura, profundidade); árvore binária e árvore binária de busca — inserção, busca e remoção de nó com 0, 1 ou 2 filhos; percursos pré-ordem, em ordem, pós-ordem e em largura
-- [ ] `20:20–21:00` **[Específicas]** 20 questões — árvores; monte à mão os percursos de pelo menos 3 árvores
-- [ ] `21:00–21:40` **[Raciocínio Lógico]** Diagnóstico IDIB — RL de Jaboatão 2024 (17 a 20) e CREMERJ 2019 (11 a 15): 9 questões em 25 min, e correção
-- [ ] `21:40–22:00` **[Revisão]** Caderno de erros do dia e flashcards
+- [x] `19:00–20:10` **[Específicas]** Árvores: terminologia (raiz, folha, grau, nível, altura, profundidade); árvore binária e árvore binária de busca — inserção, busca e remoção de nó com 0, 1 ou 2 filhos; percursos pré-ordem, em ordem, pós-ordem e em largura
+- [x] `20:20–21:00` **[Específicas]** 20 questões — árvores; monte à mão os percursos de pelo menos 3 árvores
+- [x] `21:00–21:40` **[Raciocínio Lógico]** Diagnóstico IDIB — RL de Jaboatão 2024 (17 a 20) e CREMERJ 2019 (11 a 15): 9 questões em 25 min, e correção
+- [x] `21:40–22:00` **[Revisão]** Caderno de erros do dia e flashcards
 
 ### Dia 3 — 2026-09-25 (Sex)
 
