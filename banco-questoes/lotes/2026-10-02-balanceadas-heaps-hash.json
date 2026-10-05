@@ -1,0 +1,402 @@
+[
+ {
+  "banca": "Simulado (autoral) — estilo IDIB",
+  "ano": 2026,
+  "orgao": "CMRB — treino",
+  "cargo": "Analista Legislativo TI Desenvolvimento",
+  "disciplina": "Estruturas de Dados",
+  "tipo": "ME",
+  "gabarito_fonte": "claude",
+  "codigo": "AUT-ED-IDIB-01",
+  "assunto": "Árvore AVL: conceitos",
+  "enunciado": "As árvores AVL, propostas por Adelson-Velsky e Landis, são árvores binárias de busca que se mantêm balanceadas após cada inserção ou remoção, garantindo bom desempenho nas operações. A respeito das árvores AVL, analise as afirmativas abaixo.\n\nI. O fator de balanceamento de um nó é a diferença entre a altura de sua subárvore esquerda e a altura de sua subárvore direita, e uma árvore AVL exige que esse fator seja −1, 0 ou +1 em todos os nós.\nII. Quando uma inserção desbalanceia a árvore, o equilíbrio é restaurado por meio de rotações simples ou duplas, que preservam a propriedade de árvore binária de busca.\nIII. Por estar sempre balanceada, a operação de busca em uma árvore AVL possui custo constante, O(1), no pior caso.\n\nÉ correto o que se afirma",
+  "alternativas": {
+   "A": "apenas em I.",
+   "B": "apenas em I e II.",
+   "C": "apenas em II e III.",
+   "D": "em I, II e III."
+  },
+  "gabarito": "B",
+  "comentario": "I e II corretas. III errada: o balanceamento garante altura O(log n), então busca, inserção e remoção são O(log n) no pior caso — não O(1). Custo constante é o caso MÉDIO de tabela hash, não de árvore. Pegadinha típica da IDIB: misturar dois conceitos verdadeiros em uma frase com uma conclusão exagerada."
+ },
+ {
+  "banca": "Simulado (autoral) — estilo IDIB",
+  "ano": 2026,
+  "orgao": "CMRB — treino",
+  "cargo": "Analista Legislativo TI Desenvolvimento",
+  "disciplina": "Estruturas de Dados",
+  "tipo": "ME",
+  "gabarito_fonte": "claude",
+  "codigo": "AUT-ED-IDIB-02",
+  "assunto": "Árvore AVL: rotação simples",
+  "enunciado": "Em uma árvore AVL, a inserção de um novo elemento pode provocar desbalanceamento, que deve ser corrigido imediatamente. Considere que as chaves 30, 20 e 10 sejam inseridas, nesta ordem, em uma árvore AVL inicialmente vazia. Marque a alternativa que indica, CORRETAMENTE, a operação de rebalanceamento realizada e a raiz resultante.",
+  "alternativas": {
+   "A": "Rotação simples à esquerda no nó 30, ficando o nó 10 como raiz.",
+   "B": "Rotação dupla esquerda-direita, ficando o nó 30 como raiz.",
+   "C": "Rotação simples à direita no nó 30, ficando o nó 20 como raiz.",
+   "D": "Nenhuma rotação é necessária, pois a árvore ainda possui apenas três nós."
+  },
+  "gabarito": "C",
+  "comentario": "Depois de inserir 10, o nó 30 fica com FB = +2 e o desequilíbrio forma uma linha reta esquerda-esquerda (caso LL) → UMA rotação simples à DIREITA no nó desbalanceado. Raiz final: 20, com 10 e 30 como filhos. Regra de bolso: linha reta = rotação simples; 'joelho' (zigue-zague) = rotação dupla. A opção D é falsa: com três nós em lista, a árvore já viola o FB."
+ },
+ {
+  "banca": "Simulado (autoral) — estilo IDIB",
+  "ano": 2026,
+  "orgao": "CMRB — treino",
+  "cargo": "Analista Legislativo TI Desenvolvimento",
+  "disciplina": "Estruturas de Dados",
+  "tipo": "ME",
+  "gabarito_fonte": "claude",
+  "codigo": "AUT-ED-IDIB-03",
+  "assunto": "Árvore AVL: rotação dupla",
+  "enunciado": "Considere que as chaves 30, 10 e 20 sejam inseridas, nesta ordem, em uma árvore AVL inicialmente vazia. Marque a alternativa que indica, CORRETAMENTE, o rebalanceamento necessário após a última inserção.",
+  "alternativas": {
+   "A": "Rotação dupla esquerda-direita (rotação à esquerda no nó 10 seguida de rotação à direita no nó 30), ficando o nó 20 como raiz.",
+   "B": "Rotação simples à direita no nó 30, ficando o nó 10 como raiz.",
+   "C": "Rotação simples à esquerda no nó 10, ficando o nó 30 como raiz.",
+   "D": "Nenhum, pois o fator de balanceamento da raiz é igual a +1."
+  },
+  "gabarito": "A",
+  "comentario": "O nó 30 fica com FB = +2 (pesado à esquerda), mas o filho 10 está pesado à DIREITA (20 entrou à direita de 10): é o 'joelho' esquerda-direita (caso LR). Primeiro gira-se à esquerda no filho (10), o que transforma o caso em LL, e depois à direita no 30. Nas rotações duplas, o nó do meio (20) sempre sobe para a raiz. A opção B aplica a rotação simples, que aqui só espelharia o problema."
+ },
+ {
+  "banca": "Simulado (autoral) — estilo IDIB",
+  "ano": 2026,
+  "orgao": "CMRB — treino",
+  "cargo": "Analista Legislativo TI Desenvolvimento",
+  "disciplina": "Estruturas de Dados",
+  "tipo": "ME",
+  "gabarito_fonte": "claude",
+  "codigo": "AUT-ED-IDIB-04",
+  "assunto": "Árvore AVL: sequência de inserções",
+  "enunciado": "Durante a análise de um módulo que mantém um índice em memória, um desenvolvedor simulou a inserção das chaves 10, 20, 30, 40, 50 e 25, nesta ordem, em uma árvore AVL inicialmente vazia, realizando todos os rebalanceamentos necessários. Marque a alternativa que indica, CORRETAMENTE, o percurso em pré-ordem da árvore final.",
+  "alternativas": {
+   "A": "20, 10, 40, 30, 25, 50",
+   "B": "10, 20, 25, 30, 40, 50",
+   "C": "40, 20, 10, 30, 25, 50",
+   "D": "30, 20, 10, 25, 40, 50"
+  },
+  "gabarito": "D",
+  "comentario": "10, 20, 30 → rotação à esquerda: raiz 20. 40 entra à direita de 30. 50 desbalanceia o 30 (caso RR) → rotação à esquerda em 30: 20(10, 40(30, 50)). 25 entra à esquerda de 30: a raiz 20 fica com FB = −2 e o filho 40 está pesado à esquerda → caso RL: rotação à direita em 40 e à esquerda em 20. Resultado: 30(20(10, 25), 40(–, 50)). Pré-ordem (raiz, esquerda, direita): 30, 20, 10, 25, 40, 50. A opção B é o percurso EM ORDEM, que é sempre crescente em qualquer ABB; a opção A é a árvore ANTES da última rotação."
+ },
+ {
+  "banca": "Simulado (autoral) — estilo IDIB",
+  "ano": 2026,
+  "orgao": "CMRB — treino",
+  "cargo": "Analista Legislativo TI Desenvolvimento",
+  "disciplina": "Estruturas de Dados",
+  "tipo": "ME",
+  "gabarito_fonte": "claude",
+  "codigo": "AUT-ED-IDIB-05",
+  "assunto": "Árvore rubro-negra: propriedades",
+  "enunciado": "A árvore rubro-negra (red-black) é uma árvore binária de busca balanceada em que cada nó armazena um bit extra de informação, a sua cor, utilizado para manter o balanceamento. A respeito das propriedades das árvores rubro-negras, analise as afirmativas abaixo.\n\nI. A raiz da árvore é preta.\nII. Um nó vermelho pode ter filhos vermelhos, desde que a raiz da árvore seja preta.\nIII. Para cada nó, todos os caminhos desse nó até as folhas descendentes contêm o mesmo número de nós pretos.\n\nÉ correto o que se afirma",
+  "alternativas": {
+   "A": "apenas em II.",
+   "B": "apenas em I e II.",
+   "C": "apenas em I e III.",
+   "D": "em I, II e III."
+  },
+  "gabarito": "C",
+  "comentario": "I e III são propriedades da árvore rubro-negra (a III é a 'altura negra' igual em todos os caminhos). II é falsa: se um nó é vermelho, seus dois filhos são OBRIGATORIAMENTE pretos — nunca há dois vermelhos seguidos, independentemente da cor da raiz. As demais propriedades: todo nó é vermelho ou preto; as folhas (NIL) são pretas."
+ },
+ {
+  "banca": "Simulado (autoral) — estilo IDIB",
+  "ano": 2026,
+  "orgao": "CMRB — treino",
+  "cargo": "Analista Legislativo TI Desenvolvimento",
+  "disciplina": "Estruturas de Dados",
+  "tipo": "ME",
+  "gabarito_fonte": "claude",
+  "codigo": "AUT-ED-IDIB-06",
+  "assunto": "AVL x rubro-negra",
+  "enunciado": "Árvores AVL e árvores rubro-negras são duas abordagens para manter uma árvore binária de busca balanceada e, por isso, aparecem com frequência na implementação de bibliotecas de linguagens de programação. Comparando essas duas estruturas, analise as afirmativas abaixo.\n\nI. A árvore AVL é mais rigidamente balanceada do que a rubro-negra, o que tende a favorecer as operações de busca.\nII. A árvore rubro-negra tende a realizar menos rotações em inserções e remoções do que a AVL.\nIII. As classes TreeMap e TreeSet da linguagem Java são implementadas exclusivamente por meio de árvores AVL.\n\nÉ correto o que se afirma",
+  "alternativas": {
+   "A": "apenas em I e II.",
+   "B": "apenas em III.",
+   "C": "apenas em I e III.",
+   "D": "em I, II e III."
+  },
+  "gabarito": "A",
+  "comentario": "I e II corretas: a AVL tem altura máxima ≈ 1,44·log n, e a rubro-negra ≈ 2·log n; em troca, a rubro-negra rebalanceia mais barato (no máximo 2 rotações na inserção e 3 na remoção, o resto é recoloração). III errada, e repare no 'exclusivamente': TreeMap/TreeSet (Java) e std::map (C++) usam árvore RUBRO-NEGRA, justamente por ser mais barata de manter."
+ },
+ {
+  "banca": "Simulado (autoral) — estilo IDIB",
+  "ano": 2026,
+  "orgao": "CMRB — treino",
+  "cargo": "Analista Legislativo TI Desenvolvimento",
+  "disciplina": "Estruturas de Dados",
+  "tipo": "ME",
+  "gabarito_fonte": "claude",
+  "codigo": "AUT-ED-IDIB-07",
+  "assunto": "Árvore B: aplicação em bancos de dados",
+  "enunciado": "Sistemas gerenciadores de banco de dados, como PostgreSQL e Oracle, utilizam por padrão índices baseados em árvores B (ou em sua variante B+), pois os dados ficam armazenados em disco e o acesso a disco é muito mais lento do que o acesso à memória principal. Marque a alternativa que indica, CORRETAMENTE, a característica da árvore B que a torna adequada a esse cenário.",
+  "alternativas": {
+   "A": "Cada nó possui no máximo dois filhos, o que simplifica a navegação entre as páginas do disco.",
+   "B": "Cada nó armazena várias chaves e possui vários filhos, o que resulta em uma árvore de pequena altura e em poucos acessos a disco por busca.",
+   "C": "As chaves são armazenadas sem nenhuma ordenação dentro dos nós, o que acelera as inserções.",
+   "D": "A busca possui custo O(1) no pior caso, assim como nas tabelas hash."
+  },
+  "gabarito": "B",
+  "comentario": "Árvore B é uma árvore de busca MULTIVIAS (não binária, opção A errada): um nó ocupa uma página de disco inteira, com dezenas ou centenas de chaves ordenadas (C errada). Com muitos filhos por nó, a altura fica muito baixa, e cada nível visitado é um acesso a disco. A busca é O(log n), não O(1) (D errada). Ligação com o edital: CREATE INDEX no PostgreSQL cria um índice B-tree por padrão."
+ },
+ {
+  "banca": "Simulado (autoral) — estilo IDIB",
+  "ano": 2026,
+  "orgao": "CMRB — treino",
+  "cargo": "Analista Legislativo TI Desenvolvimento",
+  "disciplina": "Estruturas de Dados",
+  "tipo": "ME",
+  "gabarito_fonte": "claude",
+  "codigo": "AUT-ED-IDIB-08",
+  "assunto": "Árvore B: limites de chaves por nó",
+  "enunciado": "Considere uma árvore B de ordem 5, em que a ordem é definida como o número máximo de filhos que um nó pode ter. Marque a alternativa que indica, CORRETAMENTE, o número máximo de chaves em um nó e o número mínimo de chaves em um nó que não seja a raiz, respectivamente.",
+  "alternativas": {
+   "A": "5 e 2",
+   "B": "5 e 3",
+   "C": "4 e 1",
+   "D": "4 e 2"
+  },
+  "gabarito": "D",
+  "comentario": "Com ordem m = 5 (máximo de filhos): máximo de chaves = m − 1 = 4. Todo nó não raiz deve ter pelo menos ⌈m/2⌉ = 3 filhos, logo pelo menos ⌈m/2⌉ − 1 = 2 chaves. A raiz é a exceção e pode ter apenas 1 chave (opção C é o mínimo da RAIZ). Atenção: livros como o Cormen usam o 'grau mínimo t' (máximo de 2t − 1 chaves); leia sempre como o enunciado define ordem."
+ },
+ {
+  "banca": "Simulado (autoral) — estilo IDIB",
+  "ano": 2026,
+  "orgao": "CMRB — treino",
+  "cargo": "Analista Legislativo TI Desenvolvimento",
+  "disciplina": "Estruturas de Dados",
+  "tipo": "ME",
+  "gabarito_fonte": "claude",
+  "codigo": "AUT-ED-IDIB-09",
+  "assunto": "Árvore B: inserção e crescimento",
+  "enunciado": "A árvore B é uma estrutura de dados balanceada amplamente utilizada em sistemas de arquivos e bancos de dados. A respeito do funcionamento da inserção em uma árvore B, analise as afirmativas abaixo.\n\nI. Em uma árvore B, todas as folhas encontram-se no mesmo nível.\nII. Quando uma inserção faz um nó exceder o número máximo de chaves, esse nó é dividido em dois (split) e a chave mediana é promovida para o nó pai.\nIII. A altura da árvore B aumenta somente quando a raiz é dividida.\n\nÉ correto o que se afirma",
+  "alternativas": {
+   "A": "apenas em I.",
+   "B": "apenas em I e II.",
+   "C": "apenas em II e III.",
+   "D": "em I, II e III."
+  },
+  "gabarito": "D",
+  "comentario": "Todas corretas. A árvore B cresce 'para cima': o split propaga a mediana para o pai e, se a própria raiz estourar, ela se divide e surge uma nova raiz — é o único momento em que a altura aumenta. Por isso todas as folhas ficam sempre no mesmo nível, sem precisar de rotações como na AVL."
+ },
+ {
+  "banca": "Simulado (autoral) — estilo IDIB",
+  "ano": 2026,
+  "orgao": "CMRB — treino",
+  "cargo": "Analista Legislativo TI Desenvolvimento",
+  "disciplina": "Estruturas de Dados",
+  "tipo": "ME",
+  "gabarito_fonte": "claude",
+  "codigo": "AUT-ED-IDIB-10",
+  "assunto": "Heap: representação em vetor",
+  "enunciado": "Um heap binário costuma ser implementado sobre um vetor, sem a necessidade de ponteiros, pois os filhos e o pai de cada nó podem ser calculados a partir do seu índice. Considere um heap armazenado em um vetor indexado a partir de 0, em que os filhos do nó de índice i estão nas posições 2i + 1 e 2i + 2. Marque a alternativa que indica, CORRETAMENTE, o índice do pai e os índices dos filhos do elemento armazenado no índice 4.",
+  "alternativas": {
+   "A": "Pai no índice 2; filhos nos índices 8 e 9.",
+   "B": "Pai no índice 1; filhos nos índices 8 e 9.",
+   "C": "Pai no índice 1; filhos nos índices 9 e 10.",
+   "D": "Pai no índice 3; filhos nos índices 9 e 10."
+  },
+  "gabarito": "C",
+  "comentario": "Filhos: 2·4 + 1 = 9 e 2·4 + 2 = 10. Pai: ⌊(i − 1)/2⌋ = ⌊3/2⌋ = 1. A opção B usa as fórmulas do vetor indexado a partir de 1 (filhos 2i e 2i + 1, pai ⌊i/2⌋) — confira sempre se o enunciado começa em 0 ou em 1."
+ },
+ {
+  "banca": "Simulado (autoral) — estilo IDIB",
+  "ano": 2026,
+  "orgao": "CMRB — treino",
+  "cargo": "Analista Legislativo TI Desenvolvimento",
+  "disciplina": "Estruturas de Dados",
+  "tipo": "ME",
+  "gabarito_fonte": "claude",
+  "codigo": "AUT-ED-IDIB-11",
+  "assunto": "Heap máximo: verificação",
+  "enunciado": "Em um heap máximo, o valor armazenado em cada nó é maior ou igual aos valores armazenados em seus filhos. Considerando vetores indexados a partir de 0, em que os filhos do índice i estão nas posições 2i + 1 e 2i + 2, marque a alternativa que indica, CORRETAMENTE, um vetor que representa um heap máximo válido.",
+  "alternativas": {
+   "A": "[50, 30, 40, 10, 35, 20, 25]",
+   "B": "[50, 45, 40, 47, 10, 20, 25]",
+   "C": "[10, 20, 25, 30, 35, 40, 45]",
+   "D": "[50, 40, 45, 10, 35, 20, 25]"
+  },
+  "gabarito": "D",
+  "comentario": "Em D: 50 ≥ 40 e 45; 40 ≥ 10 e 35; 45 ≥ 20 e 25 → válido. Em A, o 30 (índice 1) tem o filho 35. Em B, o 45 (índice 1) tem o filho 47. C é um heap MÍNIMO (todo vetor crescente é heap mínimo). O heap não exige ordem entre irmãos nem vetor ordenado, só pai ≥ filhos."
+ },
+ {
+  "banca": "Simulado (autoral) — estilo IDIB",
+  "ano": 2026,
+  "orgao": "CMRB — treino",
+  "cargo": "Analista Legislativo TI Desenvolvimento",
+  "disciplina": "Estruturas de Dados",
+  "tipo": "ME",
+  "gabarito_fonte": "claude",
+  "codigo": "AUT-ED-IDIB-12",
+  "assunto": "Heap máximo: inserção",
+  "enunciado": "Considere o heap máximo representado pelo vetor [50, 40, 45, 10, 35, 20, 25], indexado a partir de 0. Insere-se nele a chave 60, utilizando o procedimento padrão de inserção (o elemento é colocado na primeira posição livre e sobe enquanto for maior que o pai). Marque a alternativa que indica, CORRETAMENTE, o vetor resultante.",
+  "alternativas": {
+   "A": "[60, 40, 45, 50, 35, 20, 25, 10]",
+   "B": "[60, 50, 45, 40, 35, 20, 25, 10]",
+   "C": "[50, 40, 45, 60, 35, 20, 25, 10]",
+   "D": "[50, 60, 45, 40, 35, 20, 25, 10]"
+  },
+  "gabarito": "B",
+  "comentario": "60 entra no índice 7. Pai do 7 é o 3 (10) → troca. Pai do 3 é o 1 (40) → troca. Pai do 1 é o 0 (50) → troca. Resultado: [60, 50, 45, 40, 35, 20, 25, 10]. C e D param a subida cedo demais; A troca o 60 direto com a raiz, sem descer o 50 pelo caminho. Custo: O(log n), pois só o caminho até a raiz é mexido."
+ },
+ {
+  "banca": "Simulado (autoral) — estilo IDIB",
+  "ano": 2026,
+  "orgao": "CMRB — treino",
+  "cargo": "Analista Legislativo TI Desenvolvimento",
+  "disciplina": "Estruturas de Dados",
+  "tipo": "ME",
+  "gabarito_fonte": "claude",
+  "codigo": "AUT-ED-IDIB-13",
+  "assunto": "Heap máximo: remoção do máximo",
+  "enunciado": "Considere o heap máximo representado pelo vetor [50, 40, 45, 10, 35, 20, 25], indexado a partir de 0. Remove-se o maior elemento utilizando o procedimento padrão: o último elemento do vetor é movido para a raiz e desce, trocando de posição com o maior de seus filhos, até restabelecer a propriedade de heap. Marque a alternativa que indica, CORRETAMENTE, o vetor resultante.",
+  "alternativas": {
+   "A": "[40, 45, 10, 35, 20, 25]",
+   "B": "[25, 40, 45, 10, 35, 20]",
+   "C": "[45, 40, 20, 10, 35, 25]",
+   "D": "[45, 40, 25, 10, 35, 20]"
+  },
+  "gabarito": "D",
+  "comentario": "O 25 (último) vai para a raiz: [25, 40, 45, 10, 35, 20]. Ele desce trocando com o MAIOR filho: entre 40 e 45, troca com 45 → [45, 40, 25, 10, 35, 20]. No índice 2, o único filho é 20, e 25 ≥ 20, então para. B é o estado intermediário (antes de descer); A apenas desloca o vetor, o que destrói a estrutura."
+ },
+ {
+  "banca": "Simulado (autoral) — estilo IDIB",
+  "ano": 2026,
+  "orgao": "CMRB — treino",
+  "cargo": "Analista Legislativo TI Desenvolvimento",
+  "disciplina": "Estruturas de Dados",
+  "tipo": "ME",
+  "gabarito_fonte": "claude",
+  "codigo": "AUT-ED-IDIB-14",
+  "assunto": "Heap: complexidade das operações",
+  "enunciado": "Filas de prioridade são frequentemente implementadas por meio de heaps binários, como ocorre na classe PriorityQueue da linguagem Java e no módulo heapq da linguagem Python. Considerando um heap binário com n elementos, analise as afirmativas abaixo.\n\nI. Consultar o elemento de maior prioridade, sem removê-lo, tem custo O(1).\nII. Inserir um elemento e remover o elemento de maior prioridade têm custo O(log n).\nIII. Buscar um elemento qualquer tem custo O(log n), assim como em uma árvore binária de busca.\n\nÉ correto o que se afirma",
+  "alternativas": {
+   "A": "apenas em I e II.",
+   "B": "apenas em II.",
+   "C": "apenas em II e III.",
+   "D": "em I, II e III."
+  },
+  "gabarito": "A",
+  "comentario": "I: o topo está sempre no índice 0 → O(1). II: subir ou descer percorre no máximo a altura → O(log n). III errada: o heap NÃO tem a ordem esquerda < raiz < direita da ABB, então buscar um valor arbitrário exige varrer o vetor → O(n). Extra: construir o heap com heapify de baixo para cima custa O(n), e o Heap Sort custa O(n log n)."
+ },
+ {
+  "banca": "Simulado (autoral) — estilo IDIB",
+  "ano": 2026,
+  "orgao": "CMRB — treino",
+  "cargo": "Analista Legislativo TI Desenvolvimento",
+  "disciplina": "Estruturas de Dados",
+  "tipo": "ME",
+  "gabarito_fonte": "claude",
+  "codigo": "AUT-ED-IDIB-15",
+  "assunto": "Heap: rastreio de código Python (heapq)",
+  "enunciado": "Analise o código escrito na linguagem Python apresentado abaixo.\n\nimport heapq\n\nfila = [7, 3, 9, 1]\nheapq.heapify(fila)\nheapq.heappush(fila, 2)\nprint(heapq.heappop(fila), heapq.heappop(fila), fila[0])\n\nMarque a alternativa que indica, CORRETAMENTE, o resultado exibido na execução do código.",
+  "alternativas": {
+   "A": "1 2 3",
+   "B": "9 7 3",
+   "C": "7 3 9",
+   "D": "1 3 2"
+  },
+  "gabarito": "A",
+  "comentario": "O heapq implementa heap MÍNIMO. heapify([7, 3, 9, 1]) → [1, 3, 9, 7]. heappush 2 → [1, 2, 9, 7, 3]. O 1º heappop devolve 1, o 2º devolve 2, e o novo topo, fila[0], é 3. Saída: '1 2 3'. A opção B supõe heap máximo (a pegadinha); C só lê a lista original; D esquece que o 2 inserido vira o segundo menor. Para simular heap máximo no heapq, insira os valores com o sinal trocado (−x)."
+ },
+ {
+  "banca": "Simulado (autoral) — estilo IDIB",
+  "ano": 2026,
+  "orgao": "CMRB — treino",
+  "cargo": "Analista Legislativo TI Desenvolvimento",
+  "disciplina": "Estruturas de Dados",
+  "tipo": "ME",
+  "gabarito_fonte": "claude",
+  "codigo": "AUT-ED-IDIB-16",
+  "assunto": "Tabela hash: encadeamento e fator de carga",
+  "enunciado": "Tabelas hash permitem inserir e localizar elementos, em média, em tempo constante, utilizando uma função de dispersão para calcular a posição de cada chave. Considere uma tabela hash com 7 posições (0 a 6), função h(k) = k mod 7 e tratamento de colisões por encadeamento. Após a inserção das chaves 15, 22, 8, 10 e 29, marque a alternativa que indica, CORRETAMENTE, a quantidade de chaves na posição 1 e o fator de carga da tabela.",
+  "alternativas": {
+   "A": "3 chaves; fator de carga igual a 5/7.",
+   "B": "4 chaves; fator de carga igual a 7/5.",
+   "C": "4 chaves; fator de carga igual a 5/7.",
+   "D": "5 chaves; fator de carga igual a 1/7."
+  },
+  "gabarito": "C",
+  "comentario": "15 mod 7 = 1; 22 mod 7 = 1; 8 mod 7 = 1; 10 mod 7 = 3; 29 mod 7 = 1 → a posição 1 recebe 15, 22, 8 e 29 (4 chaves). Fator de carga α = número de chaves / número de posições = 5/7 ≈ 0,71. A opção B inverte a fração. No encadeamento α pode passar de 1; no endereçamento aberto, não."
+ },
+ {
+  "banca": "Simulado (autoral) — estilo IDIB",
+  "ano": 2026,
+  "orgao": "CMRB — treino",
+  "cargo": "Analista Legislativo TI Desenvolvimento",
+  "disciplina": "Estruturas de Dados",
+  "tipo": "ME",
+  "gabarito_fonte": "claude",
+  "codigo": "AUT-ED-IDIB-17",
+  "assunto": "Tabela hash: sondagem linear",
+  "enunciado": "Considere uma tabela hash com 10 posições (0 a 9), função h(k) = k mod 10 e tratamento de colisões por endereçamento aberto com sondagem linear, isto é, em caso de colisão é testada a posição seguinte. Inserindo-se, nesta ordem, as chaves 23, 43, 13, 27, 37 e 33, marque a alternativa que indica, CORRETAMENTE, a posição ocupada pela chave 33.",
+  "alternativas": {
+   "A": "3",
+   "B": "6",
+   "C": "5",
+   "D": "9"
+  },
+  "gabarito": "B",
+  "comentario": "23 → 3. 43 → 3 ocupada → 4. 13 → 3 e 4 ocupadas → 5. 27 → 7. 37 → 7 ocupada → 8. 33 → 3, 4 e 5 ocupadas → 6. Tabela: [_, _, _, 23, 43, 13, 33, 27, 37, _]. Note o agrupamento primário (clustering): chaves vão formando blocos contínuos que aumentam o número de tentativas — a principal desvantagem da sondagem linear, atenuada pela sondagem quadrática e pelo hash duplo."
+ },
+ {
+  "banca": "Simulado (autoral) — estilo IDIB",
+  "ano": 2026,
+  "orgao": "CMRB — treino",
+  "cargo": "Analista Legislativo TI Desenvolvimento",
+  "disciplina": "Estruturas de Dados",
+  "tipo": "ME",
+  "gabarito_fonte": "claude",
+  "codigo": "AUT-ED-IDIB-18",
+  "assunto": "Tabela hash: fator de carga, colisões e remoção",
+  "enunciado": "O desempenho de uma tabela hash depende da qualidade da função de dispersão e da estratégia adotada para o tratamento de colisões. A respeito das tabelas hash, analise as afirmativas abaixo.\n\nI. O fator de carga é a razão entre o número de elementos armazenados e o número de posições da tabela; quando ultrapassa um limite, a tabela costuma ser redimensionada e seus elementos redistribuídos (rehash).\nII. No endereçamento aberto, o fator de carga pode ser maior que 1, pois cada posição da tabela armazena uma lista de elementos.\nIII. No endereçamento aberto, remover uma chave simplesmente marcando sua posição como vazia pode fazer com que buscas por outras chaves falhem; por isso utiliza-se um marcador de posição removida.\n\nÉ correto o que se afirma",
+  "alternativas": {
+   "A": "apenas em I.",
+   "B": "apenas em II e III.",
+   "C": "apenas em I e III.",
+   "D": "em I, II e III."
+  },
+  "gabarito": "C",
+  "comentario": "I correta (ex.: o HashMap do Java nasce com 16 posições e fator 0,75; ao passar de 12 entradas dobra para 32). II errada: descreve o ENCADEAMENTO; no endereçamento aberto cada posição guarda uma única chave, então α ≤ 1. III correta: a busca por sondagem para ao encontrar uma posição vazia, então esvaziar uma posição no meio de uma sequência de colisões 'esconde' as chaves que vieram depois. A solução é a lápide (tombstone)."
+ },
+ {
+  "banca": "Simulado (autoral) — estilo IDIB",
+  "ano": 2026,
+  "orgao": "CMRB — treino",
+  "cargo": "Analista Legislativo TI Desenvolvimento",
+  "disciplina": "Estruturas de Dados",
+  "tipo": "ME",
+  "gabarito_fonte": "claude",
+  "codigo": "AUT-ED-IDIB-19",
+  "assunto": "Tabela hash: rastreio de código Java (HashMap)",
+  "enunciado": "Analise o trecho de código escrito na linguagem Java apresentado abaixo, considerando que as importações necessárias foram realizadas.\n\nMap<String, Integer> m = new HashMap<>();\nm.put(\"ana\", 1);\nm.put(\"bia\", 2);\nm.put(\"ana\", 3);\nm.put(null, 4);\nSystem.out.println(m.size() + \" \" + m.get(\"ana\") + \" \" + m.get(null));\n\nMarque a alternativa que indica, CORRETAMENTE, o resultado da execução do trecho.",
+  "alternativas": {
+   "A": "4 1 4",
+   "B": "3 3 4",
+   "C": "3 1 null",
+   "D": "Será lançada uma NullPointerException, pois a classe HashMap não aceita chave nula."
+  },
+  "gabarito": "B",
+  "comentario": "put com uma chave já existente SUBSTITUI o valor ('ana' passa de 1 para 3) e não cria nova entrada. HashMap aceita UMA chave null, que é uma entrada válida. Entradas: 'ana', 'bia' e null → size = 3; get(\"ana\") = 3; get(null) = 4. A opção D descreve a Hashtable (classe antiga) e o ConcurrentHashMap, que não aceitam null. A opção A supõe que put duplicado acrescenta."
+ },
+ {
+  "banca": "Simulado (autoral) — estilo IDIB",
+  "ano": 2026,
+  "orgao": "CMRB — treino",
+  "cargo": "Analista Legislativo TI Desenvolvimento",
+  "disciplina": "Estruturas de Dados",
+  "tipo": "ME",
+  "gabarito_fonte": "claude",
+  "codigo": "AUT-ED-IDIB-20",
+  "assunto": "Dicionários: Python, Java e JavaScript",
+  "enunciado": "Estruturas do tipo dicionário, que associam chaves a valores, estão presentes nas principais linguagens de programação e geralmente são implementadas por meio de tabelas hash. A respeito dessas estruturas, analise as afirmativas abaixo.\n\nI. Na linguagem Python, uma lista não pode ser utilizada como chave de um dicionário (dict), pois é mutável e, portanto, não é hashable.\nII. Na linguagem JavaScript, o objeto Map permite utilizar objetos como chaves e preserva a ordem de inserção dos elementos.\nIII. Na linguagem Java, a classe HashMap sempre garante que a iteração ocorra na ordem de inserção das chaves.\n\nÉ correto o que se afirma",
+  "alternativas": {
+   "A": "apenas em I e II.",
+   "B": "apenas em I.",
+   "C": "apenas em II e III.",
+   "D": "em I, II e III."
+  },
+  "gabarito": "A",
+  "comentario": "I correta: list, dict e set não podem ser chave; uma tupla de imutáveis pode (desde o Python 3.7 o dict também preserva a ordem de inserção). II correta: Map aceita qualquer valor como chave, ao contrário do objeto literal {}, que converte as chaves para string. III errada (e com 'sempre'): HashMap não garante ordem nenhuma; quem mantém a ordem de inserção é o LinkedHashMap, e quem ordena pela chave é o TreeMap."
+ }
+]
