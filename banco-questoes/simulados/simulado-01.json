@@ -1,0 +1,753 @@
+{
+ "codigo": "SIM-01",
+ "nome": "Simulado 1 — CMRB 2026 (estilo IDIB)",
+ "descricao": "40 questões no formato do edital (5 alternativas), montadas a partir dos assuntos e do estilo das provas IDIB da pasta provas/. Tempo oficial: 4 h para objetiva e redação; reserve cerca de 1 h para a redação.",
+ "duracao_min": 240,
+ "textos": {
+  "T1": "A câmara na palma da mão\n\nDurante muito tempo, acompanhar o trabalho de uma câmara municipal exigia tempo e disposição: era preciso ir até o prédio do Legislativo, consultar documentos em papel e, não raro, esperar dias por uma resposta. Hoje, boa parte dessas informações está a poucos cliques de distância. Projetos de lei, votações nominais, contratos e despesas podem ser consultados por qualquer cidadão que tenha acesso à internet.\n\nEssa mudança não aconteceu por acaso. A Lei de Acesso à Informação, de 2011, estabeleceu que a publicidade é a regra e o sigilo, a exceção. Dez anos depois, a Lei do Governo Digital reforçou a ideia de que os serviços públicos devem ser oferecidos, preferencialmente, em meio digital. Os órgãos que ainda resistem a essa lógica correm o risco de perder a confiança da população, que cobra cada vez mais transparência.\n\nContudo, disponibilizar dados não basta. Uma planilha com milhares de linhas, sem explicação sobre o que cada coluna significa, informa tão pouco quanto um arquivo trancado em uma gaveta. A transparência só se realiza quando a informação é compreensível, atualizada e acessível também às pessoas com deficiência, que dependem de leitores de tela e de outros recursos de acessibilidade.\n\nHá, ainda, um equilíbrio delicado a ser mantido. Ao mesmo tempo que deve divulgar o uso do dinheiro público, o Estado precisa proteger os dados pessoais dos cidadãos, como determina a Lei Geral de Proteção de Dados. Transparência e privacidade não são valores opostos: são faces de uma mesma moeda, que é o respeito ao cidadão. Cabe aos servidores, em especial aos que desenvolvem os sistemas do poder público, conciliar esses dois compromissos no dia a dia.\n\n(Texto elaborado para este simulado.)"
+ },
+ "regras": {
+  "disciplinas": {
+   "Conhecimentos Específicos": {
+    "peso": 2,
+    "minimo": 2.0
+   },
+   "Língua Portuguesa": {
+    "peso": 1,
+    "minimo": 1.0
+   },
+   "Raciocínio Lógico": {
+    "peso": 1,
+    "minimo": 1.0
+   },
+   "Ética no Serviço Público e Legislação": {
+    "peso": 1,
+    "minimo": 1.0
+   }
+  },
+  "minimo_total": 30.0,
+  "total": 60.0
+ },
+ "questoes": [
+  {
+   "numero": 1,
+   "disciplina": "Língua Portuguesa",
+   "assunto": "Interpretação de texto (ideia central)",
+   "peso": 1,
+   "texto": "T1",
+   "enunciado": "De acordo com o Texto I, é correto afirmar que a ideia central defendida pelo autor é a de que",
+   "alternativas": {
+    "A": "a internet tornou desnecessário o funcionamento presencial das câmaras municipais.",
+    "B": "a transparência pública depende não apenas da divulgação de dados, mas de informação compreensível e acessível, conciliada com a proteção dos dados pessoais.",
+    "C": "a Lei de Acesso à Informação e a Lei do Governo Digital eliminaram a possibilidade de sigilo na administração pública.",
+    "D": "transparência e privacidade são valores opostos, cabendo ao servidor escolher qual deles deve prevalecer.",
+    "E": "as planilhas de dados devem deixar de ser publicadas, por serem incompreensíveis para a maioria dos cidadãos."
+   },
+   "gabarito": "B",
+   "comentario": "O texto defende que 'disponibilizar dados não basta' (3º §) e que transparência e privacidade 'são faces de uma mesma moeda' (4º §). B e E extrapolam o texto; C contraria o 2º § (o sigilo é a EXCEÇÃO, não deixou de existir); D contraria literalmente o 4º §. A IDIB costuma pôr como distrator uma frase que repete palavras do texto, mas troca a relação entre elas.",
+   "base": "Jaboatão 2024 Q1 (argumentação)"
+  },
+  {
+   "numero": 2,
+   "disciplina": "Língua Portuguesa",
+   "assunto": "Tipologia textual",
+   "peso": 1,
+   "texto": "T1",
+   "enunciado": "Quanto à tipologia textual, o Texto I classifica-se predominantemente como",
+   "alternativas": {
+    "A": "narrativo, pois relata fatos em sequência temporal, com personagens e enredo.",
+    "B": "descritivo, pois se limita a caracterizar o prédio do Poder Legislativo.",
+    "C": "injuntivo, pois orienta o leitor, passo a passo, a consultar os dados da câmara.",
+    "D": "dialogal, pois é construído a partir da troca de falas entre interlocutores.",
+    "E": "dissertativo-argumentativo, pois apresenta uma tese e a sustenta com argumentos."
+   },
+   "gabarito": "E",
+   "comentario": "Há uma tese ('disponibilizar dados não basta'; transparência e privacidade se complementam) sustentada por argumentos (exemplo da planilha, leis citadas). As referências temporais do 1º § ('durante muito tempo', 'hoje') servem ao argumento, não constroem uma narrativa com personagens e enredo.",
+   "base": "CREMEC 2021 e Xinguara 2020 (tipologia e gênero)"
+  },
+  {
+   "numero": 3,
+   "disciplina": "Língua Portuguesa",
+   "assunto": "Conjunções e relação de sentido (conectivos)",
+   "peso": 1,
+   "texto": "T1",
+   "enunciado": "No trecho \"**Contudo**, disponibilizar dados não basta\" (3º parágrafo), o conectivo destacado poderia ser substituído, sem alteração do sentido original e mantendo a correção gramatical, por",
+   "alternativas": {
+    "A": "No entanto",
+    "B": "Portanto",
+    "C": "Porque",
+    "D": "Além disso",
+    "E": "Desde que"
+   },
+   "gabarito": "A",
+   "comentario": "'Contudo' é conjunção ADVERSATIVA (oposição): o 3º § relativiza o avanço descrito antes. Equivalentes: mas, porém, todavia, entretanto, no entanto. 'Portanto' é conclusiva; 'porque', causal/explicativa; 'além disso', aditivo; 'desde que', condicional.",
+   "base": "Jaboatão 2024 Q5 (conectivos equivalentes)"
+  },
+  {
+   "numero": 4,
+   "disciplina": "Língua Portuguesa",
+   "assunto": "Funções do QUE",
+   "peso": 1,
+   "texto": "T1",
+   "enunciado": "A respeito das ocorrências do vocábulo QUE no Texto I, analise as afirmativas abaixo.\n\nI. Em \"perder a confiança da população, **que** cobra cada vez mais transparência\", o QUE é pronome relativo e retoma o termo \"população\".\nII. Em \"reforçou a ideia de **que** os serviços públicos devem ser oferecidos\", o QUE é pronome relativo e retoma o termo \"ideia\".\nIII. Em \"às pessoas com deficiência, **que** dependem de leitores de tela\", o QUE introduz oração subordinada adjetiva explicativa, o que justifica o uso da vírgula.\n\nÉ correto o que se afirma",
+   "alternativas": {
+    "A": "apenas em II.",
+    "B": "apenas em III.",
+    "C": "apenas em I e II.",
+    "D": "apenas em I e III.",
+    "E": "apenas em II e III."
+   },
+   "gabarito": "D",
+   "comentario": "I correta. II errada: 'de que os serviços...' é CONJUNÇÃO INTEGRANTE — introduz oração substantiva completiva nominal, que completa o sentido de 'ideia' (teste: troque por 'isso': 'a ideia disso'). Como pronome relativo, o QUE poderia ser trocado por 'o qual/a qual', o que não funciona aqui. III correta: oração adjetiva entre vírgulas = explicativa.",
+   "base": "Jaboatão 2024 Q4 e CREMEC 2021 Q3 (funções do QUE)"
+  },
+  {
+   "numero": 5,
+   "disciplina": "Língua Portuguesa",
+   "assunto": "Concordância verbal",
+   "peso": 1,
+   "texto": "T1",
+   "enunciado": "Considerando a norma-padrão da língua portuguesa, assinale a alternativa em que a concordância verbal está CORRETA.",
+   "alternativas": {
+    "A": "Deve haver servidores capazes de conciliar os dois compromissos.",
+    "B": "Fazem dez anos que a Lei de Acesso à Informação foi sancionada.",
+    "C": "Haviam, no prédio do Legislativo, muitos documentos em papel.",
+    "D": "Ainda existe órgãos que resistem à lógica do governo digital.",
+    "E": "Os dados pessoais dos cidadãos precisa ser protegido pelo Estado."
+   },
+   "gabarito": "A",
+   "comentario": "'Haver' no sentido de existir é impessoal e fica no singular, e o auxiliar acompanha: 'DEVE haver'. 'Fazer' indicando tempo também é impessoal: 'FAZ dez anos'. 'Haviam documentos' está errado ('havia'). 'Existir' NÃO é impessoal e concorda com o sujeito: 'existem órgãos'. Na última, o sujeito é 'os dados': 'precisam ser protegidos'.",
+   "base": "Jaboatão 2024 Q9 (concordância verbal)"
+  },
+  {
+   "numero": 6,
+   "disciplina": "Língua Portuguesa",
+   "assunto": "Crase",
+   "peso": 1,
+   "texto": "T1",
+   "enunciado": "No trecho \"acessível também **às** pessoas com deficiência\", ocorre crase. Assinale a alternativa em que o acento grave indicativo de crase foi empregado CORRETAMENTE.",
+   "alternativas": {
+    "A": "Os relatórios foram enviados à vários órgãos da administração.",
+    "B": "A consulta pode ser feita à partir de qualquer computador.",
+    "C": "O parecer técnico foi entregue à ele na sessão de ontem.",
+    "D": "Todo cidadão tem direito à informação produzida pelo poder público.",
+    "E": "Os servidores começaram à desenvolver o novo portal."
+   },
+   "gabarito": "D",
+   "comentario": "'Direito A + A informação' = à. Não há crase antes de palavra masculina no plural ('a vários'), na expressão 'a partir de', antes de pronome pessoal ('a ele') nem antes de verbo ('a desenvolver'), porque nesses casos não existe o artigo feminino 'a'.",
+   "base": "Jaboatão 2024 Q10 (crase)"
+  },
+  {
+   "numero": 7,
+   "disciplina": "Língua Portuguesa",
+   "assunto": "Pontuação (vírgula)",
+   "peso": 1,
+   "texto": "T1",
+   "enunciado": "Sobre a pontuação empregada no Texto I, analise as afirmativas abaixo.\n\nI. Em \"Hoje, boa parte dessas informações está a poucos cliques de distância\", a vírgula isola adjunto adverbial deslocado.\nII. Em \"Há, ainda, um equilíbrio delicado a ser mantido\", as vírgulas isolam termo intercalado.\nIII. Em \"a publicidade é a regra e o sigilo, a exceção\", a vírgula separa o sujeito do predicado, o que constitui desvio da norma-padrão.\n\nÉ correto o que se afirma",
+   "alternativas": {
+    "A": "apenas em II.",
+    "B": "apenas em III.",
+    "C": "apenas em I e II.",
+    "D": "apenas em I e III.",
+    "E": "apenas em II e III."
+   },
+   "gabarito": "C",
+   "comentario": "I e II corretas. III errada: a vírgula em 'o sigilo, a exceção' marca a OMISSÃO do verbo 'é' (zeugma), que já apareceu antes: 'o sigilo [é] a exceção'. É uso correto, não separação indevida de sujeito e predicado.",
+   "base": "Jaboatão 2024 Q8 (vírgula)"
+  },
+  {
+   "numero": 8,
+   "disciplina": "Língua Portuguesa",
+   "assunto": "Acentuação gráfica",
+   "peso": 1,
+   "texto": "T1",
+   "enunciado": "Assinale a alternativa em que as duas palavras, retiradas do Texto I, são acentuadas graficamente pela MESMA regra.",
+   "alternativas": {
+    "A": "público e acessível",
+    "B": "também e câmara",
+    "C": "acessível e também",
+    "D": "câmara e público",
+    "E": "é e câmara"
+   },
+   "gabarito": "D",
+   "comentario": "'Câmara' (CÂ-ma-ra) e 'público' (PÚ-bli-co) são proparoxítonas — todas são acentuadas. 'Acessível' é paroxítona terminada em -L. 'Também' é oxítona terminada em -EM. 'É' é monossílabo tônico terminado em -E.",
+   "base": "Jaboatão 2024 Q7 (acentuação)"
+  },
+  {
+   "numero": 9,
+   "disciplina": "Língua Portuguesa",
+   "assunto": "Orações subordinadas adjetivas (restritiva x explicativa)",
+   "peso": 1,
+   "texto": "T1",
+   "enunciado": "No período \"Os órgãos **que ainda resistem a essa lógica** correm o risco de perder a confiança da população\", a oração destacada classifica-se como",
+   "alternativas": {
+    "A": "subordinada adjetiva explicativa.",
+    "B": "subordinada substantiva objetiva direta.",
+    "C": "subordinada adverbial causal.",
+    "D": "subordinada adjetiva restritiva.",
+    "E": "coordenada sindética explicativa."
+   },
+   "gabarito": "D",
+   "comentario": "Introduzida por pronome relativo (que = os quais) e SEM vírgulas: restringe o sentido de 'órgãos' — só os que resistem correm o risco, não todos os órgãos. Se viesse entre vírgulas, seria explicativa e generalizaria a todos. Compare com 'da população, que cobra...', que é explicativa.",
+   "base": "Jaboatão 2024 Q3 e CREMEC 2021 Q10 (classificação de orações)"
+  },
+  {
+   "numero": 10,
+   "disciplina": "Língua Portuguesa",
+   "assunto": "Significação de palavras e expressões",
+   "peso": 1,
+   "texto": "T1",
+   "enunciado": "No trecho \"consultar documentos em papel e, **não raro**, esperar dias por uma resposta\" (1º parágrafo), a expressão destacada pode ser substituída, sem prejuízo do sentido, por",
+   "alternativas": {
+    "A": "raramente",
+    "B": "frequentemente",
+    "C": "nunca",
+    "D": "excepcionalmente",
+    "E": "dificilmente"
+   },
+   "gabarito": "B",
+   "comentario": "'Não raro' = não é raro = acontece com frequência. A pegadinha é a alternativa 'raramente', que inverte o sentido por ignorar a negação.",
+   "base": "Jaboatão 2024 Q2 (sinônimos)"
+  },
+  {
+   "numero": 11,
+   "disciplina": "Raciocínio Lógico",
+   "assunto": "Conjuntos: inclusão-exclusão aplicada",
+   "peso": 1,
+   "texto": null,
+   "enunciado": "Em uma pesquisa com os 120 servidores de um órgão público, verificou-se que 70 sabem programar em Python, 50 sabem programar em Java e 20 sabem programar nas duas linguagens. A quantidade de servidores que não sabem programar em nenhuma dessas duas linguagens é",
+   "alternativas": {
+    "A": "0",
+    "B": "10",
+    "C": "20",
+    "D": "30",
+    "E": "40"
+   },
+   "gabarito": "C",
+   "comentario": "n(P ∪ J) = 70 + 50 − 20 = 100. Fora dos dois conjuntos: 120 − 100 = 20. Somar 70 + 50 = 120 sem descontar a interseção leva à alternativa '0' — o erro mais comum.",
+   "base": "CREMERJ 2019 Q11 e Q14, Jaboatão 2024 Q19 (conjuntos)"
+  },
+  {
+   "numero": 12,
+   "disciplina": "Raciocínio Lógico",
+   "assunto": "Sequências e padrões numéricos",
+   "peso": 1,
+   "texto": null,
+   "enunciado": "Observe a sequência numérica abaixo, construída segundo um padrão lógico.\n\n3, 6, 4, 8, 6, 12, 10, ...\n\nO próximo termo da sequência é",
+   "alternativas": {
+    "A": "14",
+    "B": "18",
+    "C": "20",
+    "D": "22",
+    "E": "24"
+   },
+   "gabarito": "C",
+   "comentario": "Padrão alternado: ×2, −2, ×2, −2... 3 (×2) 6 (−2) 4 (×2) 8 (−2) 6 (×2) 12 (−2) 10 (×2) 20. Quem olha só as diferenças (+3, −2, +4, −2, +6, −2) também chega a +10 → 20.",
+   "base": "Jaboatão 2024 Q17 (padrão alternado)"
+  },
+  {
+   "numero": 13,
+   "disciplina": "Raciocínio Lógico",
+   "assunto": "Lógica proposicional: dedução com condicional (modus tollens)",
+   "peso": 1,
+   "texto": null,
+   "enunciado": "Considere verdadeiras as seguintes premissas:\n\nP1: Se o sistema foi atualizado, então os testes automatizados passaram.\nP2: Os testes automatizados não passaram.\n\nA partir dessas premissas, conclui-se corretamente que",
+   "alternativas": {
+    "A": "o sistema não foi atualizado.",
+    "B": "o sistema foi atualizado.",
+    "C": "os testes automatizados passaram.",
+    "D": "o sistema foi atualizado, mas os testes falharam por outro motivo.",
+    "E": "nada se pode concluir sobre a atualização do sistema."
+   },
+   "gabarito": "A",
+   "comentario": "P → Q, com ¬Q verdadeiro, leva a ¬P (modus tollens): se P fosse verdadeiro, Q também teria de ser. Cuidado com a falácia inversa: com ¬P não se conclui nada sobre Q.",
+   "base": "CREMERJ 2019 Q15 (dedução com condicional)"
+  },
+  {
+   "numero": 14,
+   "disciplina": "Raciocínio Lógico",
+   "assunto": "Lógica proposicional: negação de proposição categórica",
+   "peso": 1,
+   "texto": null,
+   "enunciado": "A negação lógica da proposição \"Todo servidor da câmara usa crachá\" é",
+   "alternativas": {
+    "A": "Nenhum servidor da câmara usa crachá.",
+    "B": "Todo servidor da câmara não usa crachá.",
+    "C": "Algum servidor da câmara usa crachá.",
+    "D": "Algum servidor da câmara não usa crachá.",
+    "E": "Quem não usa crachá não é servidor da câmara."
+   },
+   "gabarito": "D",
+   "comentario": "Negar 'todo A é B' = 'algum A não é B' (basta um contraexemplo). 'Nenhum servidor usa' é a CONTRÁRIA, não a negação — as duas podem ser falsas ao mesmo tempo. A última alternativa é a contrapositiva, que EQUIVALE à original.",
+   "base": "CREMERJ 2019 Q13 (proposições)"
+  },
+  {
+   "numero": 15,
+   "disciplina": "Raciocínio Lógico",
+   "assunto": "Probabilidade sem reposição",
+   "peso": 1,
+   "texto": null,
+   "enunciado": "Uma urna contém 5 bolas azuis e 3 bolas vermelhas, idênticas exceto pela cor. Retiram-se, ao acaso e sem reposição, duas bolas. A probabilidade de as duas bolas retiradas serem azuis é",
+   "alternativas": {
+    "A": "5/14",
+    "B": "25/64",
+    "C": "5/16",
+    "D": "3/14",
+    "E": "1/2"
+   },
+   "gabarito": "A",
+   "comentario": "P = 5/8 × 4/7 = 20/56 = 5/14. 25/64 seria a resposta COM reposição (5/8 × 5/8). Pela combinação: C(5,2)/C(8,2) = 10/28 = 5/14.",
+   "base": "CREMERJ 2019 Q12 (probabilidade)"
+  },
+  {
+   "numero": 16,
+   "disciplina": "Ética no Serviço Público e Legislação",
+   "assunto": "LGPD: agentes de tratamento (art. 5º)",
+   "peso": 1,
+   "texto": null,
+   "enunciado": "De acordo com a Lei nº 13.709/2018 (Lei Geral de Proteção de Dados Pessoais), a pessoa natural ou jurídica, de direito público ou privado, a quem competem as decisões referentes ao tratamento de dados pessoais é denominada",
+   "alternativas": {
+    "A": "operador.",
+    "B": "encarregado.",
+    "C": "titular.",
+    "D": "controlador.",
+    "E": "agente de fiscalização."
+   },
+   "gabarito": "D",
+   "comentario": "Art. 5º, VI: controlador DECIDE. VII: operador REALIZA o tratamento em nome do controlador. VIII: encarregado é o canal de comunicação entre controlador, titulares e ANPD. V: titular é a pessoa natural a quem se referem os dados. Controlador e operador são os 'agentes de tratamento'.",
+   "base": "Nenhuma prova IDIB de TI — base no edital (LGPD)"
+  },
+  {
+   "numero": 17,
+   "disciplina": "Ética no Serviço Público e Legislação",
+   "assunto": "LGPD: dado pessoal sensível (art. 5º, II)",
+   "peso": 1,
+   "texto": null,
+   "enunciado": "Conforme a Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018), analise os exemplos de dados abaixo, referentes a uma pessoa natural.\n\nI. Dado referente à saúde.\nII. Filiação a sindicato.\nIII. Número de inscrição no CPF.\n\nSão considerados dados pessoais sensíveis os indicados",
+   "alternativas": {
+    "A": "apenas em II.",
+    "B": "apenas em III.",
+    "C": "apenas em I e II.",
+    "D": "apenas em I e III.",
+    "E": "apenas em II e III."
+   },
+   "gabarito": "C",
+   "comentario": "Art. 5º, II: sensível = origem racial ou étnica, convicção religiosa, opinião política, filiação a sindicato ou a organização religiosa, filosófica ou política, dado referente à saúde ou à vida sexual, dado genético ou biométrico. O CPF é dado pessoal, mas NÃO sensível.",
+   "base": "Nenhuma prova IDIB de TI — base no edital (LGPD)"
+  },
+  {
+   "numero": 18,
+   "disciplina": "Ética no Serviço Público e Legislação",
+   "assunto": "LAI: prazos de resposta e graus de sigilo",
+   "peso": 1,
+   "texto": null,
+   "enunciado": "Acerca da Lei nº 12.527/2011 (Lei de Acesso à Informação), assinale a alternativa CORRETA.",
+   "alternativas": {
+    "A": "O pedido de acesso à informação deve conter, obrigatoriamente, os motivos da solicitação.",
+    "B": "O prazo para resposta ao pedido de acesso é de 30 dias, prorrogável por mais 30 dias.",
+    "C": "A informação classificada como ultrassecreta tem prazo máximo de restrição de 15 anos.",
+    "D": "As informações pessoais relativas à intimidade e à vida privada podem ser divulgadas a qualquer pessoa, independentemente de consentimento, após 10 anos.",
+    "E": "A informação classificada no grau reservado tem prazo máximo de restrição de acesso de 5 anos."
+   },
+   "gabarito": "E",
+   "comentario": "Art. 24: ultrassecreta 25 anos, secreta 15, reservada 5. Art. 10, §3º: são VEDADAS exigências relativas aos motivos do pedido. Art. 11, §2º: prazo de até 20 dias, prorrogável por mais 10, com justificativa. Art. 31, §1º, I: informações pessoais têm acesso restrito por até 100 anos.",
+   "base": "Nenhuma prova IDIB de TI — base no edital (LAI)"
+  },
+  {
+   "numero": 19,
+   "disciplina": "Ética no Serviço Público e Legislação",
+   "assunto": "Princípios da Administração Pública (art. 37 da CF)",
+   "peso": 1,
+   "texto": null,
+   "enunciado": "O caput do art. 37 da Constituição Federal estabelece que a administração pública direta e indireta de qualquer dos Poderes obedecerá a determinados princípios. Assinale a alternativa que indica um princípio que NÃO está expresso nesse dispositivo.",
+   "alternativas": {
+    "A": "Razoabilidade.",
+    "B": "Legalidade.",
+    "C": "Impessoalidade.",
+    "D": "Publicidade.",
+    "E": "Eficiência."
+   },
+   "gabarito": "A",
+   "comentario": "Os princípios expressos no caput do art. 37 são LIMPE: Legalidade, Impessoalidade, Moralidade, Publicidade e Eficiência. Razoabilidade e proporcionalidade são princípios implícitos (ou expressos em leis como a 9.784/1999), não no art. 37.",
+   "base": "Nenhuma prova IDIB de TI — base no edital (ética e princípios)"
+  },
+  {
+   "numero": 20,
+   "disciplina": "Ética no Serviço Público e Legislação",
+   "assunto": "Lei do Governo Digital (Lei 14.129/2021): princípios",
+   "peso": 1,
+   "texto": null,
+   "enunciado": "A Lei nº 14.129/2021 dispõe sobre princípios, regras e instrumentos para o Governo Digital e para o aumento da eficiência pública. Analise as afirmativas abaixo sobre os princípios e diretrizes do Governo Digital.\n\nI. A desburocratização, a modernização, o fortalecimento e a simplificação da relação do poder público com a sociedade, mediante serviços digitais, acessíveis inclusive por meio de dispositivos móveis.\nII. A transparência na execução dos serviços públicos e o monitoramento da qualidade desses serviços.\nIII. A exigência, como regra, de reconhecimento de firma e de autenticação de documentos em cartório para a prestação de serviços digitais.\n\nÉ correto o que se afirma",
+   "alternativas": {
+    "A": "apenas em I.",
+    "B": "apenas em II.",
+    "C": "apenas em III.",
+    "D": "apenas em I e II.",
+    "E": "apenas em I e III."
+   },
+   "gabarito": "D",
+   "comentario": "I e II reproduzem incisos do art. 3º. III vai na direção oposta: a lei prevê a eliminação de formalidades e exigências cujo custo seja superior ao risco envolvido, e a Lei 13.726/2018 já dispensa reconhecimento de firma e autenticação como regra.",
+   "base": "Nenhuma prova IDIB de TI — base no edital (Governo Digital)"
+  },
+  {
+   "numero": 21,
+   "disciplina": "Conhecimentos Específicos",
+   "assunto": "SQL: sintaxe de UPDATE, DELETE e SELECT",
+   "peso": 2,
+   "texto": null,
+   "enunciado": "Considere a tabela abaixo, criada em um banco de dados PostgreSQL.\n\nCREATE TABLE funcionarios (\n  id      INTEGER PRIMARY KEY,\n  nome    VARCHAR(100) NOT NULL,\n  cargo   VARCHAR(50),\n  salario NUMERIC(10,2)\n);\n\nAnalise os comandos abaixo, considerando que cada um será executado individualmente.\n\nI. UPDATE funcionarios SET salario = 5000, cargo = 'Analista' WHERE id = 3;\nII. DELETE * FROM funcionarios WHERE id = 3;\nIII. SELECT nome FROM funcionarios WHERE salario BETWEEN 3000 AND 5000 ORDER BY nome DESC;\n\nSão comandos sintaticamente corretos os indicados",
+   "alternativas": {
+    "A": "apenas em II.",
+    "B": "apenas em III.",
+    "C": "apenas em I e II.",
+    "D": "apenas em I e III.",
+    "E": "apenas em II e III."
+   },
+   "gabarito": "D",
+   "comentario": "I correto: várias colunas no SET são separadas por VÍRGULA (a IDIB já usou 'SET marca = ... and modelo ...' como pegadinha). II errado: DELETE não leva '*' — o certo é 'DELETE FROM funcionarios WHERE id = 3;'. III correto: BETWEEN é inclusivo nas duas pontas, e ORDER BY ... DESC ordena de forma decrescente.",
+   "base": "Xinguara 2020 Q22 (comandos SQL com erro de sintaxe)"
+  },
+  {
+   "numero": 22,
+   "disciplina": "Conhecimentos Específicos",
+   "assunto": "SQL: GROUP BY e HAVING",
+   "peso": 2,
+   "texto": null,
+   "enunciado": "A tabela SERVIDORES possui as colunas NOME e SETOR, com os seguintes registros: (Ana, TI), (Bruno, TI), (Carla, RH), (Davi, TI), (Eva, RH), (Fábio, JUR), (Gil, RH) e (Hugo, RH). Considere a consulta abaixo.\n\nSELECT setor, COUNT(*) AS total\nFROM servidores\nGROUP BY setor\nHAVING COUNT(*) > 2;\n\nO resultado da consulta é composto por",
+   "alternativas": {
+    "A": "uma linha: (RH, 4).",
+    "B": "três linhas: (TI, 3), (RH, 4) e (JUR, 1).",
+    "C": "duas linhas: (TI, 3) e (RH, 4).",
+    "D": "uma linha com o total geral: 8.",
+    "E": "nenhuma linha, pois a cláusula HAVING não admite funções de agregação."
+   },
+   "gabarito": "C",
+   "comentario": "TI = 3, RH = 4, JUR = 1. HAVING filtra GRUPOS depois do agrupamento: ficam TI (3 > 2) e RH (4 > 2). É justamente o WHERE que não aceita funções de agregação; o HAVING existe para isso.",
+   "base": "CREMEC 2021 Q30/Q31 e Xinguara 2020 Q24 (SQL)"
+  },
+  {
+   "numero": 23,
+   "disciplina": "Conhecimentos Específicos",
+   "assunto": "Normalização: segunda forma normal (dependência parcial)",
+   "peso": 2,
+   "texto": null,
+   "enunciado": "Considere a tabela ITEM_PEDIDO(num_pedido, cod_produto, quantidade, nome_produto), cuja chave primária é composta pelas colunas num_pedido e cod_produto. Sabe-se que a coluna nome_produto depende apenas de cod_produto. Nessa situação, a tabela viola a",
+   "alternativas": {
+    "A": "primeira forma normal (1FN), por possuir atributos multivalorados.",
+    "B": "segunda forma normal (2FN), por existir dependência funcional parcial da chave primária.",
+    "C": "terceira forma normal (3FN), por existir dependência transitiva entre atributos não chave.",
+    "D": "forma normal de Boyce-Codd, apenas, estando em conformidade com a 3FN.",
+    "E": "integridade referencial, por não possuir chave estrangeira."
+   },
+   "gabarito": "B",
+   "comentario": "1FN: valores atômicos. 2FN: estar na 1FN e não ter atributo não chave dependendo de PARTE de uma chave composta — nome_produto depende só de cod_produto, então há dependência PARCIAL. 3FN: sem dependência TRANSITIVA (não chave → não chave). Solução: levar nome_produto para a tabela PRODUTO.",
+   "base": "CREMEC 2021 e Xinguara 2020 Q20 (modelagem relacional)"
+  },
+  {
+   "numero": 24,
+   "disciplina": "Conhecimentos Específicos",
+   "assunto": "Transações: propriedades ACID",
+   "peso": 2,
+   "texto": null,
+   "enunciado": "Em uma transferência bancária executada como transação em um SGBD relacional, o débito na conta de origem e o crédito na conta de destino devem ocorrer ambos ou nenhum deles, mesmo diante de falhas durante a execução. A propriedade ACID que garante esse comportamento é a",
+   "alternativas": {
+    "A": "atomicidade.",
+    "B": "consistência.",
+    "C": "isolamento.",
+    "D": "durabilidade.",
+    "E": "disponibilidade."
+   },
+   "gabarito": "A",
+   "comentario": "Atomicidade = tudo ou nada (COMMIT ou ROLLBACK de toda a transação). Consistência: a transação leva o banco de um estado válido a outro, respeitando as restrições. Isolamento: transações concorrentes não interferem entre si. Durabilidade: o que foi confirmado sobrevive a falhas. Disponibilidade é do teorema CAP, não do ACID.",
+   "base": "CREMEC 2021 (banco de dados) — tema do edital: transações"
+  },
+  {
+   "numero": 25,
+   "disciplina": "Conhecimentos Específicos",
+   "assunto": "UML: composição x agregação",
+   "peso": 2,
+   "texto": null,
+   "enunciado": "No diagrama de classes da UML, o relacionamento todo-parte em que a parte não existe independentemente do todo, sendo destruída junto com ele, e que é representado por um losango preenchido na extremidade do todo, denomina-se",
+   "alternativas": {
+    "A": "agregação.",
+    "B": "associação simples.",
+    "C": "composição.",
+    "D": "generalização.",
+    "E": "dependência."
+   },
+   "gabarito": "C",
+   "comentario": "Composição (◆ cheio): a parte 'morre' com o todo (Pedido ◆— ItemPedido). Agregação (◇ vazio): a parte existe sem o todo (Departamento ◇— Servidor). Generalização: seta com triângulo vazado (herança). Dependência: seta tracejada. A IDIB cobrou esse ponto em quatro questões diferentes.",
+   "base": "Xinguara 2020 Q26 e CREMEC 2021 Q24/Q38/Q47 (agregação e composição)"
+  },
+  {
+   "numero": 26,
+   "disciplina": "Conhecimentos Específicos",
+   "assunto": "Design Patterns: Observer",
+   "peso": 2,
+   "texto": null,
+   "enunciado": "Em um sistema da câmara, sempre que o status de um projeto de lei é alterado, diversos módulos (envio de e-mails, portal da transparência e painel de votação) precisam ser notificados automaticamente, sem que o objeto do projeto conheça as classes concretas desses módulos. O padrão de projeto GoF mais adequado a essa situação é o",
+   "alternativas": {
+    "A": "Observer.",
+    "B": "Singleton.",
+    "C": "Adapter.",
+    "D": "Decorator.",
+    "E": "Factory Method."
+   },
+   "gabarito": "A",
+   "comentario": "Observer (comportamental): define uma dependência um-para-muitos, em que os observadores inscritos são notificados quando o sujeito muda de estado. Singleton garante instância única; Adapter converte interfaces; Decorator acrescenta responsabilidades dinamicamente; Factory Method delega a criação de objetos às subclasses.",
+   "base": "CREMEC 2021 (POO) — Patterns nunca caíram na IDIB; tema do edital"
+  },
+  {
+   "numero": 27,
+   "disciplina": "Conhecimentos Específicos",
+   "assunto": "SOLID",
+   "peso": 2,
+   "texto": null,
+   "enunciado": "Os princípios SOLID orientam o projeto de software orientado a objetos de forma a facilitar sua manutenção e evolução. A respeito desses princípios, analise as afirmativas abaixo.\n\nI. Segundo o Princípio da Responsabilidade Única (SRP), uma classe deve ter um, e apenas um, motivo para mudar.\nII. Segundo o Princípio Aberto-Fechado (OCP), as entidades de software devem estar abertas para extensão, mas fechadas para modificação.\nIII. Segundo o Princípio da Inversão de Dependência (DIP), os módulos de alto nível devem depender diretamente das implementações concretas dos módulos de baixo nível.\n\nÉ correto o que se afirma",
+   "alternativas": {
+    "A": "apenas em III.",
+    "B": "apenas em I e II.",
+    "C": "apenas em I e III.",
+    "D": "apenas em II e III.",
+    "E": "em I, II e III."
+   },
+   "gabarito": "B",
+   "comentario": "I e II corretas. III inverte o DIP: módulos de alto nível NÃO devem depender dos de baixo nível — ambos devem depender de ABSTRAÇÕES (interfaces), e as abstrações não devem depender de detalhes. É a base da injeção de dependência.",
+   "base": "Nenhuma prova IDIB — SOLID é tema novo do edital"
+  },
+  {
+   "numero": 28,
+   "disciplina": "Conhecimentos Específicos",
+   "assunto": "Python: listas, referência e fatiamento",
+   "peso": 2,
+   "texto": null,
+   "enunciado": "Analise o código escrito na linguagem Python apresentado abaixo.\n\na = [1, 2, 3]\nb = a\nb.append(4)\nc = a[1:3]\nprint(len(a), c, a[-1])\n\nMarque a alternativa que indica, CORRETAMENTE, a saída produzida.",
+   "alternativas": {
+    "A": "4 [2, 3] 4",
+    "B": "3 [2, 3] 3",
+    "C": "4 [1, 2, 3] 4",
+    "D": "3 [2, 3, 4] 4",
+    "E": "4 [2, 3, 4] 3"
+   },
+   "gabarito": "A",
+   "comentario": "'b = a' NÃO copia a lista: as duas variáveis apontam para o MESMO objeto, então b.append(4) altera a → [1, 2, 3, 4], len = 4. a[1:3] pega os índices 1 e 2 (o final é exclusivo) → [2, 3]. a[-1] é o último elemento → 4. Para copiar seria preciso a.copy() ou a[:].",
+   "base": "Xinguara 2020 Q30/Q31 (qual a saída do código)"
+  },
+  {
+   "numero": 29,
+   "disciplina": "Conhecimentos Específicos",
+   "assunto": "Java: incremento, substring e endsWith",
+   "peso": 2,
+   "texto": null,
+   "enunciado": "Analise o trecho de código escrito na linguagem Java apresentado abaixo.\n\nint x = 5;\nint y = x++ + ++x;\nString s = \"PROGRAMACAO\";\nSystem.out.println(y + \" \" + x + \" \" + s.substring(1, 4) + \" \" + s.endsWith(\"ao\"));\n\nMarque a alternativa que indica, CORRETAMENTE, o resultado exibido.",
+   "alternativas": {
+    "A": "11 7 ROGR false",
+    "B": "12 6 ROG true",
+    "C": "11 6 PROG false",
+    "D": "12 7 ROGR true",
+    "E": "12 7 ROG false"
+   },
+   "gabarito": "E",
+   "comentario": "x++ devolve 5 e depois x vira 6; ++x incrementa antes e devolve 7 → y = 5 + 7 = 12, x = 7. substring(1, 4) pega os índices 1, 2 e 3 (final exclusivo): 'ROG'. endsWith('ao') diferencia maiúsculas de minúsculas: a string termina em 'AO' → false. São as mesmas três pegadinhas das questões de Xinguara.",
+   "base": "Xinguara 2020 Q30 (pós-incremento) e Q31 (substring/endsWith)"
+  },
+  {
+   "numero": 30,
+   "disciplina": "Conhecimentos Específicos",
+   "assunto": "JavaScript: coerção de tipos e ponto flutuante",
+   "peso": 2,
+   "texto": null,
+   "enunciado": "Considere a instrução JavaScript abaixo, executada no console de um navegador moderno.\n\nconsole.log(0.1 + 0.2 === 0.3, \"5\" + 2, \"5\" - 2, typeof NaN);\n\nMarque a alternativa que indica, CORRETAMENTE, a saída exibida.",
+   "alternativas": {
+    "A": "true 7 3 number",
+    "B": "false 7 3 NaN",
+    "C": "true 52 52 undefined",
+    "D": "false 52 3 NaN",
+    "E": "false 52 3 number"
+   },
+   "gabarito": "E",
+   "comentario": "0.1 + 0.2 = 0.30000000000000004 em ponto flutuante (IEEE 754) → false. '+' com string CONCATENA: '5' + 2 = '52'. '-' só existe para números, então converte: '5' − 2 = 3. NaN ('Not a Number') é, ironicamente, do tipo 'number'.",
+   "base": "Xinguara 2020 Q32 (JavaScript — saída do código)"
+  },
+  {
+   "numero": 31,
+   "disciplina": "Conhecimentos Específicos",
+   "assunto": "HTTP: códigos de status",
+   "peso": 2,
+   "texto": null,
+   "enunciado": "Em APIs REST, os códigos de status do protocolo HTTP informam ao cliente o resultado de cada requisição. Sobre esses códigos, analise as afirmativas abaixo.\n\nI. O código 201 (Created) indica que a requisição foi bem-sucedida e resultou na criação de um novo recurso.\nII. O código 404 (Not Found) indica que ocorreu um erro interno no servidor ao processar a requisição.\nIII. O código 401 (Unauthorized) indica ausência ou invalidade de credenciais de autenticação, enquanto o código 403 (Forbidden) indica que o cliente foi identificado, mas não tem permissão para acessar o recurso.\n\nÉ correto o que se afirma",
+   "alternativas": {
+    "A": "apenas em III.",
+    "B": "apenas em I e II.",
+    "C": "apenas em I e III.",
+    "D": "apenas em II e III.",
+    "E": "em I, II e III."
+   },
+   "gabarito": "C",
+   "comentario": "I e III corretas. II errada: 404 = recurso não encontrado (erro do CLIENTE, família 4xx). Erro interno do servidor é 500 (família 5xx). Famílias: 2xx sucesso, 3xx redirecionamento, 4xx erro do cliente, 5xx erro do servidor.",
+   "base": "Xinguara 2020 Q17 (JSON x XML) — APIs são tema novo do edital"
+  },
+  {
+   "numero": 32,
+   "disciplina": "Conhecimentos Específicos",
+   "assunto": "JWT (JSON Web Token)",
+   "peso": 2,
+   "texto": null,
+   "enunciado": "O JWT (JSON Web Token) é amplamente utilizado para autenticação em APIs. Acerca do JWT, assinale a alternativa CORRETA.",
+   "alternativas": {
+    "A": "O JWT é composto por quatro partes: cabeçalho, payload, chave privada e assinatura.",
+    "B": "A assinatura do JWT impede que terceiros leiam o conteúdo do payload.",
+    "C": "Em um JWT assinado, o payload é apenas codificado em Base64URL, e não criptografado; por isso não se devem incluir nele informações sensíveis.",
+    "D": "O uso do JWT exige que o servidor armazene a sessão de cada usuário em banco de dados para validar o token.",
+    "E": "O JWT substitui o protocolo HTTPS, pois já protege os dados transmitidos."
+   },
+   "gabarito": "C",
+   "comentario": "Estrutura: header.payload.signature (TRÊS partes, separadas por ponto). A assinatura garante INTEGRIDADE e autenticidade (ninguém altera o token sem invalidá-lo), mas não confidencialidade: qualquer um decodifica o payload. O JWT é autocontido (stateless), dispensando sessão no servidor, e deve trafegar sobre HTTPS.",
+   "base": "Nenhuma prova IDIB — JWT/OAuth é tema novo do edital"
+  },
+  {
+   "numero": 33,
+   "disciplina": "Conhecimentos Específicos",
+   "assunto": "Pilhas: sequência de operações",
+   "peso": 2,
+   "texto": null,
+   "enunciado": "Considere uma pilha inicialmente vazia, sobre a qual são executadas, nesta ordem, as operações: push(1), push(2), push(3), pop(), push(4), pop(), pop(). A sequência de valores removidos pelas operações pop() e o conteúdo final da pilha são, respectivamente,",
+   "alternativas": {
+    "A": "1, 2, 3 — pilha contendo apenas o 4.",
+    "B": "3, 4, 2 — pilha contendo apenas o 1.",
+    "C": "3, 2, 1 — pilha contendo apenas o 4.",
+    "D": "3, 4, 1 — pilha contendo apenas o 2.",
+    "E": "1, 4, 2 — pilha contendo apenas o 3."
+   },
+   "gabarito": "B",
+   "comentario": "Pilha = LIFO. [1,2,3] → pop remove 3 → [1,2] → push 4 → [1,2,4] → pop remove 4 → pop remove 2 → sobra [1]. A alternativa '1, 2, 3' trata a estrutura como fila (FIFO).",
+   "base": "Nenhuma prova IDIB — estruturas de dados são tema novo do edital"
+  },
+  {
+   "numero": 34,
+   "disciplina": "Conhecimentos Específicos",
+   "assunto": "Ordenação e pesquisa: complexidade",
+   "peso": 2,
+   "texto": null,
+   "enunciado": "Sobre algoritmos de ordenação e de pesquisa, analise as afirmativas abaixo.\n\nI. A pesquisa binária exige que o vetor esteja ordenado e tem complexidade O(log n) no pior caso.\nII. O Quick Sort possui complexidade O(n log n) no caso médio, mas pode chegar a O(n²) no pior caso.\nIII. O Merge Sort é um algoritmo de ordenação in-place e não estável, com complexidade O(n²) no pior caso.\n\nÉ correto o que se afirma",
+   "alternativas": {
+    "A": "apenas em III.",
+    "B": "apenas em I e II.",
+    "C": "apenas em I e III.",
+    "D": "apenas em II e III.",
+    "E": "em I, II e III."
+   },
+   "gabarito": "B",
+   "comentario": "I e II corretas. III errada nos três pontos: o Merge Sort é ESTÁVEL, NÃO é in-place (usa O(n) de memória auxiliar) e é O(n log n) em todos os casos. Quem é in-place e não estável com O(n log n) garantido é o Heap Sort.",
+   "base": "Nenhuma prova IDIB — algoritmos e complexidade são tema novo do edital"
+  },
+  {
+   "numero": 35,
+   "disciplina": "Conhecimentos Específicos",
+   "assunto": "Scrum: papéis, eventos e artefatos",
+   "peso": 2,
+   "texto": null,
+   "enunciado": "O Scrum é um framework leve que ajuda pessoas, times e organizações a gerar valor por meio de soluções adaptativas para problemas complexos. De acordo com o Guia do Scrum (2020), analise as afirmativas abaixo.\n\nI. A Daily Scrum é um evento de 15 minutos destinado aos Developers do Scrum Team.\nII. O Scrum Master é o responsável pelo gerenciamento eficaz do Product Backlog.\nIII. As Sprints têm duração fixa de um mês ou menos, e uma nova Sprint começa imediatamente após a conclusão da anterior.\n\nÉ correto o que se afirma",
+   "alternativas": {
+    "A": "apenas em I.",
+    "B": "apenas em II.",
+    "C": "apenas em III.",
+    "D": "apenas em I e II.",
+    "E": "apenas em I e III."
+   },
+   "gabarito": "E",
+   "comentario": "I e III corretas. II errada: quem responde pelo Product Backlog é o PRODUCT OWNER. O Scrum Master é responsável pela eficácia do time e por estabelecer o Scrum como definido no Guia. Papéis (2020): Product Owner, Scrum Master e Developers.",
+   "base": "Xinguara 2020 Q25 (ciclo de vida) — ágil é tema novo do edital"
+  },
+  {
+   "numero": 36,
+   "disciplina": "Conhecimentos Específicos",
+   "assunto": "Git: desfazer commits (revert x reset)",
+   "peso": 2,
+   "texto": null,
+   "enunciado": "Um desenvolvedor precisa desfazer as alterações introduzidas por um commit que já foi enviado ao repositório remoto compartilhado com a equipe, sem reescrever o histórico do projeto. O comando do Git mais adequado é",
+   "alternativas": {
+    "A": "git reset --hard",
+    "B": "git revert",
+    "C": "git stash",
+    "D": "git commit --amend",
+    "E": "git rebase"
+   },
+   "gabarito": "B",
+   "comentario": "git revert cria um NOVO commit que desfaz o anterior — o histórico é preservado, o que é seguro em branch compartilhada. reset --hard, commit --amend e rebase REESCREVEM o histórico (exigiriam push --force e atrapalham os colegas). git stash só guarda alterações não commitadas.",
+   "base": "Nenhuma prova IDIB — Git e DevOps são tema novo do edital"
+  },
+  {
+   "numero": 37,
+   "disciplina": "Conhecimentos Específicos",
+   "assunto": "Requisitos funcionais x não funcionais",
+   "peso": 2,
+   "texto": null,
+   "enunciado": "Durante o levantamento de requisitos para o novo sistema de protocolo da câmara municipal, foram identificados os requisitos abaixo. Assinale a alternativa que apresenta um requisito NÃO funcional.",
+   "alternativas": {
+    "A": "O sistema deve permitir que o cidadão cadastre um novo requerimento.",
+    "B": "O sistema deve emitir o comprovante de protocolo em formato PDF.",
+    "C": "O sistema deve permitir a consulta do andamento de um processo pelo número do protocolo.",
+    "D": "O sistema deve enviar um e-mail ao requerente quando o processo mudar de situação.",
+    "E": "O sistema deve responder às consultas de protocolo em, no máximo, 2 segundos, com até 500 usuários simultâneos."
+   },
+   "gabarito": "E",
+   "comentario": "Funcional = O QUE o sistema faz (serviços, funções). Não funcional = COMO/QUÃO BEM faz — restrições de desempenho, segurança, usabilidade, disponibilidade. Tempo de resposta com carga definida é requisito de desempenho, portanto não funcional.",
+   "base": "CREMEC 2021 (engenharia de requisitos)"
+  },
+  {
+   "numero": 38,
+   "disciplina": "Conhecimentos Específicos",
+   "assunto": "UML: diagrama de casos de uso (include, extend, ator)",
+   "peso": 2,
+   "texto": null,
+   "enunciado": "A respeito do diagrama de casos de uso da UML, analise as afirmativas abaixo.\n\nI. O relacionamento <<include>> indica que o caso de uso base sempre incorpora o comportamento do caso de uso incluído.\nII. O relacionamento <<extend>> representa um comportamento opcional, executado apenas sob determinadas condições.\nIII. Um ator representa exclusivamente pessoas físicas que interagem com o sistema.\n\nÉ correto o que se afirma",
+   "alternativas": {
+    "A": "apenas em III.",
+    "B": "apenas em I e II.",
+    "C": "apenas em I e III.",
+    "D": "apenas em II e III.",
+    "E": "em I, II e III."
+   },
+   "gabarito": "B",
+   "comentario": "I e II corretas. III errada pelo 'exclusivamente': ator é um PAPEL externo que interage com o sistema — pode ser pessoa, outro sistema ou dispositivo (ex.: o sistema da Receita, um sensor). Lembrete de setas: no include a seta vai do base para o incluído; no extend, do extensor para o base.",
+   "base": "Xinguara 2020 Q27 e CREMEC 2021 (UML)"
+  },
+  {
+   "numero": 39,
+   "disciplina": "Conhecimentos Específicos",
+   "assunto": "OWASP: injeção de SQL",
+   "peso": 2,
+   "texto": null,
+   "enunciado": "A injeção de SQL (SQL Injection) aparece de forma recorrente entre os riscos de segurança listados pelo OWASP Top 10. A medida mais eficaz para prevenir esse tipo de ataque no código da aplicação é",
+   "alternativas": {
+    "A": "utilizar o protocolo HTTPS em todas as páginas da aplicação.",
+    "B": "criptografar o banco de dados com algoritmo simétrico.",
+    "C": "exigir senhas com no mínimo 12 caracteres.",
+    "D": "ocultar o código-fonte das páginas com técnicas de ofuscação de JavaScript.",
+    "E": "utilizar consultas parametrizadas (prepared statements), sem concatenar a entrada do usuário ao comando SQL."
+   },
+   "gabarito": "E",
+   "comentario": "A injeção acontece quando dados do usuário são CONCATENADOS ao SQL e interpretados como código. Com consultas parametrizadas, o SGBD trata a entrada sempre como dado. HTTPS protege o transporte, a criptografia protege os dados armazenados e as senhas fortes protegem a autenticação — nenhuma dessas medidas impede a injeção.",
+   "base": "CREMEC 2021 Q20/Q21 (segurança) — OWASP é tema novo do edital"
+  },
+  {
+   "numero": 40,
+   "disciplina": "Conhecimentos Específicos",
+   "assunto": "IA: aprendizado supervisionado x não supervisionado",
+   "peso": 2,
+   "texto": null,
+   "enunciado": "A câmara municipal deseja agrupar automaticamente milhares de proposições legislativas por similaridade de conteúdo, sem dispor de nenhuma classificação prévia dos documentos. A abordagem de aprendizado de máquina mais adequada a essa tarefa é o",
+   "alternativas": {
+    "A": "aprendizado supervisionado, por meio de técnicas de classificação.",
+    "B": "aprendizado por reforço, por meio de recompensas e punições.",
+    "C": "aprendizado supervisionado, por meio de regressão linear.",
+    "D": "sistema especialista baseado exclusivamente em regras definidas manualmente.",
+    "E": "aprendizado não supervisionado, por meio de técnicas de agrupamento (clustering)."
+   },
+   "gabarito": "E",
+   "comentario": "Sem rótulos prévios = NÃO supervisionado; agrupar por similaridade = clustering (ex.: k-means). Supervisionado exige exemplos já rotulados (classificação para categorias, regressão para valores numéricos). Reforço aprende por tentativa e erro com recompensas (jogos, robótica).",
+   "base": "Xinguara 2020 Q33 (data mining)"
+  }
+ ]
+}

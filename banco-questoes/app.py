@@ -52,6 +52,47 @@ CREATE TABLE IF NOT EXISTS respostas (
     origem         TEXT NOT NULL DEFAULT 'app' CHECK (origem IN ('app', 'qconcursos'))
 );
 CREATE INDEX IF NOT EXISTS idx_respostas_questao ON respostas (questao_id);
+
+-- Simulados ficam em tabelas próprias: não entram no banco de questões nem nas estatísticas.
+CREATE TABLE IF NOT EXISTS simulados (
+    id          INTEGER PRIMARY KEY,
+    codigo      TEXT UNIQUE NOT NULL,
+    nome        TEXT NOT NULL,
+    descricao   TEXT,
+    duracao_min INTEGER NOT NULL DEFAULT 240,
+    textos      TEXT,                         -- JSON {"T1": "texto de apoio"}
+    regras      TEXT NOT NULL,                -- JSON com peso e mínimo de cada disciplina
+    criado_em   TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS simulado_questoes (
+    id           INTEGER PRIMARY KEY,
+    simulado_id  INTEGER NOT NULL REFERENCES simulados (id) ON DELETE CASCADE,
+    numero       INTEGER NOT NULL,
+    disciplina   TEXT NOT NULL,
+    assunto      TEXT NOT NULL,
+    peso         INTEGER NOT NULL DEFAULT 1,
+    texto        TEXT,                        -- chave do texto de apoio em simulados.textos
+    enunciado    TEXT NOT NULL,
+    alternativas TEXT NOT NULL,
+    gabarito     TEXT NOT NULL,
+    comentario   TEXT,
+    base         TEXT,                        -- questão das provas antigas que serviu de modelo
+    UNIQUE (simulado_id, numero)
+);
+CREATE TABLE IF NOT EXISTS simulado_tentativas (
+    id          INTEGER PRIMARY KEY,
+    simulado_id INTEGER NOT NULL REFERENCES simulados (id) ON DELETE CASCADE,
+    iniciada_em TEXT NOT NULL,
+    entregue_em TEXT
+);
+CREATE TABLE IF NOT EXISTS simulado_respostas (
+    tentativa_id  INTEGER NOT NULL REFERENCES simulado_tentativas (id) ON DELETE CASCADE,
+    questao_id    INTEGER NOT NULL REFERENCES simulado_questoes (id) ON DELETE CASCADE,
+    resposta      TEXT,
+    chute         INTEGER NOT NULL DEFAULT 0,
+    respondida_em TEXT NOT NULL,
+    PRIMARY KEY (tentativa_id, questao_id)
+);
 """
 
 ULTIMA = "(SELECT MAX(id) FROM respostas WHERE questao_id = q.id)"
@@ -173,10 +214,105 @@ def caderno():
     return {"linhas": [dict(r) for r in rows]}
 
 
+def sim_lista():
+    with conectar() as con:
+        sims = [dict(r) for r in con.execute(
+            "SELECT s.id, s.codigo, s.nome, s.descricao, s.duracao_min, COUNT(q.id) AS questoes "
+            "FROM simulados s LEFT JOIN simulado_questoes q ON q.simulado_id = s.id GROUP BY s.id ORDER BY s.id")]
+        tents = con.execute("SELECT id, simulado_id, iniciada_em, entregue_em FROM simulado_tentativas ORDER BY id DESC").fetchall()
+        for s in sims:
+            s["tentativas"] = [dict(t, **({"resultado": sim_resultado(con, t["id"])["resumo"]} if t["entregue_em"] else {}))
+                               for t in tents if t["simulado_id"] == s["id"]]
+    return {"simulados": sims}
+
+
+def sim_iniciar(b):
+    with conectar() as con:
+        aberta = con.execute("SELECT id FROM simulado_tentativas WHERE simulado_id = ? AND entregue_em IS NULL",
+                             (int(b["simulado_id"]),)).fetchone()
+        if aberta:
+            return {"tentativa_id": aberta["id"]}
+        cur = con.execute("INSERT INTO simulado_tentativas (simulado_id, iniciada_em) VALUES (?, ?)", (int(b["simulado_id"]), agora()))
+        return {"tentativa_id": cur.lastrowid}
+
+
+def sim_resultado(con, tid):
+    t = con.execute("SELECT * FROM simulado_tentativas WHERE id = ?", (tid,)).fetchone()
+    regras = json.loads(con.execute("SELECT regras FROM simulados WHERE id = ?", (t["simulado_id"],)).fetchone()[0])
+    rows = con.execute("""SELECT q.id, q.disciplina, q.peso, q.gabarito, r.resposta, COALESCE(r.chute, 0) AS chute
+                          FROM simulado_questoes q LEFT JOIN simulado_respostas r ON r.questao_id = q.id AND r.tentativa_id = ?
+                          WHERE q.simulado_id = ? ORDER BY q.numero""", (tid, t["simulado_id"])).fetchall()
+    discs, total, corretas = {}, 0.0, {}
+    for r in rows:
+        ok = r["resposta"] is not None and r["resposta"] == r["gabarito"]
+        corretas[r["id"]] = ok
+        d = discs.setdefault(r["disciplina"], {"disciplina": r["disciplina"], "questoes": 0, "acertos": 0, "chutes_certos": 0,
+                                               "em_branco": 0, "pontos": 0.0, "max": 0.0})
+        d["questoes"] += 1
+        d["max"] += r["peso"]
+        d["em_branco"] += r["resposta"] is None
+        if ok:
+            d["acertos"] += 1
+            d["chutes_certos"] += r["chute"]
+            d["pontos"] += r["peso"]
+    for d in discs.values():
+        d["minimo"] = regras["disciplinas"].get(d["disciplina"], {}).get("minimo", 0)
+        d["eliminado"] = d["pontos"] < d["minimo"]
+        total += d["pontos"]
+    eliminado = total < regras["minimo_total"] or any(d["eliminado"] for d in discs.values())
+    resumo = {"pontos": total, "max": regras["total"], "minimo_total": regras["minimo_total"], "eliminado": eliminado,
+              "acertos": sum(d["acertos"] for d in discs.values()), "questoes": len(rows)}
+    return {"disciplinas": list(discs.values()), "resumo": resumo, "corretas": corretas}
+
+
+def sim_prova(p):
+    tid = int(p["tentativa"])
+    with conectar() as con:
+        t = con.execute("SELECT * FROM simulado_tentativas WHERE id = ?", (tid,)).fetchone()
+        s = con.execute("SELECT * FROM simulados WHERE id = ?", (t["simulado_id"],)).fetchone()
+        entregue = t["entregue_em"] is not None
+        resps = {r["questao_id"]: r for r in con.execute("SELECT * FROM simulado_respostas WHERE tentativa_id = ?", (tid,))}
+        questoes = []
+        for q in con.execute("SELECT * FROM simulado_questoes WHERE simulado_id = ? ORDER BY numero", (s["id"],)):
+            item = {k: q[k] for k in ("id", "numero", "disciplina", "peso", "texto", "enunciado")}
+            item["alternativas"] = json.loads(q["alternativas"])
+            r = resps.get(q["id"])
+            item["resposta"], item["chute"] = (r["resposta"], bool(r["chute"])) if r else (None, False)
+            if entregue:  # gabarito e comentário só aparecem depois de entregar
+                item.update(gabarito=q["gabarito"], comentario=q["comentario"], assunto=q["assunto"], base=q["base"])
+            questoes.append(item)
+        out = {"tentativa": dict(t), "simulado": {k: s[k] for k in ("id", "codigo", "nome", "descricao", "duracao_min")},
+               "textos": json.loads(s["textos"] or "{}"), "questoes": questoes}
+        if entregue:
+            res = sim_resultado(con, tid)
+            out["resultado"] = {"disciplinas": res["disciplinas"], "resumo": res["resumo"]}
+    return out
+
+
+def sim_marcar(b):
+    tid = int(b["tentativa_id"])
+    with conectar() as con:
+        if con.execute("SELECT entregue_em FROM simulado_tentativas WHERE id = ?", (tid,)).fetchone()[0]:
+            raise ValueError("este simulado já foi entregue")
+        con.execute("""INSERT INTO simulado_respostas (tentativa_id, questao_id, resposta, chute, respondida_em) VALUES (?, ?, ?, ?, ?)
+                       ON CONFLICT (tentativa_id, questao_id) DO UPDATE SET resposta = excluded.resposta, chute = excluded.chute,
+                       respondida_em = excluded.respondida_em""",
+                    (tid, int(b["questao_id"]), b.get("resposta") or None, 1 if b.get("chute") else 0, agora()))
+    return {"ok": True}
+
+
+def sim_entregar(b):
+    with conectar() as con:
+        con.execute("UPDATE simulado_tentativas SET entregue_em = ? WHERE id = ? AND entregue_em IS NULL", (agora(), int(b["tentativa_id"])))
+    return {"ok": True}
+
+
 GET_ROUTES = {"/api/proxima": proxima, "/api/filtros": lambda p: filtros(),
-              "/api/stats": lambda p: stats(), "/api/caderno": lambda p: caderno()}
+              "/api/stats": lambda p: stats(), "/api/caderno": lambda p: caderno(),
+              "/api/sim/lista": lambda p: sim_lista(), "/api/sim/prova": sim_prova}
 POST_ROUTES = {"/api/responder": responder, "/api/marcar_chute": marcar_chute,
-               "/api/classificar": classificar, "/api/contestar": contestar}
+               "/api/classificar": classificar, "/api/contestar": contestar,
+               "/api/sim/iniciar": sim_iniciar, "/api/sim/marcar": sim_marcar, "/api/sim/entregar": sim_entregar}
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -272,6 +408,18 @@ td.num, th.num { text-align:right; font-variant-numeric:tabular-nums; }
 .destaque { color:var(--accent); font-weight:700; }
 .vazio { color:var(--muted); padding:30px 0; text-align:center; }
 .scroll { overflow-x:auto; }
+.sim-barra { position:sticky; top:0; z-index:2; display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between;
+             background:var(--bg); border-bottom:1px solid var(--line); padding:10px 0; margin-bottom:16px; }
+.sim-barra .tempo { font:600 18px ui-monospace, monospace; }
+.sim-barra .tempo.acabando { color:var(--bad); }
+.sim-disc { font-size:15px; letter-spacing:.06em; text-transform:uppercase; color:var(--accent); margin:28px 0 10px; }
+.sim-texto { white-space:pre-wrap; background:var(--card); border:1px solid var(--line); border-left:3px solid var(--accent);
+             border-radius:10px; padding:16px 18px; margin-bottom:16px; }
+.sim-q { margin-bottom:14px; }
+.sim-q .num { font:700 13px ui-monospace, monospace; color:var(--muted); margin-bottom:6px; }
+.sim-lista .card { margin-bottom:14px; }
+.sim-lista h2 { font-size:17px; margin:0 0 6px; }
+.p-elim { color:var(--bad); font-weight:700; } .p-aprov { color:var(--ok); font-weight:700; }
 </style>
 </head>
 <body>
@@ -282,6 +430,7 @@ td.num, th.num { text-align:right; font-variant-numeric:tabular-nums; }
     <button data-v="resolver" class="ativo">Resolver</button>
     <button data-v="stats">Estatísticas</button>
     <button data-v="caderno">Caderno de erros</button>
+    <button data-v="simulado">Simulado</button>
   </nav>
 </header>
 <main>
@@ -335,6 +484,19 @@ td.num, th.num { text-align:right; font-variant-numeric:tabular-nums; }
   <section id="v-stats" hidden><div class="scroll"><table id="t-stats"></table></div>
     <p class="dica">Chute certo não conta como acerto. Cores pela regra do plano: abaixo de 70% volta com teoria; de 70% a 85% só questões; acima de 85% questões mais difíceis.</p></section>
   <section id="v-caderno" hidden><div class="scroll"><table id="t-caderno"></table></div></section>
+  <section id="v-simulado" hidden>
+    <div id="sim-lista" class="sim-lista"></div>
+    <div id="sim-prova" hidden>
+      <div class="sim-barra">
+        <strong id="sim-nome"></strong>
+        <span class="tempo" id="sim-tempo"></span>
+        <span id="sim-cont" class="dica" style="margin:0"></span>
+        <span><button class="btn" id="sim-voltar">Voltar</button> <button class="btn primario" id="sim-entregar">Entregar</button></span>
+      </div>
+      <div id="sim-resultado"></div>
+      <div id="sim-questoes"></div>
+    </div>
+  </section>
 </main>
 <script>
 const $ = s => document.querySelector(s);
@@ -500,9 +662,10 @@ async function mostrarCaderno() {
 
 document.querySelectorAll('nav button').forEach(b => b.onclick = () => {
   document.querySelectorAll('nav button').forEach(x => x.classList.toggle('ativo', x === b));
-  for (const v of ['resolver', 'stats', 'caderno']) $('#v-' + v).hidden = v !== b.dataset.v;
+  for (const v of ['resolver', 'stats', 'caderno', 'simulado']) $('#v-' + v).hidden = v !== b.dataset.v;
   if (b.dataset.v === 'stats') mostrarStats();
   if (b.dataset.v === 'caderno') mostrarCaderno();
+  if (b.dataset.v === 'simulado') simLista();
 });
 $('#disc').onchange = preencherAssuntos;
 $('#iniciar').onclick = () => { S.sessao = []; proxima(); };
@@ -534,7 +697,155 @@ document.addEventListener('keydown', e => {
     if (e.key === 'Enter' && document.activeElement.tagName !== 'TEXTAREA') { e.preventDefault(); salvarEProxima(); }
   }
 });
+// ---------- Simulado (tabelas próprias; não mexe no banco de questões) ----------
+const SIM = { prova:null, timer:null };
+const fmtPts = n => String(Math.round(n * 100) / 100).replace('.', ',');
+function fmtData(iso) { return iso.slice(0, 16).replace('T', ' '); }
+
+async function simLista() {
+  clearInterval(SIM.timer);
+  $('#sim-prova').hidden = true; $('#sim-lista').hidden = false;
+  const { simulados } = await api('/api/sim/lista');
+  const box = $('#sim-lista'); box.replaceChildren();
+  if (!simulados.length) { box.append(el('div', { class:'vazio' }, 'Nenhum simulado importado ainda (python3 importar_simulado.py simulados/arquivo.json).')); return; }
+  for (const s of simulados) {
+    const aberta = s.tentativas.find(t => !t.entregue_em);
+    const iniciar = el('button', { class:'btn primario' }, aberta ? 'Continuar' : (s.tentativas.length ? 'Fazer de novo' : 'Começar'));
+    iniciar.onclick = async () => {
+      if (!aberta && !confirm(`Começar agora? O cronômetro de ${s.duracao_min / 60} h dispara ao abrir a prova.`)) return;
+      const r = await api('/api/sim/iniciar', { simulado_id:s.id });
+      simAbrir(r.tentativa_id);
+    };
+    const card = el('div', { class:'card' }, el('h2', {}, s.nome), el('p', { class:'dica', style:'margin-top:0' }, `${s.questoes} questões · ${s.descricao || ''}`));
+    const feitas = s.tentativas.filter(t => t.entregue_em);
+    if (feitas.length) {
+      const t = el('table', {});
+      t.append(el('tr', {}, ...['Entregue em', 'Acertos', 'Pontos', 'Situação', ''].map(h => el('th', {}, h))));
+      for (const x of feitas) {
+        const r = x.resultado, ver = el('button', { class:'btn' }, 'Ver correção');
+        ver.onclick = () => simAbrir(x.id);
+        t.append(el('tr', {}, el('td', {}, fmtData(x.entregue_em)), el('td', {}, `${r.acertos}/${r.questoes}`),
+          el('td', {}, `${fmtPts(r.pontos)} / ${r.max}`), el('td', { class:r.eliminado ? 'p-elim' : 'p-aprov' }, r.eliminado ? 'Eliminado' : 'Classificável'), el('td', {}, ver)));
+      }
+      card.append(el('div', { class:'scroll' }, t));
+    }
+    card.append(el('div', { class:'acoes' }, el('span', {}), iniciar));
+    box.append(card);
+  }
+}
+
+async function simAbrir(tid) {
+  const p = SIM.prova = await api('/api/sim/prova?tentativa=' + tid);
+  const entregue = !!p.tentativa.entregue_em;
+  $('#sim-lista').hidden = true; $('#sim-prova').hidden = false;
+  $('#sim-nome').textContent = p.simulado.nome;
+  $('#sim-entregar').hidden = entregue;
+  clearInterval(SIM.timer);
+  if (entregue) {
+    const min = Math.round((new Date(p.tentativa.entregue_em) - new Date(p.tentativa.iniciada_em)) / 60000);
+    $('#sim-tempo').textContent = `Tempo usado: ${Math.floor(min / 60)}h${String(min % 60).padStart(2, '0')}`;
+    $('#sim-tempo').classList.remove('acabando');
+  } else {
+    const fim = new Date(p.tentativa.iniciada_em).getTime() + p.simulado.duracao_min * 60000;
+    const tick = () => {
+      const s = Math.round((fim - Date.now()) / 1000), a = Math.abs(s);
+      const txt = `${Math.floor(a / 3600)}:${String(Math.floor(a % 3600 / 60)).padStart(2, '0')}:${String(a % 60).padStart(2, '0')}`;
+      $('#sim-tempo').textContent = s >= 0 ? `Restam ${txt}` : `Tempo esgotado há ${txt}`;
+      $('#sim-tempo').classList.toggle('acabando', s < 15 * 60);
+    };
+    tick(); SIM.timer = setInterval(tick, 1000);
+  }
+  simResultado(p);
+  simRenderQuestoes(p, entregue);
+  simContador();
+  window.scrollTo({ top:0 });
+}
+
+function simResultado(p) {
+  const box = $('#sim-resultado'); box.replaceChildren();
+  if (!p.resultado) return;
+  const r = p.resultado, t = el('table', {});
+  t.append(el('tr', {}, el('th', {}, 'Disciplina'), ...['Acertos', 'Em branco', 'Chutes certos', 'Pontos', 'Mínimo'].map(h => el('th', { class:'num' }, h))));
+  for (const d of r.disciplinas)
+    t.append(el('tr', {}, el('td', {}, d.disciplina), el('td', { class:'num' }, `${d.acertos}/${d.questoes}`), el('td', { class:'num' }, String(d.em_branco)),
+      el('td', { class:'num' }, String(d.chutes_certos)), el('td', { class:'num ' + (d.eliminado ? 'p-elim' : '') }, `${fmtPts(d.pontos)} / ${fmtPts(d.max)}`),
+      el('td', { class:'num' }, fmtPts(d.minimo))));
+  const s = r.resumo;
+  t.append(el('tr', {}, el('td', {}, el('strong', {}, 'Objetiva')), el('td', { class:'num' }, `${s.acertos}/${s.questoes}`), el('td', {}), el('td', {}),
+    el('td', { class:'num ' + (s.eliminado ? 'p-elim' : 'p-aprov') }, `${fmtPts(s.pontos)} / ${s.max}`), el('td', { class:'num' }, fmtPts(s.minimo_total))));
+  const situacao = s.eliminado
+    ? 'Eliminado: ficou abaixo do mínimo em pelo menos uma disciplina ou no total da objetiva.'
+    : 'Passou dos mínimos. Lembre que a redação só é corrigida para os 15 primeiros da ampla concorrência, então o que conta é a posição.';
+  box.append(el('div', { class:'card', style:'margin-bottom:18px' }, el('div', { class:'rotulo' }, 'RESULTADO'), el('div', { class:'scroll' }, t),
+    el('p', { class:'dica' }, situacao + ' Chute certo conta ponto aqui, como na prova real, mas fica destacado para você revisar.')));
+}
+
+function simRenderQuestoes(p, entregue) {
+  const box = $('#sim-questoes'); box.replaceChildren();
+  let disc = null, texto = null;
+  for (const q of p.questoes) {
+    if (q.disciplina !== disc) { disc = q.disciplina; box.append(el('h2', { class:'sim-disc' }, disc + (q.peso > 1 ? ` · peso ${q.peso}` : ''))); }
+    if (q.texto && q.texto !== texto) { texto = q.texto; const tx = el('div', { class:'sim-texto' }); renderRico(tx, p.textos[q.texto]); box.append(tx); }
+    const enun = el('div', { class:'enunciado' }); renderRico(enun, q.enunciado);
+    const card = el('div', { class:'card sim-q' }, el('div', { class:'num' }, `QUESTÃO ${String(q.numero).padStart(2, '0')}`), enun);
+    const alts = el('div', {});
+    for (const [letra, txt] of Object.entries(q.alternativas)) {
+      const span = el('span', {}); renderRico(span, txt);
+      const b = el('button', { class:'alt', 'data-l':letra }, el('span', { class:'letra' }, letra), span);
+      if (entregue) {
+        b.disabled = true;
+        if (letra === q.gabarito) b.classList.add('certa'); else if (letra === q.resposta) b.classList.add('errada');
+      } else {
+        b.classList.toggle('selecionada', letra === q.resposta);
+        b.onclick = () => simMarcar(q, q.resposta === letra ? null : letra, alts);
+      }
+      alts.append(b);
+    }
+    card.append(alts);
+    if (entregue) {
+      const ok = q.resposta === q.gabarito;
+      card.append(el('div', { class:'veredito ' + (ok && !q.chute ? 'ok' : 'bad') },
+        q.resposta == null ? `Em branco — gabarito ${q.gabarito}.` : ok ? (q.chute ? `Acertou no chute — gabarito ${q.gabarito}.` : 'Acertou.') : `Errou — você marcou ${q.resposta}, gabarito ${q.gabarito}.`));
+      const com = el('div', {}); renderRico(com, q.comentario);
+      card.append(el('div', { class:'comentario' }, el('div', { class:'rotulo' }, `${q.assunto.toUpperCase()} · MODELO: ${q.base}`), com));
+    } else {
+      const chk = el('input', { type:'checkbox' }); chk.checked = q.chute;
+      chk.onchange = () => { q.chute = chk.checked; simSalvar(q); };
+      card.append(el('label', { class:'chute-pos' }, chk, ' Chutei esta'));
+    }
+    box.append(card);
+  }
+}
+
+async function simSalvar(q) {
+  await api('/api/sim/marcar', { tentativa_id:SIM.prova.tentativa.id, questao_id:q.id, resposta:q.resposta, chute:q.chute });
+}
+async function simMarcar(q, letra, alts) {
+  q.resposta = letra;
+  alts.querySelectorAll('.alt').forEach(b => b.classList.toggle('selecionada', b.dataset.l === letra));
+  simContador();
+  await simSalvar(q);
+}
+function simContador() {
+  const qs = SIM.prova.questoes, n = qs.filter(q => q.resposta).length;
+  $('#sim-cont').textContent = `${n}/${qs.length} marcadas`;
+}
+$('#sim-voltar').onclick = simLista;
+$('#sim-entregar').onclick = async () => {
+  const brancos = SIM.prova.questoes.filter(q => !q.resposta).length;
+  if (!confirm(brancos ? `Há ${brancos} questão(ões) em branco. Entregar mesmo assim?` : 'Entregar o simulado? Depois disso não dá para alterar as respostas.')) return;
+  await api('/api/sim/entregar', { tentativa_id:SIM.prova.tentativa.id });
+  simAbrir(SIM.prova.tentativa.id);
+};
+
 carregarFiltros();
+if (location.hash === '#simulado') {  // link direto: abre a aba e continua a tentativa em andamento, se houver
+  document.querySelector('nav button[data-v="simulado"]').click();
+  api('/api/sim/lista').then(({ simulados }) => {
+    const t = simulados.flatMap(s => s.tentativas).find(t => !t.entregue_em);
+    if (t) simAbrir(t.id);
+  });
+}
 </script>
 </body>
 </html>
