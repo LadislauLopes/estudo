@@ -1,0 +1,36 @@
+{
+ "numero": 4,
+ "titulo": "O QUE tem duas profissões: ligar a um nome ou abrir uma frase",
+ "ideia": "Se o QUE puder virar “o qual / a qual”, ele é pronome relativo. Se não puder, quase sempre é conjunção integrante.",
+ "do_zero": "A palavrinha **QUE** aparece o tempo todo em português, e a banca adora perguntar qual é o “trabalho” dela em cada frase. Para esta prova, você precisa conhecer só dois trabalhos:\n\n**1. Pronome relativo**: o QUE **retoma um nome que veio logo antes** e evita que você repita esse nome.\n\n- “Conheci a **população**, **que** cobra transparência.”\n- Sem o QUE, ficaria: “Conheci a população. **A população** cobra transparência.”\n- Ou seja: o QUE está no lugar de “a população”.\n\n**2. Conjunção integrante**: o QUE **não retoma nada**. Ele só abre uma frase que completa outra palavra, como se fosse um “isso”.\n\n- “Eu sei **que** você estudou.” → Eu sei **isso**.\n- “Tenho a ideia **de que** vai dar certo.” → Tenho a ideia **disso**.\n\n> **Teste do “o qual”** (o mais importante desta questão): troque o QUE por “o qual / a qual / os quais / as quais”. Se a frase continuar fazendo sentido, é **pronome relativo**. Se ficar estranha, não é.\n\n**Teste do “isso”**: troque o QUE e tudo o que vem depois dele por “isso”. Se funcionar, é **conjunção integrante**.\n\nUm detalhe a mais, que aparece no item III: quando o pronome relativo vem **depois de vírgula**, a frase que ele abre é chamada de **oração adjetiva explicativa** (ela explica algo sobre o nome inteiro). Sem vírgula, é **restritiva** (ela separa só uma parte). Isso é explicado em detalhes na questão 9.",
+ "passo_a_passo": "Vamos aplicar o teste em cada item.\n\n**Item I**: “perder a confiança da população, **que** cobra cada vez mais transparência”.\n\n- Troque: “da população, **a qual** cobra cada vez mais transparência”. Funciona perfeitamente!\n- Então o QUE é pronome relativo e está no lugar de “população”.\n- **I está CORRETO.**\n\n**Item II**: “reforçou a ideia de **que** os serviços públicos devem ser oferecidos”.\n\n- Troque: “reforçou a ideia **da qual** os serviços públicos devem ser oferecidos”. Não faz sentido nenhum!\n- Agora faça o teste do isso: “reforçou a ideia **disso**”. Funciona.\n- Então o QUE é **conjunção integrante**: não retoma “ideia”, apenas abre a frase que diz **qual** é a ideia.\n- **II está ERRADO**, porque diz que é pronome relativo.\n\n**Item III**: “às pessoas com deficiência, **que** dependem de leitores de tela”.\n\n- Troque: “às pessoas com deficiência, **as quais** dependem de leitores de tela”. Funciona.\n- É pronome relativo e veio depois de vírgula: oração adjetiva **explicativa**. A vírgula está ali justamente por isso.\n- **III está CORRETO.**\n\nCorretos: I e III → **alternativa D**.",
+ "alternativas": {
+  "A": "Marca só o II, que é justamente o item errado (o QUE do II é conjunção integrante, não pronome relativo).",
+  "B": "Marca só o III. O III está certo, mas esquece o I, que também está certo.",
+  "C": "Inclui o II, que está errado.",
+  "D": "I e III são os dois casos em que o QUE pode virar “a qual / as quais”. Correta.",
+  "E": "Inclui o II (errado) e deixa de fora o I (certo)."
+ },
+ "seu_erro": "Você marcou **E (II e III)** e ainda indicou que foi chute. Ou seja, você aceitou o item II e recusou o item I, que é o exemplo mais clássico de pronome relativo da prova.\n\nA armadilha do item II é que o QUE aparece **logo depois de um substantivo** (“ideia”), e isso dá a impressão de que ele retoma esse substantivo. Mas estar perto de um nome não basta: o pronome relativo tem que **substituir** o nome. Em “a ideia de que os serviços devem ser digitais”, o QUE não substitui “ideia”; ele introduz **o conteúdo** da ideia.\n\n> Sempre que aparecer **“de que”** depois de palavras como ideia, certeza, medo, esperança, notícia, necessidade, desconfie: geralmente é conjunção integrante (“a certeza **de que** passarei” = a certeza **disso**).\n\nDa próxima vez, não decida “no olho”: aplique o teste do “o qual” em cada item. Leva cinco segundos.",
+ "macete": "**QUE vira “O QUAL”? → pronome RELATIVO** (retoma o nome de trás).\n**QUE vira “ISSO”? → conjunção INTEGRANTE** (abre uma frase que completa).\n\nE o bônus: relativo **com vírgula** = explicativa; relativo **sem vírgula** = restritiva.",
+ "treino": [
+  {
+   "pergunta": "Em “O servidor **que** atende o público foi elogiado”, o QUE é:",
+   "opcoes": {"A": "pronome relativo", "B": "conjunção integrante"},
+   "resposta": "A",
+   "explicacao": "“O servidor **o qual** atende o público” funciona: o QUE está no lugar de “servidor”. É pronome relativo (e, como não tem vírgula, a oração é restritiva)."
+  },
+  {
+   "pergunta": "Em “Todos esperam **que** o portal seja lançado logo”, o QUE é:",
+   "opcoes": {"A": "pronome relativo", "B": "conjunção integrante"},
+   "resposta": "B",
+   "explicacao": "“Todos esperam **o qual**…” não faz sentido. Mas “Todos esperam **isso**” funciona. O QUE abre o que é esperado: conjunção integrante."
+  },
+  {
+   "pergunta": "Em “Recebemos a notícia **de que** o prazo foi prorrogado”, o QUE é:",
+   "opcoes": {"A": "pronome relativo, retomando “notícia”", "B": "conjunção integrante"},
+   "resposta": "B",
+   "explicacao": "É exatamente a pegadinha do item II. “A notícia **da qual** o prazo foi prorrogado” não faz sentido; “a notícia **disso**” faz. Conjunção integrante."
+  }
+ ]
+}

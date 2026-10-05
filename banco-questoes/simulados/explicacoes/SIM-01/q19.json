@@ -1,0 +1,30 @@
+{
+ "numero": 19,
+ "titulo": "LIMPE: os cinco princípios escritos no art. 37 da Constituição",
+ "ideia": "O art. 37 traz só cinco princípios: Legalidade, Impessoalidade, Moralidade, Publicidade e Eficiência. Razoabilidade é importante, mas não está escrita ali.",
+ "do_zero": "**Princípios** são as regras mais gerais, que guiam todas as outras. A **Constituição Federal** (a lei mais importante do país) diz, no **caput** do art. 37, quais princípios a administração pública deve obedecer.\n\n(“Caput” é a “cabeça” do artigo: o texto principal, antes dos parágrafos e incisos.)\n\nO texto é:\n\n> “A administração pública direta e indireta de qualquer dos Poderes da União, dos Estados, do Distrito Federal e dos Municípios obedecerá aos princípios de **legalidade, impessoalidade, moralidade, publicidade e eficiência** […]”\n\nSão **cinco**, e as iniciais formam a palavra **LIMPE**:\n\n- **L**egalidade: o servidor só pode fazer o que a lei manda ou permite. (O cidadão comum pode fazer tudo o que a lei não proíbe; o servidor, não.)\n- **I**mpessoalidade: a administração trata todos igualmente, sem favorecer amigos nem perseguir inimigos, e o ato é do órgão, não da pessoa do servidor (por isso é proibido fazer propaganda pessoal com obra pública).\n- **M**oralidade: não basta ser legal; tem que ser ético, honesto, de boa-fé.\n- **P**ublicidade: os atos devem ser divulgados, para que a sociedade possa fiscalizar.\n- **E**ficiência: fazer bem feito, com rapidez e sem desperdício. Foi o último a entrar, em 1998 (Emenda Constitucional 19).\n\n**E a razoabilidade?**\nExistem outros princípios importantes que **não estão escritos no art. 37**. Eles são chamados de **implícitos** (estão “subentendidos” na Constituição) ou estão escritos em **outras leis**. Exemplos: **razoabilidade, proporcionalidade, supremacia do interesse público, motivação, segurança jurídica**. A razoabilidade e a proporcionalidade aparecem expressamente na **Lei 9.784/1999** (lei do processo administrativo federal), mas não no art. 37.",
+ "passo_a_passo": "A questão pede o princípio que **NÃO** está expresso no caput do art. 37.\n\n**Passo 1: escreva LIMPE no rascunho.**\n\n- L = Legalidade, I = Impessoalidade, M = Moralidade, P = Publicidade, E = Eficiência.\n\n**Passo 2: risque as alternativas que estão no LIMPE.**\n\n- B) Legalidade → L ✓ (está)\n- C) Impessoalidade → I ✓ (está)\n- D) Publicidade → P ✓ (está)\n- E) Eficiência → E ✓ (está)\n\n**Passo 3: a que sobrou é a resposta.**\n\n- A) **Razoabilidade** → não está no LIMPE. É princípio implícito.\n\nResposta: **A**.",
+ "alternativas": {
+  "A": "Razoabilidade é princípio implícito na Constituição (e expresso na Lei 9.784/1999), mas NÃO está escrito no caput do art. 37. Correta.",
+  "B": "Legalidade é o L do LIMPE. Está expresso.",
+  "C": "Impessoalidade é o I do LIMPE. Está expresso.",
+  "D": "Publicidade é o P do LIMPE. Está expresso.",
+  "E": "Eficiência é o E do LIMPE (incluído pela Emenda Constitucional 19/1998). Está expresso."
+ },
+ "seu_erro": "Você deixou esta **em branco**. Esta é uma das questões mais fáceis e mais cobradas de toda a parte de legislação: aparece em praticamente todo concurso. Ela vale o mesmo ponto que uma questão difícil de lógica.\n\nDois conselhos:\n\n1. **Nunca deixe em branco** numa prova que não desconta pontos por erro. Com 5 alternativas, um chute puro tem 20% de chance. Se você elimina duas, sobe para 33%.\n2. Aqui não precisava nem chutar: bastava lembrar da palavra **LIMPE** e riscar o que estava nela. Sobra uma só.\n\n> Cuidado com a variação dessa pegadinha: a banca às vezes troca **Moralidade** por **“Motivação”** ou **Eficiência** por **“Economicidade”**. Motivação e economicidade NÃO estão no caput do art. 37.",
+ "macete": "**LIMPE = Legalidade, Impessoalidade, Moralidade, Publicidade, Eficiência.**\n\n“A administração pública tem que ser **LIMPE**.”\n\n**Fora do LIMPE (pegadinhas):** razoabilidade, proporcionalidade, motivação, finalidade, supremacia do interesse público, economicidade, segurança jurídica.",
+ "treino": [
+  {
+   "pergunta": "Qual destes princípios está expresso no caput do art. 37 da CF?",
+   "opcoes": {"A": "Proporcionalidade", "B": "Moralidade", "C": "Motivação"},
+   "resposta": "B",
+   "explicacao": "Moralidade é o M do LIMPE. Proporcionalidade e motivação são princípios importantes, mas não estão no art. 37."
+  },
+  {
+   "pergunta": "Um prefeito coloca seu nome e sua foto nas placas de obras da prefeitura. Ele fere principalmente o princípio da:",
+   "opcoes": {"A": "eficiência", "B": "impessoalidade", "C": "publicidade"},
+   "resposta": "B",
+   "explicacao": "A obra é do município, não da pessoa do prefeito. Usar obra pública para promoção pessoal fere a impessoalidade (o próprio art. 37, §1º proíbe nomes, símbolos ou imagens que caracterizem promoção pessoal)."
+  }
+ ]
+}

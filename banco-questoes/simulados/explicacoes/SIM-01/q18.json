@@ -1,0 +1,36 @@
+{
+ "numero": 18,
+ "titulo": "LAI em números: 20 + 10 dias, 25-15-5 anos e nunca pedir o motivo",
+ "ideia": "Na Lei de Acesso à Informação ninguém precisa explicar por que quer a informação. Prazo: 20 dias + 10. Sigilo: ultrassecreta 25, secreta 15, reservada 5 anos.",
+ "do_zero": "A **LAI (Lei de Acesso à Informação, Lei 12.527/2011)** garante que **qualquer pessoa** pode pedir informações a órgãos públicos. A ideia central, que até aparece no texto da prova, é: **a publicidade é a regra e o sigilo é a exceção**.\n\nA banca cobra quase sempre os **números** e as **proibições** da lei. São estes:\n\n**1. Ninguém precisa dizer por que quer a informação.**\nO art. 10, §3º diz que são **vedadas** (proibidas) quaisquer exigências relativas aos **motivos** do pedido. O pedido precisa só identificar quem pede e dizer qual informação quer.\n\n**2. Prazo de resposta: 20 dias, prorrogáveis por mais 10.**\nSe a informação não puder ser entregue na hora, o órgão tem **até 20 dias** para responder. Esse prazo pode ser prorrogado **por mais 10 dias**, desde que haja **justificativa** (art. 11, §§1º e 2º). Total máximo: 30 dias.\n\n**3. Graus de sigilo e prazos máximos (art. 24):**\n\n- **Ultrassecreta**: até **25 anos**.\n- **Secreta**: até **15 anos**.\n- **Reservada**: até **5 anos**.\n\nRepare que quanto mais “secreta” no nome, mais tempo de restrição. E os números vão caindo: 25, 15, 5.\n\n**4. Informações pessoais (intimidade, vida privada, honra, imagem):**\nNão são classificadas nesses três graus. Elas têm acesso restrito por **até 100 anos**, contados da data em que foram produzidas, e só podem ser divulgadas com **consentimento** da pessoa ou por previsão legal (art. 31, §1º, I).",
+ "passo_a_passo": "Vamos conferir cada alternativa com os números da lei.\n\n**A) “O pedido deve conter, obrigatoriamente, os motivos.”**\n\n- É o contrário: exigir motivo é **proibido** (art. 10, §3º).\n- Errada.\n\n**B) “Prazo de 30 dias, prorrogável por mais 30.”**\n\n- O certo é **20 dias + 10**.\n- Errada.\n\n**C) “Ultrassecreta: prazo máximo de 15 anos.”**\n\n- Ultrassecreta é **25 anos**. 15 é a secreta.\n- Errada.\n\n**D) “Informações pessoais podem ser divulgadas a qualquer pessoa, sem consentimento, após 10 anos.”**\n\n- O prazo é de **até 100 anos**, e antes disso só com consentimento ou previsão legal.\n- Errada.\n\n**E) “Reservada: prazo máximo de 5 anos.”**\n\n- Exatamente o art. 24: reservada, **5 anos**.\n- **Correta.**",
+ "alternativas": {
+  "A": "Exigir o motivo do pedido é PROIBIDO (art. 10, §3º). Qualquer um pode pedir sem se justificar.",
+  "B": "O prazo é de até 20 dias, prorrogável por mais 10 com justificativa. Não 30 + 30.",
+  "C": "Ultrassecreta = 25 anos. O prazo de 15 anos é da secreta.",
+  "D": "Informações pessoais ficam restritas por até 100 anos e dependem de consentimento ou previsão legal para serem divulgadas.",
+  "E": "Art. 24: reservada, até 5 anos (ultrassecreta 25, secreta 15). Correta."
+ },
+ "seu_erro": "Você marcou **A** sem ser chute, ou seja, achou de verdade que o pedido precisa ter motivo. Isso é natural, porque em quase todo serviço público pedem que você explique por que quer algo.\n\nMas a LAI é diferente de propósito. A lógica é: **a informação pública pertence ao cidadão**. Se o órgão pudesse exigir o motivo, poderia negar o pedido dizendo “seu motivo não é bom o bastante”. Por isso a lei proíbe essa exigência.\n\n> Sempre que uma alternativa de LAI disser que o cidadão **“deve justificar”**, **“deve informar o motivo”** ou **“deve demonstrar interesse”**, ela está errada.",
+ "macete": "**Motivo? NUNCA se exige.**\n**Prazo: 20 + 10 dias** (pense: “vinte dias e mais um dedinho de 10”).\n**Sigilo: 25 – 15 – 5** (ultrassecreta, secreta, reservada: cai de 10 em 10 e depois para 5).\n**Informação pessoal: até 100 anos**, e só com consentimento.\n\nFrase para decorar: **“Ultra 25, Secreta 15, Reservada 5; pediu, respondem em 20 (+10), e ninguém pergunta por quê.”**",
+ "treino": [
+  {
+   "pergunta": "Pela LAI, uma informação classificada como SECRETA pode ficar restrita por no máximo:",
+   "opcoes": {"A": "5 anos", "B": "15 anos", "C": "25 anos"},
+   "resposta": "B",
+   "explicacao": "Ultrassecreta 25, secreta 15, reservada 5."
+  },
+  {
+   "pergunta": "Um cidadão pede à câmara a lista de contratos do ano. O servidor responde que só atende se ele explicar para que quer os dados. A conduta do servidor é:",
+   "opcoes": {"A": "correta, pois o motivo é requisito do pedido", "B": "incorreta, pois a LAI proíbe exigir o motivo do pedido"},
+   "resposta": "B",
+   "explicacao": "Art. 10, §3º: são vedadas quaisquer exigências relativas aos motivos determinantes da solicitação."
+  },
+  {
+   "pergunta": "O órgão não conseguiu responder em 20 dias. Ele pode:",
+   "opcoes": {"A": "prorrogar por mais 10 dias, com justificativa", "B": "prorrogar por mais 20 dias, sem justificativa", "C": "não pode prorrogar"},
+   "resposta": "A",
+   "explicacao": "Art. 11, §2º: o prazo de 20 dias pode ser prorrogado por mais 10, mediante justificativa expressa, da qual o requerente será informado."
+  }
+ ]
+}

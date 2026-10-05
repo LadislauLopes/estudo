@@ -1,0 +1,30 @@
+{
+ "numero": 16,
+ "titulo": "LGPD: quem MANDA é o controlador; quem FAZ é o operador",
+ "ideia": "Controlador decide o que fazer com os dados. Operador executa em nome dele. Encarregado é o “atendente” que faz a ponte. Titular é o dono dos dados.",
+ "do_zero": "A **LGPD (Lei Geral de Proteção de Dados, Lei 13.709/2018)** é a lei que diz como empresas e órgãos públicos podem usar informações sobre pessoas. Ela dá nome a cada personagem envolvido, e a banca adora perguntar quem é quem.\n\nAntes, duas palavras da lei:\n\n- **Dado pessoal**: qualquer informação que identifica uma pessoa ou pode levar a ela (nome, CPF, e-mail, endereço…).\n- **Tratamento**: **qualquer coisa** que se faça com o dado: coletar, guardar, consultar, usar, compartilhar, apagar.\n\nAgora os personagens (todos estão no art. 5º). Use uma **pizzaria** como exemplo:\n\n- **Titular** (art. 5º, V): a **pessoa** a quem os dados se referem. É você, o cliente que deu nome e endereço para receber a pizza.\n- **Controlador** (art. 5º, VI): quem **toma as decisões** sobre o tratamento: para que os dados serão usados, como, por quanto tempo. É a **pizzaria**.\n- **Operador** (art. 5º, VII): quem **realiza o tratamento em nome do controlador**, seguindo as ordens dele. É a **empresa de aplicativo de entregas** contratada pela pizzaria, que usa o endereço só para entregar.\n- **Encarregado** (art. 5º, VIII): a pessoa indicada pelo controlador para ser o **canal de comunicação** entre o controlador, os titulares e a ANPD. É como o **SAC de privacidade** (fora do Brasil, chamam de DPO).\n- **ANPD**: Autoridade Nacional de Proteção de Dados, o órgão do governo que **fiscaliza** a lei.\n\n> O art. 5º, IX ainda diz que **agentes de tratamento = controlador + operador**. O encarregado NÃO é agente de tratamento.\n\nControlador e operador podem ser pessoa **natural** (física) ou **jurídica** (empresa ou órgão), de direito **público** ou **privado**. Uma câmara municipal, por exemplo, é controladora dos dados dos seus servidores.",
+ "passo_a_passo": "A questão descreve: “a pessoa natural ou jurídica, de direito público ou privado, **a quem competem as decisões** referentes ao tratamento de dados pessoais”.\n\n**Passo 1: ache a palavra-chave.**\n\n- “a quem competem as **decisões**” → quem **decide**.\n\n**Passo 2: associe ao personagem.**\n\n- Quem decide? O **controlador** (art. 5º, VI).\n\n**Passo 3: descarte os outros.**\n\n- Operador → **executa**, não decide.\n- Encarregado → **comunica**, não decide.\n- Titular → é o **dono dos dados**, e a lei diz que titular é só pessoa natural (a questão fala em “natural ou jurídica”).\n- “Agente de fiscalização” → não existe com esse nome na LGPD; quem fiscaliza é a ANPD.\n\nResposta: **D (controlador)**.",
+ "alternativas": {
+  "A": "O operador REALIZA o tratamento em nome do controlador. Ele segue ordens; não toma as decisões.",
+  "B": "O encarregado é o canal de comunicação entre controlador, titulares e ANPD. Não decide sobre o tratamento.",
+  "C": "Titular é a pessoa natural a quem os dados se referem (o “dono” dos dados). Além disso, nunca é pessoa jurídica.",
+  "D": "Art. 5º, VI: controlador é a pessoa natural ou jurídica, de direito público ou privado, a quem competem as decisões referentes ao tratamento. Correta.",
+  "E": "Não existe “agente de fiscalização” na LGPD. A fiscalização é feita pela ANPD, e “agentes de tratamento” são o controlador e o operador."
+ },
+ "seu_erro": "Você marcou **A (operador)** no chute. A confusão entre controlador e operador é a mais comum, porque os dois nomes parecem “de quem mexe nos dados”.\n\nA diferença é **quem manda e quem obedece**:\n\n- **ConTROLAdor** → **CONTROLA**, decide, manda.\n- **OPERAdor** → **OPERA**, executa a ordem de outro.\n\n> Sempre que a questão falar em **“decisões”**, a resposta é controlador. Sempre que falar em **“em nome do controlador”** ou **“realiza o tratamento”**, é operador.",
+ "macete": "**ConTROLAdor = CONTROLA (decide).**\n**OPERAdor = OPERA (executa por ordem do controlador).**\n**ENCARREGADO = o “atendente” (canal de comunicação).**\n**TITULAR = o dono dos dados (sempre pessoa natural).**\n\n**Agentes de tratamento = controlador + operador** (o encarregado fica de fora).\n\nNa pizzaria: cliente = titular, pizzaria = controladora, app de entrega = operador, SAC de privacidade = encarregado.",
+ "treino": [
+  {
+   "pergunta": "Um órgão público contrata uma empresa para hospedar e processar os dados dos cidadãos, seguindo as instruções do órgão. A empresa contratada é:",
+   "opcoes": {"A": "controladora", "B": "operadora", "C": "encarregada"},
+   "resposta": "B",
+   "explicacao": "Ela realiza o tratamento em nome do órgão, seguindo instruções dele. O órgão é o controlador; a empresa é a operadora."
+  },
+  {
+   "pergunta": "Segundo a LGPD, são agentes de tratamento:",
+   "opcoes": {"A": "o controlador e o operador", "B": "o controlador, o operador e o encarregado", "C": "o titular e o controlador"},
+   "resposta": "A",
+   "explicacao": "Art. 5º, IX: agentes de tratamento são o controlador e o operador. O encarregado é só o canal de comunicação."
+  }
+ ]
+}

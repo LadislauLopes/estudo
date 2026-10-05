@@ -1,0 +1,36 @@
+{
+ "numero": 14,
+ "titulo": "Para desmentir “todo”, basta UM que não seja",
+ "ideia": "A negação de “Todo A é B” é “Algum A não é B”. “Nenhum A é B” é exagero: não é a negação.",
+ "do_zero": "Em lógica, **negar** uma frase significa dizer exatamente o que a torna **falsa**, nem mais, nem menos. A negação tem uma propriedade importante: **sempre que a frase original for verdadeira, a negação é falsa, e vice-versa**. As duas nunca podem ser verdadeiras juntas, e nunca podem ser falsas juntas.\n\nPense numa situação do dia a dia. Seu chefe diz: **“Todo servidor usa crachá.”** Você quer provar que ele está errado. O que você precisa mostrar?\n\n- Precisa mostrar que **nenhum** servidor usa crachá? Não! Isso é exagero.\n- Basta encontrar **um único servidor sem crachá**. Achou um? A frase do chefe caiu.\n\nPor isso:\n\n- **Negação de “Todo A é B” = “Algum A não é B”** (pelo menos um A não é B).\n\nE o caminho de volta também vale:\n\n- **Negação de “Algum A é B” = “Nenhum A é B”**.\n- **Negação de “Nenhum A é B” = “Algum A é B”**.\n\n> Em lógica, “algum” significa **“pelo menos um”**. Não quer dizer “poucos” nem “alguns, mas não todos”. Se há 1 servidor sem crachá, “algum servidor não usa crachá” já é verdade.\n\n**Por que “Nenhum” não serve como negação de “Todo”?**\nImagine uma câmara com 10 servidores: 7 usam crachá e 3 não usam.\n\n- “Todo servidor usa crachá” → **falso** (3 não usam).\n- “Nenhum servidor usa crachá” → **falso também** (7 usam).\n\nAs duas foram falsas ao mesmo tempo. Uma negação de verdade nunca deixa isso acontecer. Essas duas frases são chamadas de **contrárias**, não de negação uma da outra.",
+ "passo_a_passo": "Frase original: “**Todo** servidor da câmara **usa** crachá.”\n\n**Passo 1: aplique a regra.**\n\n- “Todo” vira “Algum”.\n- “usa” vira “não usa”.\n- Resultado: “**Algum servidor da câmara não usa crachá.**” → é a alternativa **D**.\n\n**Passo 2: confira com a situação dos 10 servidores.**\n\n- Se todos usam crachá (original verdadeira), “algum não usa” é falsa. ✓\n- Se pelo menos um não usa (original falsa), “algum não usa” é verdadeira. ✓\n- As duas sempre têm valores opostos. É negação.\n\n**Passo 3: veja por que as outras não servem.**\n\n- A) “Nenhum usa” → contrária (as duas podem ser falsas juntas, como no exemplo 7 + 3).\n- B) “Todo servidor não usa” → é só outro jeito de dizer “nenhum usa”. Mesmo problema da A.\n- C) “Algum usa” → pode ser verdadeira junto com a original (se todos usam, é claro que algum usa).\n- E) “Quem não usa crachá não é servidor” → isso diz **a mesma coisa** que a original (é a contrapositiva). Uma frase não pode ser negação de si mesma.\n\nResposta: **D**.",
+ "alternativas": {
+  "A": "“Nenhum usa” é a CONTRÁRIA, não a negação. Se 7 servidores usam e 3 não, a original e esta são falsas ao mesmo tempo, o que uma negação nunca permite.",
+  "B": "“Todo servidor não usa” significa o mesmo que “nenhum usa”. Mesmo erro da A.",
+  "C": "“Algum usa” não contradiz a original: se todos usam, algum usa também. As duas podem ser verdadeiras juntas.",
+  "D": "Basta um servidor sem crachá para derrubar o “todo”. “Algum A não é B” é a negação de “Todo A é B”. Correta.",
+  "E": "É a contrapositiva: “Se é servidor, usa crachá” equivale a “Se não usa crachá, não é servidor”. Diz o MESMO que a original, então não pode negá-la."
+ },
+ "seu_erro": "Você marcou **A (“Nenhum servidor usa crachá”)** no chute. Esse é o erro mais comum do assunto, porque na linguagem do dia a dia “o contrário de todo é nenhum”. Em lógica, porém, negar não é dizer “o oposto extremo”; é dizer **o mínimo necessário para desmentir**.\n\nPense assim: se alguém diz “**todos** os candidatos passaram” e você sabe que **um** reprovou, você já pode dizer “não é verdade”. Você não precisa provar que **nenhum** passou.\n\n> As bancas colocam a alternativa com “Nenhum” justamente porque sabem que é a primeira em que a pessoa pensa. Sempre que a questão pedir negação de “todo”, procure a alternativa com **“algum… não”** (ou “pelo menos um… não”, ou “existe… que não”).",
+ "macete": "**Tabela de negação (decore):**\n\n- **Todo A é B** → nega com → **Algum A NÃO é B**\n- **Algum A é B** → nega com → **Nenhum A é B**\n- **Nenhum A é B** → nega com → **Algum A é B**\n\n**Regrinha:** “TODO” e “ALGUM” trocam de lugar e o verbo ganha ou perde o “não”.\n\n**Para desmentir “todo”, basta um. Para desmentir “nenhum”, basta um.**",
+ "treino": [
+  {
+   "pergunta": "A negação de “Todo processo é digital” é:",
+   "opcoes": {"A": "Nenhum processo é digital.", "B": "Algum processo não é digital.", "C": "Algum processo é digital."},
+   "resposta": "B",
+   "explicacao": "Todo → Algum… não. Basta um processo não digital para derrubar a frase."
+  },
+  {
+   "pergunta": "A negação de “Nenhum servidor faltou” é:",
+   "opcoes": {"A": "Todo servidor faltou.", "B": "Algum servidor faltou.", "C": "Algum servidor não faltou."},
+   "resposta": "B",
+   "explicacao": "Para desmentir “nenhum faltou”, basta UM servidor que faltou. Nenhum → Algum (sem o “não”). “Todo servidor faltou” seria exagero (é a contrária)."
+  },
+  {
+   "pergunta": "A negação de “Algum vereador é advogado” é:",
+   "opcoes": {"A": "Algum vereador não é advogado.", "B": "Nenhum vereador é advogado.", "C": "Todo vereador é advogado."},
+   "resposta": "B",
+   "explicacao": "Para a frase ser falsa, não pode existir NENHUM vereador advogado. Algum → Nenhum. A alternativa A pode ser verdadeira junto com a original (alguns são, alguns não são)."
+  }
+ ]
+}

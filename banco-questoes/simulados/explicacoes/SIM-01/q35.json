@@ -1,0 +1,36 @@
+{
+ "numero": 35,
+ "titulo": "Scrum: o Product Backlog é do Product Owner, não do Scrum Master",
+ "ideia": "Product Owner cuida do O QUÊ (o backlog). Developers cuidam do COMO (constroem). Scrum Master cuida do PROCESSO (faz o Scrum funcionar).",
+ "do_zero": "**O que é Scrum?**\n\nÉ um jeito de organizar o trabalho de uma equipe que desenvolve software (ou outro produto) em **ciclos curtos**, entregando partes prontas aos poucos, em vez de passar um ano construindo tudo e só mostrar no final. As regras oficiais estão no **Guia do Scrum**, cuja versão atual é de **2020**.\n\n**As três responsabilidades (papéis)**\n\nUse a comparação com um **restaurante**:\n\n- **Product Owner (PO)**: é o **dono do cardápio**. Decide **o que** será feito e em que ordem de prioridade, pensando no valor para o cliente. É o **responsável pelo Product Backlog**. Há só **um** PO por time, e é uma pessoa, não um comitê.\n- **Developers**: são os **cozinheiros**. Constroem o produto, decidem **como** fazer o trabalho e se organizam sozinhos. São responsáveis pelo **Sprint Backlog**.\n- **Scrum Master (SM)**: é o **gerente do salão / treinador**. Não manda no que é feito; garante que o Scrum seja seguido, remove obstáculos e ajuda o time a melhorar. O Guia diz que ele é responsável pela **eficácia do Scrum Team**.\n\n**Os três artefatos (as “listas”)**\n\n- **Product Backlog**: a lista ordenada de **tudo** o que pode ser feito no produto. Dono: **Product Owner**.\n- **Sprint Backlog**: o que o time escolheu fazer **nesta Sprint**, e o plano para fazer. Dono: **Developers**.\n- **Incremento**: o pedaço do produto que ficou **pronto** na Sprint.\n\n**Os cinco eventos**\n\n- **Sprint**: o ciclo em si. Duração **fixa de um mês ou menos**. Quando uma termina, a próxima começa **imediatamente**. Todos os outros eventos acontecem dentro dela.\n- **Sprint Planning**: no início, para planejar a Sprint.\n- **Daily Scrum**: reunião diária de **15 minutos**, **para os Developers**, para ajustar o plano do dia.\n- **Sprint Review**: no fim, para mostrar o que foi feito aos interessados.\n- **Sprint Retrospective**: no fim, para o time discutir como melhorar o próprio jeito de trabalhar.",
+ "passo_a_passo": "**Item I**: “A Daily Scrum é um evento de 15 minutos destinado aos Developers.”\n\n- O Guia de 2020 diz exatamente isso.\n- **CORRETO.**\n\n**Item II**: “O Scrum Master é o responsável pelo gerenciamento eficaz do Product Backlog.”\n\n- Quem responde pelo Product Backlog é o **Product Owner**.\n- O Scrum Master cuida da eficácia do time e de fazer o Scrum funcionar.\n- **ERRADO.**\n\n**Item III**: “As Sprints têm duração fixa de um mês ou menos, e uma nova Sprint começa imediatamente após a conclusão da anterior.”\n\n- Também está no Guia, palavra por palavra.\n- **CORRETO.**\n\nCorretos: I e III → **alternativa E**.",
+ "alternativas": {
+  "A": "Esquece o III, que também está correto (Sprint de até um mês, uma emendada na outra).",
+  "B": "Marca só o II, que é justamente o errado: o Product Backlog é responsabilidade do Product Owner.",
+  "C": "Esquece o I, que também está correto (Daily de 15 minutos para os Developers).",
+  "D": "Inclui o II, que troca o Product Owner pelo Scrum Master.",
+  "E": "I e III reproduzem o Guia do Scrum 2020; II atribui ao Scrum Master o que é do Product Owner. Correta."
+ },
+ "seu_erro": "Você marcou **D (I e II)** com convicção: aceitou que o Scrum Master gerencia o Product Backlog e recusou o item III.\n\n**Sobre o II:** é muito comum imaginar o Scrum Master como o “gerente do projeto”, que cuida de todas as listas. Mas no Scrum não existe gerente de projeto. O Scrum Master é um **facilitador**: ele pode até **ajudar** o PO a encontrar boas técnicas para organizar o backlog, mas quem **responde** pelo backlog é o PO. Associe pelo nome: **Product** Owner → **Product** Backlog.\n\n**Sobre o III:** talvez tenha parecido estranho uma Sprint começar “imediatamente” após a outra, sem pausa. Mas é isso mesmo: no Scrum não há intervalo entre Sprints. A Review e a Retrospective acontecem **dentro** da Sprint que está terminando, e no dia seguinte já começa a próxima.\n\n> Pegadinha frequente: trocar o dono de cada coisa. Decore os pares **PO ↔ Product Backlog**, **Developers ↔ Sprint Backlog**, **SM ↔ eficácia do time / processo**.",
+ "macete": "**PRODUCT Owner → PRODUCT Backlog** (o “quê” e a prioridade).\n**Developers → Sprint Backlog** (o “como”; constroem).\n**Scrum Master → faz o SCRUM funcionar** (facilitador, remove impedimentos, eficácia do time).\n\n**Sprint: até 1 mês, duração fixa, uma emendada na outra.**\n**Daily: 15 minutos, para os Developers.**",
+ "treino": [
+  {
+   "pergunta": "Segundo o Guia do Scrum 2020, quem é responsável por ordenar os itens do Product Backlog?",
+   "opcoes": {"A": "Scrum Master", "B": "Product Owner", "C": "Developers"},
+   "resposta": "B",
+   "explicacao": "O Product Owner é responsável pelo gerenciamento eficaz do Product Backlog, o que inclui ordenar os itens."
+  },
+  {
+   "pergunta": "Qual destas é responsabilidade do Scrum Master?",
+   "opcoes": {"A": "Definir as prioridades do produto", "B": "Ajudar a remover impedimentos ao progresso do time", "C": "Escrever o código das funcionalidades"},
+   "resposta": "B",
+   "explicacao": "O SM é o facilitador: remove impedimentos e ajuda o time a ser eficaz. Prioridade é com o PO; código é com os Developers."
+  },
+  {
+   "pergunta": "Uma Sprint pode ter duração de:",
+   "opcoes": {"A": "6 semanas, se o time precisar", "B": "2 semanas", "C": "varia a cada Sprint, conforme a quantidade de trabalho"},
+   "resposta": "B",
+   "explicacao": "A Sprint tem duração fixa de um mês ou menos. Duas semanas é muito comum. Seis semanas passa de um mês, e mudar a duração a cada Sprint vai contra a ideia de duração fixa."
+  }
+ ]
+}

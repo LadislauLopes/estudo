@@ -1,0 +1,30 @@
+{
+ "numero": 7,
+ "titulo": "A vírgula que está no lugar de um verbo que sumiu",
+ "ideia": "Em “a publicidade é a regra e o sigilo, a exceção”, a vírgula marca o verbo “é” que foi omitido para não ser repetido. Isso é correto.",
+ "do_zero": "A vírgula tem algumas funções que a banca cobra sempre. Para esta questão você precisa de três:\n\n**1. Isolar um adjunto adverbial deslocado.**\nAdjunto adverbial é a palavra ou expressão que diz **quando, onde, como, por quê** algo aconteceu (hoje, ontem, no prédio, com calma…). A ordem “normal” de uma frase em português é: **sujeito + verbo + complemento + adverbial**. Quando o adverbial vai para o começo ou para o meio, ele está **deslocado** e pode ser isolado por vírgula.\n\n- Ordem normal: “Boa parte das informações está disponível **hoje**.”\n- Deslocado: “**Hoje**, boa parte das informações está disponível.”\n\n**2. Isolar um termo intercalado.**\nÉ uma palavra ou expressão “enfiada” no meio da frase, que pode ser tirada sem estragar nada. Ela fica entre **duas** vírgulas.\n\n- “Há, **ainda**, um equilíbrio delicado.” → sem ele: “Há um equilíbrio delicado.”\n\n**3. Marcar a omissão de um verbo (zeugma).**\nQuando um verbo já apareceu na frase e o autor não quer repeti-lo, ele o apaga e coloca uma **vírgula no lugar**.\n\n- “Eu gosto de café; ela, de chá.” → “ela [gosta] de chá”.\n\n> E a regra proibida que confunde: **não se separa o sujeito do verbo com uma vírgula só**. “O servidor, trabalha.” está errado. Mas atenção: isso só vale quando o verbo está ali, logo depois da vírgula. Se a vírgula está no lugar de um verbo que sumiu, ela é obrigatória e correta.",
+ "passo_a_passo": "**Item I**: “Hoje, boa parte dessas informações está a poucos cliques de distância.”\n\n- “Hoje” diz **quando**: é adjunto adverbial de tempo.\n- Ele está no começo, fora da ordem normal: deslocado.\n- A vírgula isola esse adverbial deslocado. **I está CORRETO.**\n\n**Item II**: “Há, ainda, um equilíbrio delicado a ser mantido.”\n\n- “ainda” está entre duas vírgulas, no meio da frase.\n- Tire: “Há um equilíbrio delicado a ser mantido.” Continua perfeita.\n- É um termo intercalado. **II está CORRETO.**\n\n**Item III**: “a publicidade é a regra e o sigilo, a exceção”.\n\n- Reescreva por inteiro: “a publicidade **é** a regra e o sigilo **é** a exceção”.\n- O segundo “é” foi apagado para não repetir, e a vírgula entrou no lugar dele.\n- Isso é **zeugma**, um uso correto da vírgula.\n- O item diz que é “desvio da norma-padrão”. **III está ERRADO.**\n\nCorretos: I e II → **alternativa C**.",
+ "alternativas": {
+  "A": "Esquece o item I, que também está correto (“Hoje” é adjunto adverbial deslocado).",
+  "B": "Marca só o III, que é justamente o errado: a vírgula de “o sigilo, a exceção” é correta.",
+  "C": "I (adverbial deslocado) e II (termo intercalado) estão certos; III erra ao chamar de desvio uma vírgula correta. Correta.",
+  "D": "Inclui o III, que está errado.",
+  "E": "Inclui o III (errado) e deixa de fora o I (certo)."
+ },
+ "seu_erro": "Você acertou a **C** no chute. A parte difícil desta questão é o item III, porque ele parece verdade: a vírgula realmente está entre “o sigilo” (que parece um sujeito) e “a exceção”.\n\nO perigo é ter aprendido só a regra “não se separa sujeito de predicado com vírgula” e aplicá-la sem pensar. Essa regra vale quando o **verbo está ali**. Em “o sigilo, a exceção” **não há verbo** depois da vírgula: o verbo “é” foi apagado, e a vírgula ocupa o lugar dele.\n\n> Sempre que vir uma vírgula estranha numa frase com “e” ou “;”, tente **repetir o verbo da primeira parte** no lugar dela. Se encaixar, é zeugma, e a vírgula está certa.",
+ "macete": "**Vírgula no lugar de verbo que sumiu = zeugma = CORRETO.**\n“Eu prefiro Java; ele, Python.” → “ele [prefere] Python.”\n\n**Adverbial (quando, onde, como) no começo** → pode ter vírgula.\n**Termo intercalado** → sempre entre DUAS vírgulas.\n**Sujeito, verbo** (com o verbo ali) → vírgula proibida.",
+ "treino": [
+  {
+   "pergunta": "Em “Ana estudou Português; Bruno, Matemática”, a vírgula depois de “Bruno”:",
+   "opcoes": {"A": "separa indevidamente o sujeito do predicado", "B": "marca a omissão do verbo “estudou”", "C": "isola um vocativo"},
+   "resposta": "B",
+   "explicacao": "“Bruno [estudou] Matemática”. O verbo foi omitido para não repetir: zeugma. A vírgula é correta."
+  },
+  {
+   "pergunta": "Qual frase tem vírgula ERRADA?",
+   "opcoes": {"A": "Ontem, o sistema caiu.", "B": "O sistema, caiu ontem.", "C": "O sistema caiu, ontem, duas vezes."},
+   "resposta": "B",
+   "explicacao": "Em B a vírgula separa o sujeito (“O sistema”) do verbo (“caiu”), que está logo ali. Isso é proibido. Em A, “Ontem” é adverbial deslocado; em C, “ontem” está intercalado."
+  }
+ ]
+}

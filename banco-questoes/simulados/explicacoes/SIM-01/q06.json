@@ -1,0 +1,30 @@
+{
+ "numero": 6,
+ "titulo": "Crase é a soma de dois “a”: só existe se os dois estiverem lá",
+ "ideia": "Crase = preposição A + artigo A. Antes de palavra masculina, verbo, pronome pessoal ou palavra no plural sem “s” no “a”, não tem crase.",
+ "do_zero": "O acento grave (à) não é um enfeite. Ele mostra que **dois “a” se juntaram em um só**:\n\n- **A preposição “a”**: é exigida por uma palavra que pede complemento com “a”. Exemplos: quem vai, vai **a** algum lugar; quem tem direito, tem direito **a** algo; quem se refere, se refere **a** algo.\n- **O artigo “a”**: é o “a” que vem antes de palavra feminina, como em “**a** informação”, “**a** escola”.\n\nQuando os dois se encontram, viram **à**:\n\n- “direito **a**” + “**a** informação” = “direito **à** informação”.\n\nPor isso a regra de ouro é: **só existe crase quando os DOIS “a” existem**. Se faltar um deles, não tem acento.\n\nOs casos em que **falta o artigo feminino** (e por isso nunca há crase):\n\n- **Antes de palavra masculina**: “a pé”, “a cavalo”, “a vários órgãos”.\n- **Antes de verbo**: “começou a desenvolver”, “a partir de” (“partir” é verbo!).\n- **Antes de pronome pessoal**: “a ele”, “a ela”, “a você”, “a Vossa Senhoria”.\n- **Antes de palavra no plural, quando o “a” está sem “s”**: “a pessoas” (se fosse com artigo, seria “às pessoas”).\n\n> **Truque do masculino** (resolve 90% das questões): troque a palavra feminina por uma masculina. Se aparecer **“ao”**, tem crase. Se aparecer só **“a”** ou **“o”**, não tem.\n> “direito **à** informação” → “direito **ao** conhecimento”. Apareceu AO → crase confirmada.",
+ "passo_a_passo": "Vamos testar cada alternativa procurando os dois “a”.\n\n**A) “enviados à vários órgãos”**\n\n- “órgãos” é masculino. Não existe artigo feminino “a” antes de palavra masculina.\n- Errada. O certo é “enviados **a** vários órgãos”.\n\n**B) “à partir de qualquer computador”**\n\n- “partir” é verbo. Antes de verbo não existe artigo.\n- Errada. O certo é “**a** partir de”.\n\n**C) “entregue à ele”**\n\n- “ele” é pronome pessoal (e ainda por cima masculino).\n- Errada. O certo é “entregue **a** ele”.\n\n**D) “direito à informação”**\n\n- Quem tem direito, tem direito **a** algo (preposição).\n- “**a** informação” (artigo feminino).\n- Os dois juntos: **à**. Truque do masculino: “direito **ao** conhecimento”.\n- **Correta.**\n\n**E) “começaram à desenvolver”**\n\n- “desenvolver” é verbo.\n- Errada. O certo é “começaram **a** desenvolver”.\n\nResposta: **D**.",
+ "alternativas": {
+  "A": "“vários órgãos” é masculino. Não há artigo feminino, logo não há crase: “a vários órgãos”.",
+  "B": "“partir” é verbo. A expressão “a partir de” nunca tem crase.",
+  "C": "“ele” é pronome pessoal. Antes de pronome pessoal não há artigo, então não há crase.",
+  "D": "“direito a” (preposição) + “a informação” (artigo feminino) = “direito à informação”. Teste: “direito ao conhecimento”. Correta.",
+  "E": "“desenvolver” é verbo. Antes de verbo nunca há crase."
+ },
+ "seu_erro": "Você acertou a **D**, mas marcou como chute. A boa notícia: esta questão dá para acertar **sem decorar regra nenhuma**, por eliminação, usando só a ideia de que a crase precisa de um artigo feminino.\n\nRepare que as quatro erradas têm algo em comum: antes de **verbo** (partir, desenvolver), de **masculino** (vários órgãos) e de **pronome** (ele). Em nenhum desses casos é possível dizer “a” como artigo. Só sobra a D.\n\n> Na próxima, faça o truque do masculino em todas as alternativas. Se só uma vira “ao”, ela é a resposta.",
+ "macete": "**Crase = A + A.** Faltou um, não tem acento.\n\n**Nunca tem crase antes de:** masculino, verbo, pronome pessoal (ele, ela, você) e “a” sozinho antes de plural.\n\n**Truque:** troque por uma palavra masculina. Virou **AO**? Então é **À**.\n\nFrase para decorar: **“Vou à praia, mas volto ao trabalho; vou a pé e a partir de hoje falo a ele.”**",
+ "treino": [
+  {
+   "pergunta": "Em qual frase a crase está correta?",
+   "opcoes": {"A": "Fiz uma pergunta à você.", "B": "Fui à reunião da comissão.", "C": "Ele saiu à pé."},
+   "resposta": "B",
+   "explicacao": "“Ir a” + “a reunião” = à. Teste: “fui **ao** encontro”. Na A, “você” é pronome; na C, “pé” é masculino."
+  },
+  {
+   "pergunta": "“O prazo começa a contar a partir de amanhã.” Quantos acentos de crase faltam nessa frase?",
+   "opcoes": {"A": "Nenhum", "B": "Um", "C": "Dois"},
+   "resposta": "A",
+   "explicacao": "“a contar” → antes de verbo; “a partir” → também verbo. A frase já está correta sem acento nenhum."
+  }
+ ]
+}

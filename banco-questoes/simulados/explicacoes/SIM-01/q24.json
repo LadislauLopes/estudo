@@ -1,0 +1,36 @@
+{
+ "numero": 24,
+ "titulo": "ACID: Atomicidade é o “tudo ou nada” da transação",
+ "ideia": "Se uma parte da transação falha, tudo é desfeito como se nada tivesse acontecido. Isso é atomicidade.",
+ "do_zero": "**Banco de dados** é onde um sistema guarda suas informações (clientes, contas, saldos…). O programa que gerencia esse banco se chama **SGBD** (Sistema Gerenciador de Banco de Dados): MySQL, PostgreSQL, Oracle, SQL Server.\n\n**O que é uma transação?**\nÉ um **conjunto de operações que precisa ser tratado como um bloco só**. O exemplo clássico é a transferência bancária de R$ 100 da conta da Ana para a conta do Bruno:\n\n1. Tirar R$ 100 da conta da Ana.\n2. Colocar R$ 100 na conta do Bruno.\n\nAgora imagine que a luz acaba **entre o passo 1 e o passo 2**. A Ana perdeu R$ 100 e o Bruno não recebeu nada. O dinheiro sumiu! As transações existem para isso **nunca** acontecer.\n\nToda transação em um banco relacional deve ter quatro propriedades, cujas iniciais formam **ACID**:\n\n- **A – Atomicidade**: **tudo ou nada**. Ou todas as operações acontecem, ou nenhuma. Se algo falhar no meio, tudo o que já foi feito é desfeito (**ROLLBACK**). Se tudo der certo, a transação é confirmada (**COMMIT**). O nome vem de “átomo”, que antigamente se achava que não podia ser dividido: a transação é indivisível.\n- **C – Consistência**: a transação leva o banco de um estado **válido** para outro estado **válido**, respeitando as regras (por exemplo: “saldo não pode ficar negativo”, “todo pedido precisa ter um cliente”).\n- **I – Isolamento**: transações que rodam **ao mesmo tempo** não atrapalham umas às outras. Se duas pessoas sacam da mesma conta no mesmo instante, cada uma “enxerga” o banco como se estivesse sozinha.\n- **D – Durabilidade**: depois do COMMIT, o resultado **fica gravado para sempre**, mesmo que o servidor desligue logo em seguida.\n\n> Para diferenciar A e C, que são as mais confundidas: **Atomicidade** fala de **completar ou desfazer a transação inteira**. **Consistência** fala de **respeitar as regras do banco**.",
+ "passo_a_passo": "A questão descreve: o débito e o crédito “devem ocorrer **ambos ou nenhum deles**, mesmo diante de falhas”.\n\n**Passo 1: ache a palavra-chave.**\n\n- “ambos ou nenhum” = **tudo ou nada**.\n\n**Passo 2: associe à letra do ACID.**\n\n- Tudo ou nada = **Atomicidade**.\n\n**Passo 3: confira as outras.**\n\n- Consistência → regras do banco respeitadas (não é sobre “os dois ou nenhum”).\n- Isolamento → transações simultâneas não se misturam (a questão não fala de duas transações ao mesmo tempo).\n- Durabilidade → o que foi confirmado não se perde (a questão fala de falha **durante** a execução, não depois do COMMIT).\n- Disponibilidade → nem faz parte do ACID (é do teorema CAP, de sistemas distribuídos).\n\nResposta: **A (atomicidade)**.",
+ "alternativas": {
+  "A": "Tudo ou nada: ou o débito e o crédito acontecem juntos (COMMIT), ou os dois são desfeitos (ROLLBACK). Correta.",
+  "B": "Consistência garante que o banco passe de um estado válido para outro, respeitando regras e restrições. É consequência de uma transação bem feita, mas não é a propriedade do “tudo ou nada”.",
+  "C": "Isolamento trata de transações executadas ao mesmo tempo, que não podem interferir umas nas outras. A questão fala de uma transação só.",
+  "D": "Durabilidade garante que, depois do COMMIT, os dados não se percam. A questão fala de falha durante a transação, antes de confirmar.",
+  "E": "Disponibilidade não é uma letra do ACID (A-C-I-D). Ela pertence ao teorema CAP, de bancos distribuídos."
+ },
+ "seu_erro": "Você marcou **B (consistência)** com convicção. O raciocínio provavelmente foi: “se o dinheiro sai de uma conta e não entra na outra, o banco fica inconsistente”. E isso é verdade!\n\nO problema é que a banca não pergunta qual propriedade é **afetada**; pergunta qual propriedade **garante o comportamento** “ambos ou nenhum”. O **mecanismo** que impede a transação de ficar pela metade é a **atomicidade**. A consistência é o **resultado** que você obtém por causa disso.\n\n> Regra para a prova: quando o enunciado descrever “**ou tudo ou nada**”, “**ambos ou nenhum**”, “**indivisível**”, “**não pode ser executada parcialmente**”, a resposta é **atomicidade**. Consistência aparece quando o enunciado fala em **regras, restrições, integridade** e **estado válido**.",
+ "macete": "**A**tomicidade = **A**ll or nothing (tudo ou nada).\n**C**onsistência = **C**umpre as regras.\n**I**solamento = **I**ndependência entre transações simultâneas.\n**D**urabilidade = **D**efinitivo depois do COMMIT.\n\nPalavra-chave → resposta: “ambos ou nenhum” → **A**; “restrições/estado válido” → **C**; “concorrentes/simultâneas” → **I**; “mesmo após queda, depois de confirmado” → **D**.",
+ "treino": [
+  {
+   "pergunta": "Após o COMMIT de uma venda, o servidor do banco de dados desliga por falta de energia. Ao religar, a venda continua registrada. Qual propriedade garantiu isso?",
+   "opcoes": {"A": "Atomicidade", "B": "Isolamento", "C": "Durabilidade"},
+   "resposta": "C",
+   "explicacao": "Depois de confirmado (COMMIT), o resultado é permanente, mesmo com falhas: durabilidade."
+  },
+  {
+   "pergunta": "Duas pessoas compram o último ingresso de um show exatamente no mesmo instante, e o sistema garante que uma transação não enxergue os dados pela metade da outra. Qual propriedade é essa?",
+   "opcoes": {"A": "Isolamento", "B": "Atomicidade", "C": "Consistência"},
+   "resposta": "A",
+   "explicacao": "Transações simultâneas que não interferem entre si: isolamento."
+  },
+  {
+   "pergunta": "Uma regra do banco diz que o estoque não pode ficar negativo. Uma transação que deixaria o estoque em −1 é rejeitada. Isso se relaciona principalmente com:",
+   "opcoes": {"A": "Consistência", "B": "Durabilidade", "C": "Isolamento"},
+   "resposta": "A",
+   "explicacao": "Manter o banco respeitando suas regras e restrições, de um estado válido para outro: consistência."
+  }
+ ]
+}

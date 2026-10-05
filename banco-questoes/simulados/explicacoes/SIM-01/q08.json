@@ -1,0 +1,30 @@
+{
+ "numero": 8,
+ "titulo": "Acentuação: primeiro descubra a sílaba forte, depois aplique a regra",
+ "ideia": "Câmara (CÂ-ma-ra) e público (PÚ-bli-co) têm a sílaba forte na antepenúltima: são proparoxítonas, e TODA proparoxítona leva acento.",
+ "do_zero": "Para saber por que uma palavra tem acento, você precisa fazer duas coisas, nesta ordem:\n\n**Passo 1: separar as sílabas e achar a mais forte (a tônica).**\nFale a palavra como se estivesse chamando alguém de longe. A sílaba que você “grita” é a tônica.\n\n- ca-**FÉ** → a forte é a última.\n- **LÁ**-pis → a forte é a penúltima.\n- **MÉ**-di-co → a forte é a antepenúltima.\n\n**Passo 2: dar o nome, contando de trás para frente.**\n\n- Forte na **última** sílaba → **oxítona** (ca-FÉ, tam-BÉM, so-FÁ).\n- Forte na **penúltima** → **paroxítona** (LÁ-pis, a-ces-SÍ-vel, FÁ-cil).\n- Forte na **antepenúltima** → **proparoxítona** (CÂ-ma-ra, PÚ-bli-co, MÉ-di-co).\n- Palavra de **uma sílaba só** e forte → **monossílabo tônico** (é, pé, já, só).\n\n**Passo 3: aplicar a regra de cada grupo.**\n\n- **Proparoxítonas**: **todas** são acentuadas. Sem exceção. É a regra mais fácil.\n- **Oxítonas**: acentuadas se terminam em **a, e, o, em, ens** (com ou sem s): sofá, café, avô, também, parabéns.\n- **Monossílabos tônicos**: acentuados se terminam em **a, e, o** (com ou sem s): já, é, pé, só, nós.\n- **Paroxítonas**: são acentuadas quando terminam em algo **diferente** de a, e, o, em, ens. Por exemplo **l, r, x, n, i, us, um, ão, ditongo**: fácil, acessível, caráter, tórax, hífen, táxi, vírus, órfão, história.\n\n> Repare como paroxítonas e oxítonas são “opostas”: o que acentua uma, não acentua a outra. Café (oxítona em -e) tem acento; “cafe” como paroxítona não teria.",
+ "passo_a_passo": "Vamos classificar cada palavra que aparece nas alternativas:\n\n- **câmara** → CÂ-ma-ra → forte na antepenúltima → **proparoxítona**.\n- **público** → PÚ-bli-co → forte na antepenúltima → **proparoxítona**.\n- **acessível** → a-ces-SÍ-vel → forte na penúltima, termina em **L** → **paroxítona terminada em L**.\n- **também** → tam-BÉM → forte na última, termina em **EM** → **oxítona terminada em EM**.\n- **é** → uma sílaba só → **monossílabo tônico terminado em E**.\n\nAgora procure o par com a **mesma regra**:\n\n- A) público (proparoxítona) + acessível (paroxítona em L) → diferentes.\n- B) também (oxítona em EM) + câmara (proparoxítona) → diferentes.\n- C) acessível (paroxítona em L) + também (oxítona em EM) → diferentes.\n- **D) câmara + público → as duas proparoxítonas → MESMA regra.**\n- E) é (monossílabo) + câmara (proparoxítona) → diferentes.\n\nResposta: **D**.",
+ "alternativas": {
+  "A": "“público” é proparoxítona; “acessível” é paroxítona terminada em L. Regras diferentes.",
+  "B": "“também” é oxítona terminada em EM; “câmara” é proparoxítona. Regras diferentes.",
+  "C": "“acessível” é paroxítona em L; “também” é oxítona em EM. Regras diferentes.",
+  "D": "“câmara” e “público” são proparoxítonas, e todas as proparoxítonas são acentuadas. Mesma regra. Correta.",
+  "E": "“é” é monossílabo tônico terminado em E; “câmara” é proparoxítona. Regras diferentes."
+ },
+ "seu_erro": "Você acertou a **D** no chute. O jeito de nunca mais precisar chutar aqui é **sempre separar as sílabas** e falar em voz alta (ou mentalmente) cada palavra antes de olhar as alternativas.\n\nNesta questão, bastava perceber que “câmara” e “público” soam parecido: as duas têm o “peso” bem no começo, com duas sílabas fracas depois (CÂ-ma-ra, PÚ-bli-co). Esse “ritmo” de **forte-fraca-fraca** é a cara da proparoxítona.\n\n> Atenção: não confunda acento com sílaba tônica. Toda palavra tem sílaba tônica, mas só algumas levam acento. O acento é a **consequência** da regra.",
+ "macete": "**Separe → ache a forte → dê o nome → aplique a regra.**\n\n**Proparoxítona: acento SEMPRE** (forte-fraca-fraca: CÂ-ma-ra, LÂM-pa-da, ÚL-ti-mo).\n**Oxítona: acento se termina em A, E, O, EM, ENS** (sofá, café, também).\n**Paroxítona: acento se NÃO termina em A, E, O, EM, ENS** (fácil, acessível, táxi).",
+ "treino": [
+  {
+   "pergunta": "Qual par é acentuado pela MESMA regra?",
+   "opcoes": {"A": "lâmpada e médico", "B": "fácil e café", "C": "você e próximo"},
+   "resposta": "A",
+   "explicacao": "LÂM-pa-da e MÉ-di-co são proparoxítonas. Em B: fácil é paroxítona em L e café é oxítona em E. Em C: você é oxítona em E e próximo é proparoxítona."
+  },
+  {
+   "pergunta": "A palavra “usuário” (u-su-Á-rio) é acentuada porque é:",
+   "opcoes": {"A": "proparoxítona", "B": "paroxítona terminada em ditongo", "C": "oxítona terminada em O"},
+   "resposta": "B",
+   "explicacao": "A sílaba forte é “Á”, a penúltima (u-su-Á-rio): paroxítona. Ela termina em “io”, que é um ditongo, e paroxítona terminada em ditongo é acentuada (como história, série, água)."
+  }
+ ]
+}

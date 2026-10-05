@@ -1,0 +1,30 @@
+{
+ "numero": 32,
+ "titulo": "JWT: a assinatura impede ALTERAR, mas não impede LER",
+ "ideia": "O JWT tem 3 partes (header.payload.signature). O payload é só codificado em Base64URL: qualquer um decodifica e lê. Nunca coloque senha ou dado sensível nele.",
+ "do_zero": "**O problema que o JWT resolve**\n\nQuando você faz login em um site, o servidor precisa lembrar que é você nas próximas requisições. Um jeito de fazer isso é o servidor te entregar um **“crachá digital”** depois do login. Em cada requisição seguinte, você mostra o crachá e o servidor sabe quem você é. O **JWT (JSON Web Token)** é um formato muito usado para esse crachá.\n\n**Como é um JWT**\n\nÉ um texto comprido com **três partes separadas por ponto**:\n\n```\nxxxxx.yyyyy.zzzzz\nheader.payload.signature\n```\n\n1. **Header (cabeçalho)**: diz qual algoritmo foi usado para assinar (ex.: HS256).\n2. **Payload (conteúdo)**: as informações do crachá, como o id do usuário, o nome, o perfil e quando o token expira.\n3. **Signature (assinatura)**: um “lacre” calculado com uma **chave secreta que só o servidor conhece**.\n\n**Codificar não é criptografar** (o ponto central da questão)\n\n- **Codificar** (Base64URL) é só **trocar a forma de escrever**, como escrever uma palavra em código Morse. Qualquer pessoa que conheça o código consegue voltar ao texto original. Não há segredo nenhum. Existem sites que decodificam um JWT em um clique.\n- **Criptografar** é embaralhar com uma **chave**, de modo que só quem tem a chave consegue ler.\n\nNo JWT comum (assinado), o header e o payload são apenas **codificados**. Ou seja: **qualquer um que pegar o token consegue ler o payload**.\n\n**Então para que serve a assinatura?**\n\nPara garantir que **ninguém alterou o conteúdo**. Pense num **lacre de garantia** num pote: você consegue ver o que tem dentro pelo vidro, mas se alguém abrir e mexer, o lacre quebra. Se um usuário mudar o payload de `\"perfil\": \"comum\"` para `\"perfil\": \"admin\"`, a assinatura deixa de bater e o servidor rejeita o token.\n\n- Assinatura garante **integridade** (não foi alterado) e **autenticidade** (foi o servidor quem emitiu).\n- Assinatura **não** garante **confidencialidade** (sigilo).\n\n**Outras características**\n\n- O JWT é **autocontido** (stateless): o servidor não precisa guardar sessão no banco; basta conferir a assinatura.\n- Ele deve trafegar **sempre sobre HTTPS**, porque quem interceptar o token pode lê-lo e usá-lo.",
+ "passo_a_passo": "**A) “quatro partes: cabeçalho, payload, chave privada e assinatura”**\n\n- São **três** partes. E a chave **nunca** vai dentro do token (se fosse, qualquer um poderia forjar tokens).\n- Errada.\n\n**B) “a assinatura impede que terceiros leiam o payload”**\n\n- A assinatura impede **alterar**, não **ler**. O payload é só Base64URL.\n- Errada.\n\n**C) “o payload é apenas codificado em Base64URL, e não criptografado; por isso não se devem incluir informações sensíveis”**\n\n- Exatamente.\n- **Correta.**\n\n**D) “exige que o servidor armazene a sessão de cada usuário”**\n\n- É o contrário: a grande vantagem do JWT é **dispensar** a sessão guardada no servidor.\n- Errada.\n\n**E) “substitui o HTTPS”**\n\n- Não. Como o conteúdo é legível, o JWT **precisa** do HTTPS para não ser interceptado.\n- Errada.",
+ "alternativas": {
+  "A": "São TRÊS partes (header.payload.signature). A chave secreta nunca vai dentro do token: fica só no servidor.",
+  "B": "A assinatura garante integridade (ninguém altera sem invalidar), mas não sigilo: qualquer um decodifica e lê o payload.",
+  "C": "O payload é só codificado (Base64URL), não criptografado. Qualquer um lê, então não se coloca senha nem dado sensível. Correta.",
+  "D": "O JWT é autocontido (stateless): o servidor só confere a assinatura, sem guardar sessão.",
+  "E": "O JWT não protege contra quem intercepta a comunicação. Ele deve sempre trafegar sobre HTTPS."
+ },
+ "seu_erro": "Você marcou **A (quatro partes, incluindo a chave privada)** com convicção. Dois pontos para corrigir:\n\n1. **São três partes**, e dá para ver isso no próprio token: ele tem **dois pontos** separando o texto, ou seja, três pedaços.\n2. **A chave nunca viaja dentro do token.** Pense: se a chave fosse junto, qualquer pessoa que recebesse o token poderia usá-la para criar tokens falsos (por exemplo, se dando perfil de administrador). A chave fica **guardada só no servidor**, e o que vai no token é apenas a **assinatura** gerada com ela.\n\n> Ligação com o lacre: a fábrica tem a **máquina de lacrar** (a chave). O pote leva só o **lacre** (a assinatura). Ninguém manda a máquina junto com o pote.",
+ "macete": "**JWT = 3 partes: HEADER . PAYLOAD . SIGNATURE** (dois pontos, três pedaços).\n**Payload = Base64URL = qualquer um LÊ.** Nada de senha ou dado sensível.\n**Assinatura = lacre = ninguém ALTERA** (integridade), mas todo mundo vê.\n**Stateless** (sem sessão no servidor) e **sempre com HTTPS**.\n\nFrase para decorar: **“JWT é um crachá com lacre: todo mundo lê, ninguém falsifica.”**",
+ "treino": [
+  {
+   "pergunta": "Um desenvolvedor colocou a senha do usuário dentro do payload de um JWT assinado. Isso é:",
+   "opcoes": {"A": "seguro, pois a assinatura protege o conteúdo", "B": "inseguro, pois qualquer um pode decodificar o payload e ler a senha"},
+   "resposta": "B",
+   "explicacao": "O payload é apenas codificado (Base64URL). A assinatura impede alteração, não leitura."
+  },
+  {
+   "pergunta": "Um usuário mal-intencionado muda o payload do seu JWT de “perfil: comum” para “perfil: admin” e envia ao servidor. O que acontece?",
+   "opcoes": {"A": "O servidor aceita, pois o payload é só codificado", "B": "O servidor rejeita, pois a assinatura não confere mais com o conteúdo"},
+   "resposta": "B",
+   "explicacao": "Ele consegue LER e ALTERAR o texto, mas não consegue gerar uma assinatura nova válida sem a chave secreta do servidor. A assinatura antiga não bate com o conteúdo novo, e o token é rejeitado."
+  }
+ ]
+}

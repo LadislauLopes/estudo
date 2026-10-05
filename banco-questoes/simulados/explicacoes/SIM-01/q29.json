@@ -1,0 +1,36 @@
+{
+ "numero": 29,
+ "titulo": "Java: x++ entrega e depois soma; ++x soma e depois entrega",
+ "ideia": "x++ devolve o valor antigo; ++x devolve o valor novo. substring(1, 4) pega as posições 1, 2 e 3. endsWith diferencia maiúsculas de minúsculas.",
+ "do_zero": "Esta questão junta **três pegadinhas clássicas** de Java. Vamos uma por uma, do zero.\n\n**Pegadinha 1: os operadores ++ (incremento)**\n\n`x++` e `++x` fazem a mesma coisa com a variável: **somam 1 a ela**. A diferença é **qual valor eles entregam** para a conta em que estão:\n\n- `x++` (**pós**-incremento, o ++ vem **depois**): **primeiro entrega** o valor atual, **depois soma** 1.\n- `++x` (**pré**-incremento, o ++ vem **antes**): **primeiro soma** 1, **depois entrega** o valor novo.\n\nExemplo com x = 5:\n\n```\nint a = x++;   // a recebe 5; depois x vira 6\nint b = ++x;   // x vira 7; depois b recebe 7\n```\n\n> Leia da esquerda para a direita: em `x++` você “vê” o x antes do ++ (pega o valor e depois soma). Em `++x` você “vê” o ++ antes do x (soma e depois pega o valor).\n\n**Pegadinha 2: substring(início, fim)**\n\nEm Java, as posições de uma String começam em **0**, não em 1. E no `substring(início, fim)` o **início entra**, mas o **fim NÃO entra** (para uma posição antes).\n\n```\nP  R  O  G  R  A  M  A  C  A  O\n0  1  2  3  4  5  6  7  8  9  10\n```\n\n`s.substring(1, 4)` pega as posições 1, 2 e 3 → **\"ROG\"**. (A posição 4 fica de fora.)\n\n> Dica: a quantidade de letras é sempre **fim − início**. 4 − 1 = 3 letras.\n\n**Pegadinha 3: endsWith diferencia maiúsculas de minúsculas**\n\n`s.endsWith(\"ao\")` pergunta: “a String termina exatamente com `ao`?”. Para o Java, **`A` maiúsculo e `a` minúsculo são caracteres diferentes**. \"PROGRAMACAO\" termina com \"AO\" (maiúsculo), então `endsWith(\"ao\")` dá **false**.\n\n**Bônus: o + com Strings**\nNo `println`, `y + \" \" + x` vai juntando tudo em texto, com espaços no meio.",
+ "passo_a_passo": "```\nint x = 5;\nint y = x++ + ++x;\nString s = \"PROGRAMACAO\";\nSystem.out.println(y + \" \" + x + \" \" + s.substring(1, 4) + \" \" + s.endsWith(\"ao\"));\n```\n\n**Linha 2: `y = x++ + ++x`** (Java calcula da esquerda para a direita)\n\n1. `x++`: entrega **5** e depois x vira **6**.\n2. `++x`: x vira **7** e entrega **7**.\n3. y = 5 + 7 = **12**.\n4. No fim, x vale **7**.\n\n**substring(1, 4)**\n\n- Posições 1, 2, 3 de \"PROGRAMACAO\": R, O, G → **ROG**.\n\n**endsWith(\"ao\")**\n\n- A String termina em \"AO\", maiúsculo. \"ao\" minúsculo é diferente → **false**.\n\n**Resultado impresso:** `12 7 ROG false` → alternativa **E**.",
+ "alternativas": {
+  "A": "11 vem de achar que ++x entrega 6 (5 + 6). E “ROGR” inclui a posição 4, que fica de fora no substring.",
+  "B": "x termina em 7, não 6 (foram dois incrementos). E endsWith(\"ao\") é false, porque a String termina em “AO” maiúsculo.",
+  "C": "Erra o y (11), o x (6) e o substring: “PROG” começaria na posição 0, mas o início é 1.",
+  "D": "Acerta 12 e 7, mas “ROGR” inclui a posição 4 (o fim não entra) e true ignora a diferença entre maiúsculas e minúsculas.",
+  "E": "y = 5 + 7 = 12; x = 7; substring(1,4) = ROG; endsWith(\"ao\") = false. Correta."
+ },
+ "seu_erro": "Você acertou a **E** no chute. Como são três pegadinhas na mesma linha, as alternativas são montadas combinando os erros possíveis. Quem sabe as três regras acerta com certeza; quem sabe só uma ou duas cai em alguma alternativa “quase certa”, como a D.\n\nUm jeito seguro de resolver questões de código é **montar uma tabelinha no rascunho**, anotando o valor de cada variável a cada passo:\n\n```\n            x    y\ninício      5    -\nx++         6    (entregou 5)\n++x         7    (entregou 7)\ny = 5 + 7   7    12\n```\n\n> Nunca faça conta de código “de cabeça”. Escreva as posições das letras (0, 1, 2…) embaixo da String e acompanhe as variáveis linha a linha.",
+ "macete": "**x++ → “usa e depois soma”.** **++x → “soma e depois usa”.**\n**substring(a, b) → começa em a, para ANTES de b** (pega b − a letras). Posições começam em **0**.\n**equals, startsWith, endsWith, contains → diferenciam MAIÚSCULA de minúscula.** (Só `equalsIgnoreCase` ignora.)",
+ "treino": [
+  {
+   "pergunta": "Em Java, depois de `int a = 3; int b = a++ * 2;`, quanto valem a e b?",
+   "opcoes": {"A": "a = 4, b = 6", "B": "a = 4, b = 8", "C": "a = 3, b = 6"},
+   "resposta": "A",
+   "explicacao": "a++ entrega 3 para a conta (3 × 2 = 6) e depois a vira 4."
+  },
+  {
+   "pergunta": "Qual o resultado de `\"CAMARA\".substring(2, 5)`?",
+   "opcoes": {"A": "AMA", "B": "MAR", "C": "MARA"},
+   "resposta": "B",
+   "explicacao": "C=0, A=1, M=2, A=3, R=4, A=5. Pega 2, 3 e 4 (o 5 fica de fora): M, A, R → “MAR”."
+  },
+  {
+   "pergunta": "Qual o resultado de `\"Java\".startsWith(\"j\")`?",
+   "opcoes": {"A": "true", "B": "false"},
+   "resposta": "B",
+   "explicacao": "A String começa com “J” maiúsculo; “j” minúsculo é diferente → false."
+  }
+ ]
+}
