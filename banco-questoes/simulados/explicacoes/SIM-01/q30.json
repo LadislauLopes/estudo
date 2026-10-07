@@ -1,0 +1,36 @@
+{
+ "numero": 30,
+ "titulo": "JavaScript: o + gruda textos, o − faz conta, e NaN é do tipo number",
+ "ideia": "\"5\" + 2 = \"52\" (junta). \"5\" - 2 = 3 (converte e subtrai). 0.1 + 0.2 não dá exatamente 0.3. typeof NaN é \"number\".",
+ "do_zero": "Esta questão também junta **quatro pegadinhas** numa linha só. Vamos entender cada uma.\n\n**Pegadinha 1: o computador não guarda 0.1 exatamente**\n\nO computador guarda números em **binário** (só 0 e 1). Alguns números que parecem simples para nós, como **0.1**, viram uma “dízima infinita” em binário, do mesmo jeito que 1/3 vira 0,3333… no nosso sistema decimal. Como a memória é finita, o computador guarda um valor **aproximado**.\n\nResultado: em JavaScript (e em Java, Python, C…), `0.1 + 0.2` dá **0.30000000000000004**. Por isso `0.1 + 0.2 === 0.3` dá **false**. (O nome técnico desse formato de número é **ponto flutuante, padrão IEEE 754**.)\n\n**Pegadinha 2: o + com texto JUNTA**\n\nEm JavaScript, o `+` tem duas funções: **somar números** e **juntar textos** (concatenar). Se **um dos lados for texto** (string, entre aspas), ele converte o outro para texto e **junta**:\n\n- `\"5\" + 2` → `\"5\" + \"2\"` → **\"52\"**\n\n**Pegadinha 3: o − só sabe fazer conta**\n\nO `-` não tem a função de juntar textos. Então o JavaScript **converte o texto em número** e subtrai:\n\n- `\"5\" - 2` → `5 - 2` → **3**\n\n(O mesmo vale para `*` e `/`: `\"6\" * 2` dá 12.)\n\n> Essa conversão automática de tipos se chama **coerção de tipos**. O `+` prefere texto; os outros operadores matemáticos preferem número.\n\n**Pegadinha 4: typeof NaN**\n\n`typeof` diz o **tipo** de um valor. `NaN` significa “Not a Number” (“não é um número”) e aparece quando uma conta dá um resultado inválido (como `\"abc\" * 2`). Ironicamente, o tipo de NaN é **\"number\"**: ele é um valor especial **dentro** do tipo número.",
+ "passo_a_passo": "```\nconsole.log(0.1 + 0.2 === 0.3, \"5\" + 2, \"5\" - 2, typeof NaN);\n```\n\nO `console.log` imprime os quatro valores separados por espaço. Calcule um por um:\n\n1. `0.1 + 0.2 === 0.3` → 0.30000000000000004 não é igual a 0.3 → **false**\n2. `\"5\" + 2` → tem texto, então junta → **52**\n3. `\"5\" - 2` → o − converte para número → **3**\n4. `typeof NaN` → **number**\n\nSaída: `false 52 3 number` → alternativa **E**.\n\n**Eliminando rápido:** só de saber que `\"5\" + 2` dá 52, já sobram C, D e E. Sabendo que `\"5\" - 2` dá 3, sobram D e E. E sabendo que typeof NaN é number, sobra a E.",
+ "alternativas": {
+  "A": "Erra três coisas: 0.1 + 0.2 === 0.3 é false; \"5\" + 2 concatena (52), não soma.",
+  "B": "Erra \"5\" + 2 (é 52, não 7) e typeof NaN (é \"number\", não \"NaN\").",
+  "C": "0.1 + 0.2 === 0.3 é false; \"5\" - 2 é 3 (o − não concatena); typeof NaN é \"number\".",
+  "D": "Quase lá: só erra typeof NaN, que é \"number\".",
+  "E": "false (ponto flutuante), 52 (+ concatena com string), 3 (− converte para número), number (tipo do NaN). Correta."
+ },
+ "seu_erro": "Você marcou **B (false 7 3 NaN)** com convicção. Dois erros:\n\n1. **\"5\" + 2 = 7**: você tratou o \"5\" como número. Em muitas linguagens isso daria erro; em JavaScript, o `+` vê um texto e **junta**. Lembre das **aspas**: se tem aspas, é texto.\n2. **typeof NaN = NaN**: parece lógico, mas `typeof` sempre responde com o **nome de um tipo** (\"number\", \"string\", \"boolean\", \"undefined\", \"object\", \"function\"…). \"NaN\" não é nome de tipo; é um valor do tipo \"number\".\n\nRepare que você acertou o 0.1 + 0.2 (false) e o \"5\" - 2 (3). Faltaram só as duas regras acima.\n\n> Os valores possíveis de `typeof` são poucos. Se uma alternativa mostrar `typeof` devolvendo algo fora desta lista, desconfie: \"number\", \"string\", \"boolean\", \"undefined\", \"object\", \"function\", \"symbol\", \"bigint\".",
+ "macete": "**+ com texto → JUNTA** (\"5\" + 2 = \"52\").\n**− * / → CONVERTEM para número** (\"5\" − 2 = 3; \"6\" * 2 = 12).\n**0.1 + 0.2 ≠ 0.3** (ponto flutuante: 0.30000000000000004).\n**typeof NaN = \"number\"** (“Not a Number” é um número 🙃).\n\nFrase para decorar: **“O mais é sociável (junta), o menos é calculista (faz conta).”**",
+ "treino": [
+  {
+   "pergunta": "Em JavaScript, qual o resultado de `\"10\" + 5 - 3`?",
+   "opcoes": {"A": "12", "B": "102", "C": "\"1053\""},
+   "resposta": "B",
+   "explicacao": "Da esquerda para a direita: \"10\" + 5 = \"105\" (junta). Depois \"105\" - 3 = 102 (o − converte para número)."
+  },
+  {
+   "pergunta": "Em JavaScript, qual o resultado de `\"3\" * \"4\"`?",
+   "opcoes": {"A": "12", "B": "\"34\"", "C": "NaN"},
+   "resposta": "A",
+   "explicacao": "O * só faz conta: converte os dois textos para número. 3 × 4 = 12."
+  },
+  {
+   "pergunta": "Em JavaScript, `typeof \"42\"` resulta em:",
+   "opcoes": {"A": "\"number\"", "B": "\"string\""},
+   "resposta": "B",
+   "explicacao": "Está entre aspas, então é texto: \"string\". Mesmo que o conteúdo pareça número."
+  }
+ ]
+}

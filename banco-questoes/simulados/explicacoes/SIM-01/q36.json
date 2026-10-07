@@ -1,0 +1,36 @@
+{
+ "numero": 36,
+ "titulo": "Git: commit já enviado se desfaz com revert, nunca com reset",
+ "ideia": "git revert cria um commit NOVO que desfaz o antigo, sem apagar a história. git reset APAGA commits da história e atrapalha quem já baixou.",
+ "do_zero": "**O que é o Git?**\n\nÉ um programa que guarda o **histórico** de todas as versões de um projeto. Cada vez que você salva uma versão, cria um **commit**: uma “foto” do projeto naquele momento, com uma mensagem dizendo o que mudou.\n\nO histórico é como uma **corrente de fotos**, uma ligada à outra:\n\n```\nA ── B ── C ── D   (D é o commit mais recente)\n```\n\n**Repositório local e remoto**\n\n- **Local**: a cópia do projeto no seu computador.\n- **Remoto**: a cópia no servidor (GitHub, GitLab…), **compartilhada com a equipe**.\n- `git push` envia seus commits para o remoto. Depois disso, **seus colegas podem baixar** esses commits e começar a trabalhar em cima deles.\n\n**Duas formas de desfazer um commit**\n\nImagine que o commit **D** introduziu um erro.\n\n**1. Reescrever a história (reset):**\n\n```\nantes:  A ── B ── C ── D\ndepois: A ── B ── C\n```\n\nO `git reset --hard C` **apaga** o D, como se ele nunca tivesse existido. Se o D só estava no seu computador, tudo bem. Mas se você já tinha feito push e um colega já baixou o D, agora a história dele e a do servidor **não batem mais**. Para enviar, você teria que usar `push --force`, o que pode **apagar o trabalho dos colegas**. É como arrancar uma página de um caderno que várias pessoas estão copiando.\n\n**2. Preservar a história (revert):**\n\n```\nantes:  A ── B ── C ── D\ndepois: A ── B ── C ── D ── D'\n```\n\nO `git revert D` cria um commit **novo** (D') que faz **exatamente o contrário** do D: se o D adicionou uma linha, o D' a remove. O D continua na história, mas o efeito dele foi anulado. Ninguém perde nada; é só mais um commit, que todos baixam normalmente. É como escrever no caderno “**errata: desconsiderar a página anterior**”.\n\n**Os outros comandos das alternativas**\n\n- `git commit --amend`: **refaz o último commit** (muda a mensagem ou acrescenta arquivos). Na prática, troca o commit por outro: **reescreve** a história.\n- `git rebase`: **reorganiza** commits, mudando a base deles. Também **reescreve** a história.\n- `git stash`: guarda numa “gaveta” alterações que você **ainda não commitou**, para usar depois. Não desfaz commit nenhum.",
+ "passo_a_passo": "A questão dá duas condições:\n\n1. O commit **já foi enviado** ao repositório remoto **compartilhado** com a equipe.\n2. É preciso desfazer **sem reescrever o histórico**.\n\n**Passo 1: separe quem reescreve a história.**\n\n- `reset --hard` → apaga commits → **reescreve**.\n- `commit --amend` → substitui o último commit → **reescreve**.\n- `rebase` → recria commits → **reescreve**.\n\n**Passo 2: separe quem nem mexe em commit.**\n\n- `stash` → só guarda alterações ainda não commitadas.\n\n**Passo 3: sobra quem desfaz preservando a história.**\n\n- `git revert` → cria um commit novo que anula o antigo.\n\nResposta: **B (git revert)**.",
+ "alternativas": {
+  "A": "reset --hard apaga commits da história. Num commit já compartilhado, exigiria push --force e bagunçaria o repositório dos colegas.",
+  "B": "revert cria um commit novo que desfaz o anterior, mantendo toda a história. É o jeito seguro em branch compartilhada. Correta.",
+  "C": "stash guarda alterações que ainda não foram commitadas. Não desfaz commits.",
+  "D": "commit --amend substitui o último commit por outro: reescreve a história. Além disso, serve para corrigir o commit, não para desfazê-lo.",
+  "E": "rebase reorganiza e recria commits: reescreve a história."
+ },
+ "seu_erro": "Você marcou **A (git reset --hard)** com convicção. Faz sentido: o reset é o primeiro comando que aparece quando se pesquisa “como desfazer commit no Git”, e ele realmente desfaz.\n\nO detalhe que a questão cobra está em duas expressões do enunciado: **“já foi enviado ao repositório remoto compartilhado”** e **“sem reescrever o histórico”**. O reset funciona bem para commits que **só existem no seu computador**. Depois do push, ele vira um problema para a equipe inteira.\n\n> Regra de convivência no Git: **o que já foi publicado não se reescreve**. Commit local errado → pode usar reset/amend. Commit já enviado → use **revert**.",
+ "macete": "**REVERT = ERRATA** (commit novo que desfaz o antigo; história preservada; seguro em equipe).\n**RESET = BORRACHA** (apaga commits; reescreve a história; só para o que é local).\n\n**Reescrevem a história:** reset, commit --amend, rebase.\n**Não mexe em commit:** stash (gaveta para o que não foi commitado).\n\nFrase para decorar: **“Já deu push? Então é revert.”**",
+ "treino": [
+  {
+   "pergunta": "Você fez um commit com erro, mas ainda NÃO deu push. Quer apagá-lo completamente, como se nunca tivesse existido. O mais adequado é:",
+   "opcoes": {"A": "git reset", "B": "git stash", "C": "git push --force"},
+   "resposta": "A",
+   "explicacao": "Commit apenas local pode ser apagado com reset sem prejudicar ninguém, porque ninguém mais tem esse commit."
+  },
+  {
+   "pergunta": "Você está no meio de uma alteração (sem commit) e precisa trocar de branch rapidamente para corrigir um bug, sem perder o que fez. O comando indicado é:",
+   "opcoes": {"A": "git revert", "B": "git stash", "C": "git commit --amend"},
+   "resposta": "B",
+   "explicacao": "O stash guarda as alterações não commitadas numa “gaveta”. Depois, `git stash pop` as traz de volta."
+  },
+  {
+   "pergunta": "O que o comando `git revert` faz?",
+   "opcoes": {"A": "Apaga o último commit do histórico", "B": "Cria um novo commit que desfaz as alterações de um commit anterior", "C": "Volta o projeto para a versão do servidor remoto"},
+   "resposta": "B",
+   "explicacao": "O revert não apaga nada: adiciona um commit novo com o efeito contrário."
+  }
+ ]
+}

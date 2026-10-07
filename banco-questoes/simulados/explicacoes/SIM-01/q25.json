@@ -1,0 +1,36 @@
+{
+ "numero": 25,
+ "titulo": "Composição (◆ cheio): a parte morre junto com o todo",
+ "ideia": "Losango CHEIO = composição = a parte não vive sozinha. Losango VAZIO = agregação = a parte sobrevive sem o todo.",
+ "do_zero": "**UML** é uma linguagem de **desenhos padronizados** para representar sistemas. Um dos desenhos mais cobrados é o **diagrama de classes**.\n\n**O que é uma classe?** É o “molde” de um tipo de coisa do sistema. Por exemplo: a classe `Pedido` descreve como todo pedido é (número, data, cliente…); cada pedido real é um **objeto** feito a partir desse molde. No diagrama, cada classe é um retângulo, e as linhas entre os retângulos mostram como as classes se relacionam.\n\nA questão fala de relacionamentos **todo-parte**: quando uma coisa é formada por outras. Existem dois tipos, e a diferença é **o que acontece com a parte quando o todo deixa de existir**:\n\n**1. Composição** (losango **cheio** ◆, do lado do todo)\n\n- A parte **não existe sem o todo**. Se o todo é destruído, as partes são destruídas junto.\n- Exemplo: **Pedido ◆—— ItemDoPedido**. Se você apaga o pedido nº 123, os itens “2 pizzas” e “1 refrigerante” desse pedido não fazem sentido sozinhos: são apagados junto.\n- Outro exemplo: **Casa ◆—— Cômodo**. Se a casa é demolida, a cozinha dela deixa de existir.\n\n**2. Agregação** (losango **vazio** ◇, do lado do todo)\n\n- A parte **continua existindo sem o todo**.\n- Exemplo: **Departamento ◇—— Servidor**. Se o departamento é extinto, os servidores continuam existindo e vão para outro lugar.\n- Outro exemplo: **Time ◇—— Jogador**. Se o time acaba, o jogador continua vivo e vai para outro time.\n\n> Pense no losango como um copo: **cheio** = a parte está “presa” dentro do todo (composição). **Vazio** = a parte pode sair (agregação).\n\nOutros símbolos que aparecem nas alternativas:\n\n- **Associação simples**: uma linha comum, sem losango. Só diz que as classes se conhecem (Cliente —— Pedido).\n- **Generalização (herança)**: seta com **triângulo vazado** apontando para a classe mais geral (Cachorro ——▷ Animal: “cachorro é um animal”).\n- **Dependência**: seta **tracejada** (- - - >). Uma classe usa a outra de forma passageira.",
+ "passo_a_passo": "A questão dá **três pistas**. Basta uma delas para chegar à resposta, mas as três confirmam:\n\n**Pista 1**: “relacionamento todo-parte”\n\n- Só dois relacionamentos são todo-parte: **composição** e **agregação**. Descartamos associação simples, generalização e dependência.\n\n**Pista 2**: “a parte não existe independentemente do todo, sendo destruída junto com ele”\n\n- A parte morre com o todo → **composição**.\n\n**Pista 3**: “representado por um losango **preenchido**”\n\n- Losango cheio ◆ → **composição**.\n\nResposta: **C (composição)**.",
+ "alternativas": {
+  "A": "Agregação também é todo-parte, mas a parte sobrevive sem o todo e o losango é VAZIO (◇). A questão diz o contrário nos dois pontos.",
+  "B": "Associação simples é só uma linha, sem losango e sem ideia de todo-parte.",
+  "C": "Todo-parte + parte destruída com o todo + losango preenchido = composição. Correta.",
+  "D": "Generalização é herança (“é um”), desenhada com seta de triângulo vazado. Não é todo-parte.",
+  "E": "Dependência é uma seta tracejada: uma classe usa outra de forma temporária. Não é todo-parte."
+ },
+ "seu_erro": "Você marcou **A (agregação)** no chute. É a confusão mais comum desse assunto, porque “agregar” parece significar “juntar partes” e “compor” também. Os nomes não ajudam.\n\nO que resolve é decorar **o desenho** e **o teste da destruição**:\n\n- “Se eu apagar o todo, a parte some junto?” **Sim** → composição (◆ cheio). **Não** → agregação (◇ vazio).\n\nE repare: a questão entregou a resposta duas vezes (“destruída junto com ele” e “losango preenchido”). Quem sabe só um dos dois fatos já acerta.\n\n> Segundo o próprio simulado, a IDIB cobrou composição × agregação em quatro questões diferentes. Vale a pena fixar.",
+ "macete": "**COMPOSIÇÃO = ◆ CHEIO = a parte MORRE com o todo** (Pedido ◆— Item; Casa ◆— Cômodo).\n**AGREGAÇÃO = ◇ VAZIO = a parte SOBREVIVE** (Departamento ◇— Servidor; Time ◇— Jogador).\n\nFrase para decorar: **“Composição é Casamento até a morte (cheio de amor); Agregação é Amizade (cada um segue a vida).”**\n\nO losango fica **sempre do lado do TODO**.",
+ "treino": [
+  {
+   "pergunta": "Uma Universidade tem Professores. Se a universidade fechar, os professores continuam existindo. O relacionamento é:",
+   "opcoes": {"A": "composição (◆)", "B": "agregação (◇)", "C": "generalização"},
+   "resposta": "B",
+   "explicacao": "A parte (professor) sobrevive sem o todo (universidade): agregação, losango vazio."
+  },
+  {
+   "pergunta": "Uma NotaFiscal tem Linhas de produto. Se a nota for excluída, suas linhas também são. O relacionamento é:",
+   "opcoes": {"A": "composição (◆)", "B": "agregação (◇)", "C": "dependência"},
+   "resposta": "A",
+   "explicacao": "A linha de uma nota fiscal não existe sozinha: some junto com a nota. Composição, losango cheio."
+  },
+  {
+   "pergunta": "No diagrama de classes, “Gerente ——▷ Funcionário” (seta com triângulo vazado) indica:",
+   "opcoes": {"A": "que Gerente é composto de Funcionários", "B": "que Gerente é um tipo de Funcionário (herança)", "C": "uma dependência temporária"},
+   "resposta": "B",
+   "explicacao": "Triângulo vazado = generalização (herança): “Gerente é um Funcionário”. A seta aponta para a classe mais geral."
+  }
+ ]
+}

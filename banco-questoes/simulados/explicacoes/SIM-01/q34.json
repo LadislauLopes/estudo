@@ -1,0 +1,30 @@
+{
+ "numero": 34,
+ "titulo": "Merge Sort: sempre O(n log n), estável e gasta memória extra",
+ "ideia": "Merge Sort é rápido em todos os casos, estável e NÃO é in-place. O Quick Sort pode piorar para O(n²). A busca binária exige vetor ordenado.",
+ "do_zero": "**O que é “complexidade” (o tal do O grande)?**\n\nÉ uma forma de dizer **quanto o tempo de um algoritmo cresce quando a quantidade de dados (n) cresce**. Não mede segundos; mede o “ritmo” de crescimento. Do mais rápido para o mais lento:\n\n- **O(log n)**: cresce muito devagar. Dobrar os dados acrescenta só **um passo**. Com 1 milhão de itens, são uns 20 passos.\n- **O(n)**: cresce na mesma proporção. Dobrou os dados, dobrou o tempo.\n- **O(n log n)**: um pouco mais que O(n). É o melhor possível para ordenar comparando itens.\n- **O(n²)**: cresce rápido. Dobrou os dados, o tempo **quadruplica**. Com 1 milhão de itens, são 1 trilhão de passos.\n\n**Busca binária**\n\nÉ o jeito de procurar uma palavra no **dicionário**: você abre no meio, vê se a palavra está antes ou depois, descarta a metade errada e repete. A cada passo, metade dos dados some. Por isso é **O(log n)**.\n\nMas ela só funciona se a lista estiver **ordenada**. (Num dicionário embaralhado, abrir no meio não te diz nada.)\n\n**Quick Sort**\n\nEscolhe um elemento como **pivô** e separa os outros em “menores que o pivô” e “maiores que o pivô”. Depois repete o processo em cada lado.\n\n- **Caso médio: O(n log n)**, muito rápido na prática.\n- **Pior caso: O(n²)**, quando o pivô escolhido é sempre o menor ou o maior elemento (por exemplo, usar sempre o primeiro elemento como pivô num vetor que já está ordenado). Aí a divisão fica totalmente desequilibrada.\n\n**Merge Sort**\n\nDivide o vetor ao meio, depois ao meio de novo, até sobrar pedaços de 1 elemento. Depois vai **juntando (merge)** os pedaços em ordem, como quem junta dois montes de cartas já ordenados.\n\n- **Sempre O(n log n)**: melhor, médio e pior caso. Ele sempre divide ao meio, então nunca fica desequilibrado.\n- **Estável**: elementos iguais mantêm a ordem em que estavam. (Se dois alunos têm nota 8 e Ana vinha antes de Bruno, depois de ordenar por nota, Ana continua antes de Bruno.)\n- **Não é in-place**: precisa de um **vetor auxiliar** do mesmo tamanho para fazer as junções, ou seja, gasta **O(n) de memória extra**. (“In-place” significa “ordena no próprio lugar”, sem precisar de outro vetor.)",
+ "passo_a_passo": "**Item I**: “A pesquisa binária exige que o vetor esteja ordenado e tem complexidade O(log n) no pior caso.”\n\n- Exige ordenação? Sim (o dicionário precisa estar em ordem).\n- O(log n)? Sim (corta a metade a cada passo).\n- **CORRETO.**\n\n**Item II**: “O Quick Sort possui complexidade O(n log n) no caso médio, mas pode chegar a O(n²) no pior caso.”\n\n- Médio O(n log n) e pior O(n²) por causa de pivôs ruins.\n- **CORRETO.**\n\n**Item III**: “O Merge Sort é in-place e não estável, com complexidade O(n²) no pior caso.”\n\n- In-place? **Não** (usa vetor auxiliar).\n- Não estável? **Errado**: ele é estável.\n- O(n²) no pior caso? **Errado**: é O(n log n) sempre.\n- Os três pedaços estão errados. **ERRADO.**\n\nCorretos: I e II → **alternativa B**.",
+ "alternativas": {
+  "A": "Marca só o III, que é o único errado (errado nas três características do Merge Sort).",
+  "B": "I (busca binária: ordenado e O(log n)) e II (Quick Sort: médio n log n, pior n²) estão certos. Correta.",
+  "C": "Inclui o III, que está errado.",
+  "D": "Inclui o III, que está errado, e deixa de fora o I.",
+  "E": "O III está errado, então “todos” não pode ser."
+ },
+ "seu_erro": "Você acertou a **B** no chute. O item III é o que decide a questão, e a banca escreveu uma descrição que na verdade combina com **outro** algoritmo: o **Heap Sort** é in-place e não estável (mas é O(n log n) no pior caso, não O(n²)).\n\nPara não chutar, guarde uma tabelinha mínima com os quatro algoritmos que mais caem:\n\n- **Bubble / Insertion Sort**: pior caso O(n²); estáveis; in-place.\n- **Quick Sort**: médio O(n log n), **pior O(n²)**; não estável; in-place.\n- **Merge Sort**: **sempre O(n log n)**; **estável**; **não** in-place.\n- **Heap Sort**: **sempre O(n log n)**; não estável; in-place.\n\n> O Merge Sort é o “certinho que gasta memória”: sempre rápido e estável, mas precisa de espaço extra. O Quick Sort é o “rápido e imprevisível”: geralmente o mais veloz, mas pode piorar muito.",
+ "macete": "**Busca binária = dicionário: precisa estar ORDENADO, O(log n).**\n**Quick Sort = rápido no médio (n log n), PÉSSIMO no pior caso (n²).**\n**Merge Sort = SEMPRE n log n + ESTÁVEL + NÃO in-place (gasta memória).**\n**Heap Sort = SEMPRE n log n + NÃO estável + in-place.**\n\nFrase para decorar: **“Merge é Metódico (sempre igual) e Mantém a ordem, mas Mora em dois vetores.”**",
+ "treino": [
+  {
+   "pergunta": "Qual algoritmo de ordenação tem complexidade O(n log n) em todos os casos e é estável?",
+   "opcoes": {"A": "Quick Sort", "B": "Merge Sort", "C": "Bubble Sort"},
+   "resposta": "B",
+   "explicacao": "Merge Sort: sempre O(n log n) e estável. O Quick Sort pode cair para O(n²) e não é estável; o Bubble Sort é O(n²) no pior caso."
+  },
+  {
+   "pergunta": "Para usar a busca binária em uma lista de 1.000 nomes, é necessário que a lista:",
+   "opcoes": {"A": "não tenha nomes repetidos", "B": "esteja ordenada", "C": "tenha tamanho par"},
+   "resposta": "B",
+   "explicacao": "A busca binária descarta metade da lista a cada passo comparando com o elemento do meio. Isso só funciona se a lista estiver ordenada."
+  }
+ ]
+}

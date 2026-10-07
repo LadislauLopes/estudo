@@ -1,0 +1,36 @@
+{
+ "numero": 38,
+ "titulo": "Casos de uso: ator é um PAPEL, e pode ser pessoa, sistema ou dispositivo",
+ "ideia": "Include = sempre acontece. Extend = só às vezes. Ator = qualquer coisa externa que interage com o sistema (não só pessoas). Desconfie do “exclusivamente”.",
+ "do_zero": "**O que é um diagrama de casos de uso?**\n\nÉ um desenho da UML que mostra **o que o sistema faz** e **quem usa** cada funcionalidade, sem entrar em detalhes técnicos. É um dos primeiros desenhos feitos num projeto, para conversar com o cliente.\n\nEle tem três elementos principais:\n\n**1. Caso de uso** (uma elipse/oval)\n\nUma funcionalidade do sistema, escrita como verbo + objeto: “Sacar dinheiro”, “Emitir certidão”, “Fazer login”.\n\n**2. Ator** (o “bonequinho de palito”)\n\nQualquer coisa **de fora do sistema** que interage com ele. O ator é um **papel**, não uma pessoa específica. Pode ser:\n\n- uma **pessoa**: Cliente, Servidor, Vereador;\n- **outro sistema**: o sistema da Receita Federal, o sistema do banco que processa pagamentos;\n- um **dispositivo** ou o próprio **tempo**: um sensor, um relógio que dispara uma rotina toda meia-noite.\n\n> O desenho é um bonequinho, mas isso é só um símbolo. Um sistema externo também é desenhado como bonequinho (ou como um retângulo com a palavra «actor»).\n\n**3. Relacionamentos entre casos de uso**\n\nUse o exemplo de um **caixa eletrônico**:\n\n- **«include» (inclusão) = SEMPRE acontece.** “Sacar dinheiro” **sempre** inclui “Validar senha”. Não existe saque sem validar a senha. A seta tracejada vai **do caso base para o incluído**: Sacar - - «include» - -> Validar senha.\n- **«extend» (extensão) = SÓ ÀS VEZES acontece, sob uma condição.** “Imprimir comprovante” **estende** “Sacar dinheiro”, porque só acontece **se** o cliente pedir. A seta tracejada vai **do extensor para o caso base**: Imprimir comprovante - - «extend» - -> Sacar.\n\n> Para lembrar o sentido das setas: no include, o **base aponta** para o que ele “puxa”; no extend, o **opcional aponta** para quem ele “complementa”.",
+ "passo_a_passo": "**Item I**: “O «include» indica que o caso de uso base **sempre** incorpora o comportamento do caso incluído.”\n\n- Include = sempre. (Sacar sempre inclui Validar senha.)\n- **CORRETO.**\n\n**Item II**: “O «extend» representa um comportamento **opcional**, executado apenas sob determinadas condições.”\n\n- Extend = opcional, condicional. (Imprimir comprovante só se o cliente quiser.)\n- **CORRETO.**\n\n**Item III**: “Um ator representa **exclusivamente** pessoas físicas que interagem com o sistema.”\n\n- O ator é um papel externo: pode ser pessoa, **outro sistema** ou **dispositivo**.\n- A palavra “exclusivamente” torna o item falso.\n- **ERRADO.**\n\nCorretos: I e II → **alternativa B**.",
+ "alternativas": {
+  "A": "Marca só o III, que é o único errado: ator não é só pessoa.",
+  "B": "I (include = sempre) e II (extend = opcional/condicional) estão certos; III erra ao limitar o ator a pessoas. Correta.",
+  "C": "Inclui o III, que está errado.",
+  "D": "Inclui o III, que está errado.",
+  "E": "O III está errado, então “todos” não pode ser."
+ },
+ "seu_erro": "Você marcou **E (I, II e III)** no chute, ou seja, aceitou o item III. A armadilha dele é o desenho: como o ator é um **bonequinho**, parece óbvio que é uma pessoa.\n\nMas pense num sistema da câmara que consulta o CPF de alguém na base da Receita Federal. A Receita é algo **externo** que **interage** com o sistema. Ela é um ator, e não é uma pessoa.\n\n> Palavras como **“exclusivamente”**, **“somente”**, **“sempre”**, **“nunca”** e **“apenas”** são muito usadas pelas bancas para transformar uma frase quase certa em falsa. Quando aparecerem, pergunte: **“existe alguma exceção?”**. Se existir uma só, o item está errado.",
+ "macete": "**«include» = INCLUI SEMPRE** (Sacar → Validar senha). Seta: base → incluído.\n**«extend» = EXTRA, SÓ ÀS VEZES** (Imprimir comprovante → Sacar). Seta: extensor → base.\n**Ator = PAPEL EXTERNO**: pessoa, sistema, dispositivo ou tempo. Nunca “exclusivamente pessoas”.\n\nFrase para decorar: **“INclude é INdispensável; EXtend é EXtra.”**",
+ "treino": [
+  {
+   "pergunta": "Em um sistema de loja virtual, o sistema da operadora de cartão de crédito, que recebe e aprova os pagamentos, é representado no diagrama de casos de uso como:",
+   "opcoes": {"A": "um caso de uso", "B": "um ator", "C": "não aparece, pois não é uma pessoa"},
+   "resposta": "B",
+   "explicacao": "É um sistema externo que interage com a loja: é um ator."
+  },
+  {
+   "pergunta": "No caso de uso “Finalizar compra”, aplicar um cupom de desconto só acontece se o cliente tiver um cupom. A relação entre “Aplicar cupom” e “Finalizar compra” é:",
+   "opcoes": {"A": "«include»", "B": "«extend»", "C": "generalização"},
+   "resposta": "B",
+   "explicacao": "É opcional e depende de uma condição (ter um cupom): extend. A seta vai de “Aplicar cupom” para “Finalizar compra”."
+  },
+  {
+   "pergunta": "Todo “Emitir certidão” exige “Autenticar usuário” antes. A relação é:",
+   "opcoes": {"A": "«include»", "B": "«extend»"},
+   "resposta": "A",
+   "explicacao": "Sempre acontece: include. A seta vai de “Emitir certidão” (base) para “Autenticar usuário” (incluído)."
+  }
+ ]
+}

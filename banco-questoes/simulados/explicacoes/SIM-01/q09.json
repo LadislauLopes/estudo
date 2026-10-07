@@ -1,0 +1,36 @@
+{
+ "numero": 9,
+ "titulo": "Com vírgula explica todos; sem vírgula separa só alguns",
+ "ideia": "Oração com QUE pronome relativo e SEM vírgula é adjetiva restritiva: ela separa um grupo (“só os órgãos que resistem”).",
+ "do_zero": "Primeiro, alguns nomes que a gramática usa:\n\n- **Oração** é qualquer pedaço da frase que tem um verbo. “Os órgãos correm risco” é uma oração. “que ainda resistem” é outra.\n- **Oração subordinada** é a que depende de outra para fazer sentido. “que ainda resistem a essa lógica” sozinha não diz nada; ela está pendurada em “órgãos”.\n\nAs subordinadas têm **três famílias**, e o nome de cada uma vem do papel que ela faz:\n\n- **Substantiva**: funciona como um **substantivo** (dá para trocar por “isso”). Começa com conjunção integrante. “Eu sei **que você estudou**” → Eu sei **isso**.\n- **Adjetiva**: funciona como um **adjetivo**, ou seja, caracteriza um nome. Começa com **pronome relativo** (que = o qual). “Os órgãos **que resistem**” → os órgãos **resistentes**.\n- **Adverbial**: funciona como um **advérbio**, indicando causa, tempo, condição etc. “Saí **porque choveu**.”\n\nDentro das **adjetivas**, existem dois tipos, e a diferença está na **vírgula**:\n\n- **Restritiva (SEM vírgula)**: **restringe**, separa um grupo dentro de um todo. “Os alunos **que estudaram** passaram.” → Só **alguns** alunos passaram: os que estudaram.\n- **Explicativa (COM vírgula)**: **explica** algo que vale para **todos**. “Os alunos, **que estudaram**, passaram.” → **Todos** os alunos estudaram, e todos passaram.\n\n> Veja como a vírgula muda o sentido: sem vírgula, há alunos que não estudaram (e não passaram). Com vírgula, a frase diz que todos estudaram.",
+ "passo_a_passo": "Frase: “Os órgãos **que ainda resistem a essa lógica** correm o risco de perder a confiança da população.”\n\n**Passo 1: que tipo de QUE é esse?**\n\n- Teste do “o qual”: “Os órgãos **os quais** ainda resistem…”. Funciona.\n- Então é **pronome relativo**, retomando “órgãos”.\n- Pronome relativo abre oração **adjetiva**. Já eliminamos B (substantiva), C (adverbial) e E (coordenada).\n\n**Passo 2: tem vírgula?**\n\n- Não. A oração está colada em “órgãos”, sem vírgula antes nem depois.\n- Sem vírgula = **restritiva**.\n\n**Passo 3: confira pelo sentido.**\n\n- Quem corre risco? **Só os órgãos que resistem**, não todos os órgãos. A oração separa um grupo. É exatamente o que a restritiva faz.\n\nResposta: **D (subordinada adjetiva restritiva)**.\n\nCompare com o outro trecho do texto: “da população, **que cobra cada vez mais transparência**”. Aqui há vírgula, e a ideia vale para toda a população: é **explicativa**.",
+ "alternativas": {
+  "A": "Seria explicativa se estivesse entre vírgulas. Sem vírgulas, é restritiva.",
+  "B": "Substantiva objetiva direta começa com conjunção integrante e pode ser trocada por “isso” (“Sei **que ele veio**” → sei isso). Aqui o QUE é pronome relativo (troca por “os quais”), então a oração é adjetiva.",
+  "C": "Adverbial causal indica causa (porque, já que, visto que). Não há ideia de causa aqui, e o QUE não é conjunção causal.",
+  "D": "QUE pronome relativo (os quais) + sem vírgula = adjetiva restritiva. Só os órgãos que resistem correm risco. Correta.",
+  "E": "Coordenada é uma oração independente, que não se pendura em nenhum termo. Esta está presa a “órgãos”, então é subordinada."
+ },
+ "seu_erro": "Você marcou **B (substantiva objetiva direta)** no chute. O que provavelmente aconteceu: você viu um QUE e lembrou que “oração com QUE pode ser substantiva”. É verdade, mas só quando o QUE é **conjunção integrante**.\n\nO caminho seguro é sempre começar pelo **teste do “o qual”** (o mesmo da questão 4):\n\n- Virou “o qual / os quais”? → pronome relativo → oração **ADJETIVA**.\n- Virou “isso”? → conjunção integrante → oração **SUBSTANTIVA**.\n\nAqui, “os órgãos **os quais** resistem” funciona e “os órgãos **isso**” não faz sentido. Então é adjetiva, e a única dúvida que sobra é restritiva ou explicativa, que a vírgula resolve.\n\n> Repare que as questões 4 e 9 se apoiam no mesmo conhecimento. Aprendendo bem a diferença entre QUE relativo e QUE integrante, você ganha várias questões de uma vez.",
+ "macete": "**Duas perguntas resolvem tudo:**\n\n1. **O QUE vira “o qual”?** Sim → ADJETIVA. Vira “isso”? → SUBSTANTIVA.\n2. **Tem vírgula?** Sim → EXPLICATIVA (vale para todos). Não → RESTRITIVA (só alguns).\n\nFrase para decorar: **“Os servidores que faltaram foram punidos”** (só os faltosos) × **“Os servidores, que faltaram, foram punidos”** (todos faltaram).",
+ "treino": [
+  {
+   "pergunta": "“Os candidatos **que estudaram com antecedência** ficaram tranquilos.” A oração destacada é:",
+   "opcoes": {"A": "adjetiva restritiva", "B": "adjetiva explicativa", "C": "substantiva objetiva direta"},
+   "resposta": "A",
+   "explicacao": "QUE = os quais (relativo) e sem vírgula. Só os candidatos que estudaram ficaram tranquilos: restritiva."
+  },
+  {
+   "pergunta": "“O Brasil, **que tem 27 unidades federativas**, é dividido em cinco regiões.” A oração destacada é:",
+   "opcoes": {"A": "adjetiva restritiva", "B": "adjetiva explicativa", "C": "adverbial causal"},
+   "resposta": "B",
+   "explicacao": "QUE = o qual, e a oração está entre vírgulas. Ela apenas explica uma característica do Brasil, que é um só (não existe um “grupo” de Brasis a separar). Explicativa."
+  },
+  {
+   "pergunta": "“O diretor disse **que o sistema será trocado**.” A oração destacada é:",
+   "opcoes": {"A": "adjetiva restritiva", "B": "substantiva objetiva direta"},
+   "resposta": "B",
+   "explicacao": "“O diretor disse **o qual**…” não funciona; “O diretor disse **isso**” funciona. QUE conjunção integrante → substantiva. (Ela é objetiva direta porque completa o verbo “dizer”: quem diz, diz algo.)"
+  }
+ ]
+}

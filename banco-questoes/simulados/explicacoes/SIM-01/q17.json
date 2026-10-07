@@ -1,0 +1,30 @@
+{
+ "numero": 17,
+ "titulo": "Dado sensível é o que pode gerar discriminação; o CPF não está na lista",
+ "ideia": "Sensível = dados que permitem preconceito: raça, religião, opinião política, sindicato, saúde, vida sexual, genética e biometria. CPF é pessoal, mas não sensível.",
+ "do_zero": "A LGPD separa os dados em dois níveis:\n\n**1. Dado pessoal (art. 5º, I)**: qualquer informação que identifica uma pessoa ou permite identificá-la. Exemplos: nome, CPF, RG, e-mail, telefone, endereço, placa do carro.\n\n**2. Dado pessoal sensível (art. 5º, II)**: um tipo especial de dado pessoal, que recebe **proteção extra**. São os dados que, se vazarem ou forem mal usados, podem fazer a pessoa sofrer **discriminação ou preconceito**.\n\nA lei traz uma **lista fechada** de dados sensíveis. São eles:\n\n- **origem racial ou étnica**;\n- **convicção religiosa**;\n- **opinião política**;\n- **filiação a sindicato** ou a organização de caráter religioso, filosófico ou político;\n- **dado referente à saúde** ou à **vida sexual**;\n- **dado genético** (DNA) ou **biométrico** (digital, rosto, íris), quando ligado a uma pessoa.\n\n> O teste prático: pergunte **“alguém poderia ser discriminado por causa disso?”**. Religião, partido, doença, sindicato, orientação sexual: sim. Número do CPF: não. Ele identifica você, mas não revela nada sobre quem você é.\n\nUm jeito de lembrar: pense nas coisas que **não se perguntam numa entrevista de emprego**: “Qual a sua religião? Em quem você vota? É sindicalizado? Tem alguma doença?”. Isso é dado sensível.",
+ "passo_a_passo": "Vamos passar cada item pela lista do art. 5º, II.\n\n**I. Dado referente à saúde.**\n\n- Está na lista, com essas mesmas palavras (“dado referente à saúde”).\n- Teste da discriminação: uma pessoa pode ser rejeitada num emprego por ter uma doença? Sim.\n- **SENSÍVEL.**\n\n**II. Filiação a sindicato.**\n\n- Está na lista (“filiação a sindicato”).\n- Teste: alguém pode ser perseguido por ser sindicalizado? Sim.\n- **SENSÍVEL.**\n\n**III. Número de inscrição no CPF.**\n\n- **Não** está na lista.\n- É dado pessoal comum (identifica a pessoa), mas não revela nada que gere discriminação.\n- **NÃO sensível.**\n\nSensíveis: I e II → **alternativa C**.",
+ "alternativas": {
+  "A": "Esquece o item I: dado de saúde está expressamente na lista de dados sensíveis.",
+  "B": "Marca só o CPF, que é justamente o único que NÃO é sensível.",
+  "C": "Saúde e filiação a sindicato estão na lista do art. 5º, II. O CPF é dado pessoal comum. Correta.",
+  "D": "Inclui o CPF e deixa de fora o sindicato. O CPF é pessoal, mas não sensível; o sindicato está na lista.",
+  "E": "Inclui o CPF (não sensível) e deixa de fora a saúde (sensível)."
+ },
+ "seu_erro": "Você marcou **D (I e III)** no chute: aceitou o CPF como sensível e recusou o sindicato.\n\nAs duas confusões são compreensíveis:\n\n- **CPF parece sensível** porque é um dado que a gente protege (ninguém quer o CPF vazado). Mas “importante” ou “sigiloso” não é o mesmo que “sensível” na LGPD. Sensível é só o que está na **lista** do art. 5º, II, e a lista é sobre **discriminação**.\n- **Sindicato parece inofensivo**, mas está na lista porque a história mostra muitos casos de trabalhadores demitidos ou perseguidos por serem sindicalizados.\n\n> Na prova, não use o “bom senso” de “o que eu não gostaria que vazasse”. Use a lista. E se não lembrar dela, use o teste: **“isso pode gerar preconceito?”**.",
+ "macete": "**Sensível = pode gerar PRECONCEITO.**\n\nLista para decorar (pense em “RA-RE-PO-SI-SA-SE-GE-BIO”):\n**RA**ça/etnia · **RE**ligião · **PO**lítica · **SI**ndicato (e organizações religiosas, filosóficas ou políticas) · **SA**úde · **SE**xo (vida sexual) · **GE**nético · **BIO**métrico.\n\n**CPF, RG, nome, e-mail, endereço, telefone, salário = pessoais, mas NÃO sensíveis.**",
+ "treino": [
+  {
+   "pergunta": "Qual destes é dado pessoal SENSÍVEL segundo a LGPD?",
+   "opcoes": {"A": "Endereço residencial", "B": "Impressão digital usada para bater o ponto", "C": "Número do título de eleitor"},
+   "resposta": "B",
+   "explicacao": "A digital é dado biométrico, que está na lista. Endereço e título de eleitor são dados pessoais comuns. (Cuidado: o título de eleitor não revela em quem você vota; opinião política é que seria sensível.)"
+  },
+  {
+   "pergunta": "A informação de que um servidor é membro de um partido político é:",
+   "opcoes": {"A": "dado pessoal sensível", "B": "dado pessoal comum", "C": "dado anonimizado"},
+   "resposta": "A",
+   "explicacao": "Filiação a organização de caráter político está na lista do art. 5º, II. É sensível."
+  }
+ ]
+}

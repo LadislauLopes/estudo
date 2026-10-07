@@ -1,0 +1,36 @@
+{
+ "numero": 5,
+ "titulo": "Verbos que não têm sujeito: HAVER (existir) e FAZER (tempo)",
+ "ideia": "HAVER no sentido de existir e FAZER indicando tempo ficam SEMPRE no singular: “havia documentos”, “faz dez anos”.",
+ "do_zero": "**Concordância verbal** é a regra que diz: o verbo combina com o **sujeito** (quem pratica ou sofre a ação).\n\n- “O servidor **trabalha**.” (um servidor → verbo no singular)\n- “Os servidores **trabalham**.” (vários → plural)\n\nPara achar o sujeito, pergunte ao verbo **“quem?”** ou **“o quê?”**: “Quem trabalha? Os servidores.”\n\nAgora a parte que a banca cobra: alguns verbos, em certos sentidos, **não têm sujeito nenhum**. Eles se chamam **verbos impessoais** e, como não há com quem concordar, ficam **sempre na 3ª pessoa do singular** (a forma do “ele”).\n\nOs dois impessoais mais cobrados:\n\n- **HAVER no sentido de EXISTIR ou ACONTECER**: “**Há** muitos problemas.” “**Havia** dois candidatos.” “**Houve** reuniões.” Nunca “haviam candidatos”.\n- **FAZER indicando TEMPO decorrido ou clima**: “**Faz** dez anos.” “**Faz** dias que não chove.” “**Fez** invernos rigorosos.” Nunca “fazem dez anos”.\n\n> Cuidado: a palavra que vem depois (“muitos problemas”, “dez anos”) **não é sujeito**. É o complemento do verbo. Por isso o plural dela não puxa o verbo.\n\nE tem mais uma regra que completa esta: quando o verbo impessoal vem acompanhado de um **verbo auxiliar** (deve, pode, vai, costuma, começa a…), o auxiliar **também fica no singular**:\n\n- “**Deve** haver servidores capazes.” (e não “devem haver”)\n- “**Vai** fazer cinco anos.” (e não “vão fazer”)\n\nPor fim, **EXISTIR não é impessoal**. Ele tem sujeito normal e concorda: “**Existem** órgãos que resistem.” Essa diferença entre HAVER e EXISTIR é a pegadinha preferida das bancas.",
+ "passo_a_passo": "Vamos olhar uma por uma, procurando o verbo e perguntando se ele é impessoal.\n\n**A) “Deve haver servidores capazes…”**\n\n- “Haver” = existir → impessoal → singular.\n- O auxiliar “deve” acompanha o impessoal → também singular.\n- **Correta.**\n\n**B) “Fazem dez anos que a lei foi sancionada.”**\n\n- “Fazer” indicando tempo → impessoal → tem que ser **“Faz** dez anos”.\n- Errada.\n\n**C) “Haviam, no prédio, muitos documentos.”**\n\n- “Haver” = existir → impessoal → tem que ser **“Havia** muitos documentos”.\n- Errada.\n\n**D) “Ainda existe órgãos que resistem…”**\n\n- “Existir” NÃO é impessoal. Quem existe? “órgãos” (plural). → **“existem** órgãos”.\n- Errada.\n\n**E) “Os dados pessoais dos cidadãos precisa ser protegido.”**\n\n- Quem precisa? “Os dados” (plural). → **“precisam** ser **protegidos**”.\n- A banca colocou “dos cidadãos” no meio para você se distrair. O núcleo do sujeito é “dados”.\n- Errada.\n\nResposta: **A**.",
+ "alternativas": {
+  "A": "“Haver” (existir) é impessoal e o auxiliar “deve” fica no singular junto com ele. Concordância perfeita.",
+  "B": "“Fazer” indicando tempo é impessoal: o certo é “**Faz** dez anos”. “Dez anos” não é sujeito, então não puxa o plural.",
+  "C": "“Haver” no sentido de existir não vai ao plural: o certo é “**Havia** muitos documentos”.",
+  "D": "“Existir” tem sujeito normal (“órgãos”) e precisa concordar: “**existem** órgãos”.",
+  "E": "O sujeito é “os dados” (plural): “os dados **precisam** ser **protegidos**”."
+ },
+ "seu_erro": "Você marcou **B**: “Fazem dez anos que…”. Isso soa natural porque, no dia a dia, muita gente fala assim. Mas na norma-padrão (a que a prova cobra) está errado.\n\nO raciocínio que leva ao erro é: “dez anos” é plural, então o verbo vai para o plural. Só que “dez anos” **não é o sujeito**. Pergunte: “quem faz dez anos?”. Não há ninguém fazendo nada; o verbo só marca a passagem do tempo. Sem sujeito, singular.\n\n> Truque de ouvido: troque por “há”. “**Há** dez anos” (ninguém fala “hão dez anos”). FAZER de tempo se comporta igual a HAVER: singular sempre.",
+ "macete": "**HAVER = existir → singular.** “Havia dúvidas”, “houve problemas”, “deve haver soluções”.\n**FAZER = tempo → singular.** “Faz dois anos”, “vai fazer dez anos”.\n**EXISTIR → concorda normalmente.** “Existem dúvidas”, “devem existir soluções”.\n\nFrase para decorar: **“Faz anos que HÁ erros, mas EXISTEM soluções.”**",
+ "treino": [
+  {
+   "pergunta": "Qual frase está correta?",
+   "opcoes": {"A": "Houveram muitas reclamações no portal.", "B": "Houve muitas reclamações no portal."},
+   "resposta": "B",
+   "explicacao": "“Houve” é o verbo haver no passado, no sentido de “acontecer/existir”: impessoal, fica no singular."
+  },
+  {
+   "pergunta": "Qual frase está correta?",
+   "opcoes": {"A": "Podem haver falhas no sistema.", "B": "Pode haver falhas no sistema.", "C": "Pode existir falhas no sistema."},
+   "resposta": "B",
+   "explicacao": "Com HAVER, o auxiliar fica no singular: “**Pode** haver falhas”. A C está errada porque EXISTIR concorda com o sujeito: o certo seria “**Podem** existir falhas”. Repare como as duas regras são opostas: com haver, singular; com existir, plural."
+  },
+  {
+   "pergunta": "Complete: “_____ três meses que o sistema está fora do ar.”",
+   "opcoes": {"A": "Fazem", "B": "Faz"},
+   "resposta": "B",
+   "explicacao": "FAZER indicando tempo decorrido é impessoal: “**Faz** três meses”."
+  }
+ ]
+}

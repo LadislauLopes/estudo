@@ -1,0 +1,30 @@
+{
+ "numero": 20,
+ "titulo": "Governo Digital quer MENOS burocracia: cartório como regra vai contra a lei",
+ "ideia": "A Lei 14.129/2021 existe para simplificar e digitalizar. Qualquer item que traga mais papel, mais carimbo ou mais exigência está errado.",
+ "do_zero": "A **Lei do Governo Digital (Lei 14.129/2021)** define como o poder público deve oferecer seus serviços pela internet. Você não precisa decorar os mais de 20 princípios do art. 3º. Basta entender o **espírito** da lei, porque quase toda questão se resolve com ele.\n\n**O espírito da lei: facilitar a vida do cidadão.**\n\nTudo o que vai nessa direção costuma estar certo:\n\n- **Desburocratizar e simplificar** a relação com o governo.\n- Oferecer serviços **digitais**, acessíveis inclusive pelo **celular**.\n- **Transparência** e **dados abertos**.\n- **Monitorar a qualidade** dos serviços e ouvir o usuário.\n- Não pedir ao cidadão documentos que o próprio governo já tem.\n- **Eliminar formalidades** cujo custo seja maior do que o risco que elas evitam.\n- **Acessibilidade** para pessoas com deficiência.\n\nTudo o que vai na direção contrária costuma estar errado: exigir papel, carimbo, firma reconhecida, cópia autenticada, comparecimento presencial “como regra”.\n\n**E o cartório?**\nAntes mesmo da Lei do Governo Digital, a **Lei 13.726/2018** (Lei da Desburocratização) já tinha **dispensado**, como regra, o **reconhecimento de firma** e a **autenticação de cópias** em cartório na relação do cidadão com os órgãos públicos. O servidor pode comparar a assinatura com o documento de identidade, ou a cópia com o original, e ele mesmo atestar.\n\n> Truque para a prova: em questões sobre Governo Digital, procure palavras que **aumentam a burocracia** (“exigência”, “obrigatoriamente presencial”, “cartório”, “firma reconhecida”). Normalmente elas marcam o item errado.",
+ "passo_a_passo": "**Item I**: desburocratização, modernização, simplificação, serviços digitais acessíveis por celular.\n\n- Vai na direção do espírito da lei. E é praticamente cópia do art. 3º, I.\n- **CORRETO.**\n\n**Item II**: transparência na execução dos serviços e monitoramento da qualidade.\n\n- Também vai na direção certa (é o art. 3º, IV).\n- **CORRETO.**\n\n**Item III**: exigência, **como regra**, de reconhecimento de firma e autenticação em cartório.\n\n- Vai no sentido **oposto**: aumenta a burocracia.\n- A lei prevê justamente eliminar formalidades desnecessárias, e a Lei 13.726/2018 dispensa firma e autenticação como regra.\n- **ERRADO.**\n\nCorretos: I e II → **alternativa D**.",
+ "alternativas": {
+  "A": "Esquece o item II, que também é princípio da lei (transparência e monitoramento da qualidade).",
+  "B": "Esquece o item I, que é praticamente o primeiro princípio do art. 3º.",
+  "C": "Marca só o III, que é o único errado: cartório como regra vai contra a desburocratização.",
+  "D": "I e II reproduzem princípios do art. 3º; III vai no sentido oposto ao da lei. Correta.",
+  "E": "Inclui o III, que está errado."
+ },
+ "seu_erro": "Você acertou a **D** no chute. Para não depender da sorte, guarde o raciocínio: **a lei é a favor do cidadão e contra a burocracia**. Com isso você resolve esta questão sem ter decorado nenhum inciso.\n\nO item III tem uma armadilha: ele usa palavras “bonitas” do tema (“prestação de serviços digitais”), mas no meio coloca **“exigência, como regra, de reconhecimento de firma”**. É o tipo de item feito para quem lê rápido e só vê o tema.\n\n> Ao ler itens de legislação, sublinhe mentalmente os **verbos e as palavras de obrigação** (exigência, obrigatório, vedado, como regra, exclusivamente). É neles que a banca esconde o erro.",
+ "macete": "**Governo Digital = MENOS papel, MAIS celular, MAIS transparência.**\n\nItem que **simplifica** → provavelmente certo.\nItem que **exige cartório, papel ou presença como regra** → errado.\n\nLei 13.726/2018: **firma reconhecida e cópia autenticada estão dispensadas** como regra.",
+ "treino": [
+  {
+   "pergunta": "Está de acordo com os princípios da Lei do Governo Digital:",
+   "opcoes": {"A": "exigir do cidadão documentos que já constam das bases de dados do próprio governo", "B": "priorizar o atendimento presencial, usando o digital só em casos excepcionais", "C": "oferecer serviços digitais acessíveis inclusive por dispositivos móveis"},
+   "resposta": "C",
+   "explicacao": "A lei quer serviços digitais, inclusive pelo celular. As outras duas vão contra o espírito da lei: pedir o que o governo já tem e tratar o digital como exceção."
+  },
+  {
+   "pergunta": "Um órgão exige que o cidadão traga cópia autenticada em cartório do RG, mesmo com o original em mãos. Pela Lei 13.726/2018, essa exigência é:",
+   "opcoes": {"A": "válida", "B": "dispensada: o servidor pode comparar a cópia com o original e atestar a autenticidade"},
+   "resposta": "B",
+   "explicacao": "A Lei da Desburocratização dispensa a autenticação de cópia: o próprio agente compara com o original e atesta."
+  }
+ ]
+}

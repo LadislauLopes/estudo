@@ -1,0 +1,36 @@
+{
+ "numero": 40,
+ "titulo": "Sem respostas prontas para aprender? É aprendizado NÃO supervisionado",
+ "ideia": "Se os dados não têm rótulo (“classificação prévia”) e a tarefa é agrupar por semelhança, a resposta é não supervisionado com clustering.",
+ "do_zero": "**Aprendizado de máquina** é quando o computador aprende padrões a partir de exemplos, em vez de alguém programar cada regra à mão. Existem três tipos principais, e a diferença entre eles é **que tipo de exemplo o computador recebe**.\n\n**1. Aprendizado supervisionado: aprende com gabarito**\n\nO computador recebe exemplos **já com a resposta certa** (os **rótulos**), como um aluno estudando por uma lista de exercícios **com gabarito**.\n\n- Você mostra 10 mil e-mails, cada um marcado como “spam” ou “não spam”. O computador aprende a separar os próximos.\n- Tem dois subtipos:\n- **Classificação**: a resposta é uma **categoria** (spam / não spam; aprovado / reprovado; gato / cachorro).\n- **Regressão**: a resposta é um **número** (preço de uma casa, temperatura de amanhã).\n\n**2. Aprendizado não supervisionado: aprende sem gabarito**\n\nO computador recebe os dados **sem resposta nenhuma** e precisa **descobrir sozinho** a estrutura escondida neles.\n\n- O uso mais comum é o **agrupamento (clustering)**: juntar coisas parecidas. Exemplo: uma loja entrega a lista de clientes e o computador descobre sozinho que existem “clientes que compram só em promoção”, “clientes de luxo” etc. Ninguém tinha dito esses grupos antes.\n- O algoritmo de clustering mais famoso é o **k-means**.\n\n> Analogia: imagine uma caixa com centenas de peças de LEGO misturadas, e ninguém te diz quais grupos existem. Você naturalmente separa por cor ou por formato. Isso é agrupamento não supervisionado.\n\n**3. Aprendizado por reforço: aprende por tentativa e erro**\n\nO computador (chamado de **agente**) toma ações num ambiente e recebe **recompensas** ou **punições**. Com o tempo, aprende quais ações dão mais recompensa. É como **adestrar um cachorro** com petiscos. Usos: jogos, robôs, carros autônomos.\n\n**E o “sistema especialista”?**\n\nNão é aprendizado de máquina. É um programa com **regras escritas à mão** por especialistas (“SE febre E manchas ENTÃO suspeita de dengue”). Ele não aprende nada sozinho.",
+ "passo_a_passo": "O enunciado tem duas pistas decisivas:\n\n**Pista 1**: “**sem dispor de nenhuma classificação prévia** dos documentos”\n\n- Sem classificação prévia = **sem rótulos** = **sem gabarito**.\n- Sem gabarito → **não supervisionado**.\n- Isso já elimina A e C (supervisionado precisa de rótulos).\n\n**Pista 2**: “**agrupar** automaticamente… **por similaridade**”\n\n- Agrupar coisas parecidas = **clustering (agrupamento)**.\n\n**Descartando o resto:**\n\n- B) Reforço → não há ações, recompensas nem punições na tarefa.\n- D) Sistema especialista → regras manuais, sem aprendizado. E com “milhares de proposições”, escrever regras à mão seria inviável.\n\nResposta: **E (não supervisionado, por clustering)**.",
+ "alternativas": {
+  "A": "Classificação é supervisionada: exige documentos já rotulados com a categoria certa. A questão diz que não há classificação prévia.",
+  "B": "Reforço aprende com recompensas e punições a partir de ações num ambiente (jogos, robôs). Não é o caso de agrupar documentos.",
+  "C": "Regressão é supervisionada e prevê um NÚMERO (preço, temperatura). Não agrupa e precisa de rótulos.",
+  "D": "Sistema especialista usa regras escritas à mão e não aprende sozinho. Não é aprendizado de máquina.",
+  "E": "Sem rótulos (não supervisionado) + agrupar por semelhança (clustering, como k-means). Correta."
+ },
+ "seu_erro": "Você marcou **A (supervisionado, por classificação)** no chute. A confusão é natural: no dia a dia, “classificar documentos” e “agrupar documentos” parecem a mesma coisa.\n\nEm aprendizado de máquina, a diferença é técnica:\n\n- **Classificar** = colocar cada item numa **categoria que já existe e é conhecida** (alguém já disse quais são as categorias e deu exemplos de cada uma). → supervisionado.\n- **Agrupar (clustering)** = **descobrir** quais grupos existem, sem ninguém ter dito antes. → não supervisionado.\n\nO enunciado deixou isso bem claro com “**sem dispor de nenhuma classificação prévia**”. Essa frase é a pista principal.\n\n> Sempre que a questão disser “**sem rótulos**”, “**sem classificação prévia**”, “**dados não rotulados**” ou “**descobrir padrões/grupos**”, a resposta é **não supervisionado**. Se disser “**a partir de exemplos rotulados**” ou “**histórico com a resposta**”, é **supervisionado**.",
+ "macete": "**Tem gabarito (rótulo)? → SUPERVISIONADO.** Categoria = classificação; número = regressão.\n**Não tem gabarito? → NÃO SUPERVISIONADO.** Agrupar = clustering (k-means).\n**Aprende com recompensa e punição? → REFORÇO.**\n**Regras escritas à mão? → sistema especialista (não aprende).**\n\nFrase para decorar: **“Supervisionado tem professor com gabarito; não supervisionado estuda sozinho; reforço ganha petisco.”**",
+ "treino": [
+  {
+   "pergunta": "Um banco quer prever se um cliente vai pagar ou não um empréstimo, usando o histórico de milhares de empréstimos anteriores em que já se sabe quem pagou. A abordagem é:",
+   "opcoes": {"A": "supervisionada, por classificação", "B": "não supervisionada, por clustering", "C": "por reforço"},
+   "resposta": "A",
+   "explicacao": "O histórico tem a resposta (pagou / não pagou): há rótulos. E a saída é uma categoria: classificação supervisionada."
+  },
+  {
+   "pergunta": "Uma imobiliária quer prever o PREÇO de venda de um imóvel a partir da área, do bairro e do número de quartos, usando vendas passadas. A técnica é:",
+   "opcoes": {"A": "clustering", "B": "regressão (supervisionada)", "C": "classificação"},
+   "resposta": "B",
+   "explicacao": "Há vendas passadas com o preço (rótulo) e a resposta é um número: regressão, que é supervisionada."
+  },
+  {
+   "pergunta": "Um programa aprende a jogar xadrez jogando milhões de partidas contra si mesmo e ganhando pontos quando vence. É aprendizado:",
+   "opcoes": {"A": "supervisionado", "B": "não supervisionado", "C": "por reforço"},
+   "resposta": "C",
+   "explicacao": "Tentativa e erro com recompensa (vencer) e punição (perder): aprendizado por reforço."
+  }
+ ]
+}
