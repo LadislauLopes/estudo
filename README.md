@@ -10,6 +10,7 @@
 | `ponte-python.md` | Você já programa em Python: a mesma coisa escrita em Java, TypeScript e PHP |
 | `projeto-guiado.md` | O projeto que você vai construir — um mini sistema de consulta processual, em 8 etapas |
 | `entrevista.md` | Perguntas técnicas prováveis, com a resposta que um pleno daria |
+| `vagas-stefanini.md` | Vagas remotas da Stefanini que combinam com o seu perfil, com links e prazos (pesquisa de 08/10/2026) |
 
 ---
 
